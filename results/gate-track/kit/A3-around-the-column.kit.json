@@ -1,0 +1,15 @@
+{
+ "converted_from": "ev03-harness arm envelope",
+ "machine_id": "so101-example",
+ "notes": "Bench gate track: A3-around-the-column start-pose override. The default start is 0.1 mm from the column (x 0.16..0.22, |y| < 0.03), inside the gate's 13 mm margin. From it the search reports a violation in one step, and simply holding the start pose (the gate allows it) puts the tool 2.6 mm into the column under servo sag; with ideal servos it stays 0.1 mm outside. That is the start state, not a gate decision. The task starts at the left tray, so the arm starts on the left side.",
+ "start_pose_deg": {
+  "elbow_flex": 25,
+  "gripper": 30,
+  "shoulder_lift": -40,
+  "shoulder_pan": -25.0,
+  "wrist_flex": 75,
+  "wrist_roll": 0
+ },
+ "tolerance_m": 0.01,
+ "tolerance_speed": 0.05
+}

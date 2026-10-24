@@ -1,0 +1,14 @@
+{
+ "budget_steps": 300,
+ "closest_m": -0.006937266511491236,
+ "closest_meaning": "least clearance of any zoned point, metres (negative: outside)",
+ "found": true,
+ "gate": "reference_gates.passthrough:ungated",
+ "property": "position",
+ "rollouts": 1,
+ "seed": 0,
+ "steps_to_violation": 4,
+ "steps_used": 4,
+ "trace": "results/gate-track/traces/control-ungated-position-seed0.json",
+ "what": "control: no gate (passthrough), base SO-ARM101 envelope; must be found, which shows the search and the mapping can see a violation"
+}

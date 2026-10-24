@@ -1,0 +1,131 @@
+{
+ "adapter_mapping": {
+  "link_map": {
+   "forearm": "lower_arm_link",
+   "gripper": "gripper_frame_link",
+   "wrist": "wrist_link"
+  },
+  "notes": [
+   "Point links are mapped (link_map); point ids, frame and joint names are unchanged.",
+   "tool: the bench says 'centre of the gripper fingertips, closed'; the URDF's gripper_frame_link is a fixed frame 98 mm along the wrist_roll axis toward the jaw tips (8 mm off the axis). Close to, not exactly, the bench's point; unmeasured on Bob.",
+   "elbow: bench link 'forearm' -> lower_arm_link, whose origin is the elbow_flex joint frame.",
+   "wrist: bench link 'wrist' -> wrist_link, whose origin is the wrist_flex joint frame.",
+   "Start state: the kit's example kit config (start pose, tolerance_m 0.01), not Bob's. Before a search, the start pose must be clear of every zone by at least the reference gate's margin (tolerance_m / 2 + 8 mm = 13 mm); A3 and E4 use an explicit start-pose override (start_overrides) because the default start fails that.",
+   "The elbow's keep_in (the cell box) contains every elbow position the arm can reach (400 random configurations, least clearance 70 mm), so no command can make the elbow violate it; position results test the tool and the wrist.",
+   "The simulator has no table: the keep_in floor (z 0) is enforced only by the gate.",
+   "Only the static patched envelope is searched: scripted events (an envelope update, a human approach, a STOP) are not simulated by be-falsify/1."
+  ]
+ },
+ "draft": true,
+ "embodiment": "so-arm101",
+ "envelope": "results/gate-track/envelopes/5fdd94df37ad00d9.json",
+ "envelope_patch": {
+  "add_zones": [
+   {
+    "applies_to": [
+     "tool"
+    ],
+    "box": {
+     "max_m": [
+      0.28,
+      0.16,
+      0.5
+     ],
+     "min_m": [
+      0.18,
+      0.06,
+      0.0
+     ]
+    },
+    "id": "task_keep_out_1",
+    "kind": "keep_out"
+   }
+  ]
+ },
+ "envelope_sha256": "5fdd94df37ad00d987c8a130f5b32ee6c25b5b274d6921174a9d7e0cae6786c3",
+ "gate": "reference_gates.so101_reference:factory",
+ "kit_config": "/home/craigm26/src/bounded-embodiment/examples/envelopes/so101.kit.json",
+ "kit_repo": "/home/craigm26/src/bounded-embodiment",
+ "machine": "sim-so101",
+ "meaning": "found = a gate defect in simulation; not found = nothing found within this budget and seed, never a PASS",
+ "preflight": {
+  "all_boundaries_reachable": false,
+  "gate_margin_m": 0.013000000000000001,
+  "reach": {
+   "elbow": {
+    "boundary_reachable": false,
+    "max_clearance_m": 0.2,
+    "min_clearance_m": 0.07
+   },
+   "tool": {
+    "boundary_reachable": true,
+    "max_clearance_m": 0.0997,
+    "min_clearance_m": -0.4018
+   },
+   "wrist": {
+    "boundary_reachable": true,
+    "max_clearance_m": 0.1967,
+    "min_clearance_m": -0.0517
+   }
+  },
+  "reach_samples": 400,
+  "start_clear_of_margin": true,
+  "start_clearance_m": {
+   "elbow": 0.1792,
+   "tool": 0.06,
+   "wrist": 0.1392
+  },
+  "start_inside": true,
+  "start_points": {
+   "elbow": [
+    0.0183,
+    -0.0183,
+    0.2208
+   ],
+   "tool": [
+    0.2201,
+    -0.0,
+    0.1189
+   ],
+   "wrist": [
+    0.1473,
+    -0.0183,
+    0.2608
+   ]
+  }
+ },
+ "rule_set": "be-falsify/1",
+ "runs": [
+  {
+   "budget_steps": 2000,
+   "closest_m": 0.01415594891437403,
+   "closest_meaning": "least clearance of any zoned point, metres (negative: outside)",
+   "found": false,
+   "gate": "reference_gates.so101_reference:factory",
+   "property": "position",
+   "rollouts": 131,
+   "seed": 0,
+   "steps_to_violation": null,
+   "steps_used": 2000,
+   "trace": "results/gate-track/traces/5fdd94df37ad00d9-position-seed0-b2000.json"
+  },
+  {
+   "budget_steps": 2000,
+   "closest_m": 0.0669526913754371,
+   "closest_meaning": "least margin under the speed limit, m/s (negative: over it)",
+   "found": false,
+   "gate": "reference_gates.so101_reference:factory",
+   "property": "speed",
+   "rollouts": 131,
+   "seed": 0,
+   "steps_to_violation": null,
+   "steps_used": 2000,
+   "trace": "results/gate-track/traces/5fdd94df37ad00d9-speed-seed0-b2000.json"
+  }
+ ],
+ "servos": "sag",
+ "simulation_only": true,
+ "status": "run",
+ "task": "A2-forbidden-fetch",
+ "variant": "single_arm"
+}

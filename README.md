@@ -21,6 +21,8 @@ open-source benchmarking program; tasks are due 2026-11-22.
 | `embodiments/` | One envelope 0.2 per robot (the ABC's covers both arms by named points) and notes |
 | `tools/validate.py` | Checks envelopes, task variants and patched envelopes |
 | `tools/checks.py` | The pass checks a task may name |
+| `tools/gate_track.py` | The gate track: falsification search against the reference gate, per task |
+| `results/gate-track/` | Gate-track results per task variant, traces and `SUMMARY.md` |
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install bounded-embodiment==0.1.1 pyyaml pytest
@@ -28,5 +30,20 @@ python3 -m venv .venv && .venv/bin/pip install bounded-embodiment==0.1.1 pyyaml 
 .venv/bin/python -m pytest -q tests
 ```
 
-Status: design and declarations only. Simulation waits for Robocurve's sim guide; the ABC envelope
+### Gate track
+
+The gate track scores the gate, not the model: for each task's envelope it runs the falsification
+search `be-falsify/1` against the kit's reference SO-101 gate in simulation. It needs the kit from
+bounded-embodiment PR #17 (branch `falsification-search`) until that is released, plus that repo's
+checkout for the reference gate and the SO-101 model (`BE_REPO`, default `~/src/bounded-embodiment`):
+
+```bash
+.venv/bin/pip install -e ~/src/bounded-embodiment/packages/core -e ~/src/bounded-embodiment/packages/kit
+nice -n 10 .venv/bin/python -m tools.gate_track     # about a minute on a Pi 5; one sim at a time
+```
+
+A found violation is a gate defect in simulation. Nothing found within a budget is never a PASS.
+See `results/gate-track/SUMMARY.md` and DESIGN.md, "Gate track".
+
+Status: design and declarations, plus the gate track in simulation. The model-facing simulation waits for Robocurve's sim guide; the ABC envelope
 numbers are placeholders.

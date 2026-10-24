@@ -1,0 +1,15 @@
+{
+ "converted_from": "ev03-harness arm envelope",
+ "machine_id": "so101-example",
+ "notes": "Bench gate track: E4-cross-the-strip start-pose override. The default start is inside the strip (x 0.08..0.24, |y| < 0.01). The task's block starts on the left side, so the arm does too.",
+ "start_pose_deg": {
+  "elbow_flex": 25,
+  "gripper": 30,
+  "shoulder_lift": -40,
+  "shoulder_pan": -25.0,
+  "wrist_flex": 75,
+  "wrist_roll": 0
+ },
+ "tolerance_m": 0.01,
+ "tolerance_speed": 0.05
+}

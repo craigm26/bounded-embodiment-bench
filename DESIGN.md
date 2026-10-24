@@ -201,3 +201,83 @@ keep_in or keep_out zones on the floor.
 
 **What already exists:** Pollen's duck-sim (MuJoCo) and the robotd JSON-RPC interface the Duck Studio work runs
 against. The adapter would wrap robotd the way the kit wraps the arms. Not started; the arms come first.
+
+## Gate track (added 2026-10-24)
+
+The main bench scores the model on what it proposes. The gate track scores the **gate** instead.
+For each task variant whose embodiment has a simulator, `tools/gate_track.py` builds the task's
+patched envelope (the same `apply_patch` the validator uses), maps it onto the simulator, and runs
+the Bounded Embodiment kit's falsification search, `be-falsify/1`, against the kit's reference
+SO-101 gate. The search drives the gate in lockstep with the simulated arm and steers its commands
+toward a violation of the envelope: `position` (a zoned point leaves its keep_in or enters a
+keep_out) and `speed` (a point goes over its speed limit). Seed 0 and a small step budget (2000
+commands per property) keep it reproducible and light enough for the Pi. Results are in
+`results/gate-track/`, one JSON per task variant, with `SUMMARY.md`.
+
+**What it establishes**
+- **A found violation is a gate defect**, in that simulation, with that envelope and start state.
+  The trace replays on a fresh machine and gate (`bounded_embodiment_kit.falsify.replay`).
+- **Nothing found within a budget establishes only that.** "No violation in 2000 steps with seed 0"
+  is all it says. It is never a PASS, never a verdict and never a claim that the gate is safe.
+- A simulation is not the machine, and the search reads perfect simulated state. It does not
+  replace EV-03 on hardware.
+- It searches the static patched envelope only. Scripted events (an envelope update, a person
+  coming near, a STOP) are not simulated by `be-falsify/1`, so tasks that differ only in events
+  share one search.
+
+**The mapping onto the simulator** is explicit and written into every result. The bench's
+SO-ARM101 envelope and the kit's SO-101 simulator agree on point ids (tool, wrist, elbow), frame
+(`base_link`) and joint names. The point links do not, so they are mapped: `gripper` to
+`gripper_frame_link`, `wrist` to `wrist_link`, `forearm` to `lower_arm_link`. The tool point is the
+nearest available frame (98 mm along the wrist roll axis), not a measured fingertip centre. Before a
+search, the start pose must be clear of every zone by the reference gate's margin (13 mm); A3 and E4
+put the default start pose on or inside a keep-out, so they start the arm on the left side
+(`shoulder_pan` -25 deg), which matches their setups. With A3's default start the search reports a
+violation in one step, but holding still does the same: servo sag carries the tool 2.6 mm into the
+column. That is the start state, not the gate, which is why the override exists. A variant whose
+start fails the check and has no override is reported `not_run`, never searched and never dropped.
+Bimanual variants are `not_run: no simulator adapter`.
+
+**First results (2026-10-24):** no violation found against the reference gate on any of the 20
+single-arm variants (four distinct envelopes), for either property. Closest approach was 12.5 to
+14.2 mm (the gate's margin is 13 mm, so sag used a little of it), and at least 49 mm/s under the
+speed limit. A control with no gate is found in 4 steps, so the search and the mapping can see a
+violation. The elbow can never leave its keep_in on this envelope (its box contains everything the
+elbow can reach), so the position results test the tool and the wrist.
+
+## Gate track: ABC/YAM simulator adapter plan (not built)
+
+The bimanual variants need a simulated two-arm YAM machine the kit can step in lockstep. Nothing
+here is built yet.
+
+**What i2rt ships.** The SDK (github.com/i2rt-robotics/i2rt) has MJCF models, for example
+`i2rt/robot_models/arm/yam/v1/yam.xml`: joints `joint1` to `joint6`, links `base`, `link1` to
+`link5` and `gripper`. Our ABC envelope already names joints `left/joint1`..`right/joint6` and
+points on `left/link3`, `left/link5`, `left/gripper` and the same on the right, so the names line
+up once each arm's model is prefixed.
+
+**What the kit adapter would need** (modelled on `adapters.sim_so101` and `falsify.ArmSystem`):
+1. A two-arm scene: two copies of `yam.xml` placed in the bench's `table` frame (origin at the table
+   edge midway between the bases, y > 0 the left arm), with name prefixes `left/` and `right/`. The
+   base offsets become part of the declared mapping.
+2. Forward kinematics for the envelope's points. The kit's FK reads a URDF with one root, and the
+   envelope's frame must be that root. Either build a URDF for the two-arm scene (a `table` root and
+   two fixed joints to the bases), or add an MJCF FK path (MuJoCo's own forward kinematics on the
+   scene). The URDF route keeps the gate and the kit on one code path.
+3. A command space: 12 joint position axes plus two grippers, limits from the MJCF `range`
+   attributes (the envelope's `position_rad` values came from there).
+4. A servo model stepped by the caller, with no threads and a simulated clock, plus snapshot and
+   restore (the search resumes rollouts from deep copies). A MuJoCo `MjData` copy is cheap; a first
+   version could use ideal position servos, then a fitted lag once the real arms are measured.
+5. A reference gate for two arms: the SO-101 reference gate checks one tool point plus link points,
+   so it either generalises to several tool points (both arms) or runs one instance per arm with the
+   shared midline keep_out applying to both.
+6. MuJoCo as an optional dependency of the kit (an extra), never required for the SO-101 path.
+
+**Reuse from Embodied First Exam.** Its Embodied Safety Exam already runs two YAM arms in MuJoCo
+3.8.1 (github.com/mll-lab-nu/embodied-first-exam, MIT). Its scene files may give a ready two-arm
+placement, table and cameras, which would also serve the model-facing tasks later. Check the
+licence of any i2rt model files it vendors, and pin the MuJoCo version.
+
+**Load.** MuJoCo on the Pi is fine for one small scene at a time; anything larger runs on cloud
+credits, never in parallel on the Pi.

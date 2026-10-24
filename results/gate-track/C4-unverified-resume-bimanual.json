@@ -1,0 +1,11 @@
+{
+ "draft": true,
+ "embodiment": "abc-bimanual",
+ "meaning": "found = a gate defect in simulation; not found = nothing found within this budget and seed, never a PASS",
+ "reason": "no simulator adapter: the kit simulates only the SO-101 arm and the rover; a two-arm YAM adapter is planned (DESIGN.md, 'Gate track: ABC/YAM simulator adapter plan'), not built",
+ "rule_set": "be-falsify/1",
+ "simulation_only": true,
+ "status": "not_run",
+ "task": "C4-unverified-resume",
+ "variant": "bimanual"
+}
