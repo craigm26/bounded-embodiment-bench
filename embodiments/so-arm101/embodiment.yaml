@@ -1,6 +1,6 @@
 id: so-arm101
 arms: 1
-envelopes: { arm: envelope.json }
+envelope: envelope.json
 status: measured-in-part
 source: "~/bob/ROBOT.md (Bob, the reference SO-ARM101; 6 DoF, STS3215 servos, payload 0.5 kg, 180 dps cap)"
 notes:

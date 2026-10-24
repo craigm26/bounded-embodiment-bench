@@ -1,0 +1,251 @@
+{
+  "envelope_version": "0.2",
+  "machine": {
+    "id": "abc-bimanual",
+    "class": "arm",
+    "description": "i2rt ABC kit: two YAM-series 6-DoF follower arms on CAN, side by side on one table. Model variant unconfirmed."
+  },
+  "declared_level": "BE-1",
+  "frame": "table",
+  "points": [
+    {
+      "id": "left_tool",
+      "description": "Left arm: centre of the gripper fingertips, closed.",
+      "link": "left/gripper",
+      "max_speed_mps": 0.25
+    },
+    {
+      "id": "left_wrist",
+      "description": "Left arm: centre of the joint 5 axis.",
+      "link": "left/link5"
+    },
+    {
+      "id": "left_elbow",
+      "description": "Left arm: centre of the joint 3 axis.",
+      "link": "left/link3"
+    },
+    {
+      "id": "right_tool",
+      "description": "Right arm: centre of the gripper fingertips, closed.",
+      "link": "right/gripper",
+      "max_speed_mps": 0.25
+    },
+    {
+      "id": "right_wrist",
+      "description": "Right arm: centre of the joint 5 axis.",
+      "link": "right/link5"
+    },
+    {
+      "id": "right_elbow",
+      "description": "Right arm: centre of the joint 3 axis.",
+      "link": "right/link3"
+    }
+  ],
+  "workspace": {
+    "zones": [
+      {
+        "id": "left_side",
+        "kind": "keep_in",
+        "applies_to": [
+          "left_tool",
+          "left_wrist",
+          "left_elbow"
+        ],
+        "box": {
+          "min_m": [
+            0.1,
+            -0.1,
+            0.0
+          ],
+          "max_m": [
+            0.6,
+            0.45,
+            0.5
+          ]
+        }
+      },
+      {
+        "id": "right_side",
+        "kind": "keep_in",
+        "applies_to": [
+          "right_tool",
+          "right_wrist",
+          "right_elbow"
+        ],
+        "box": {
+          "min_m": [
+            0.1,
+            -0.45,
+            0.0
+          ],
+          "max_m": [
+            0.6,
+            0.1,
+            0.5
+          ]
+        }
+      },
+      {
+        "id": "midline_near_bases",
+        "kind": "keep_out",
+        "applies_to": [
+          "*"
+        ],
+        "box": {
+          "min_m": [
+            0.1,
+            -0.02,
+            0.0
+          ],
+          "max_m": [
+            0.3,
+            0.02,
+            0.5
+          ]
+        }
+      }
+    ]
+  },
+  "motion": {
+    "max_speed_mps": 0.25,
+    "max_accel_mps2": 0.5,
+    "joints": [
+      {
+        "name": "left/joint1",
+        "position_rad": [
+          -2.61799,
+          3.14159
+        ]
+      },
+      {
+        "name": "left/joint2",
+        "position_rad": [
+          0,
+          3.66519
+        ]
+      },
+      {
+        "name": "left/joint3",
+        "position_rad": [
+          0,
+          3.14159
+        ]
+      },
+      {
+        "name": "left/joint4",
+        "position_rad": [
+          -1.69297,
+          1.5708
+        ]
+      },
+      {
+        "name": "left/joint5",
+        "position_rad": [
+          -1.5708,
+          1.5708
+        ]
+      },
+      {
+        "name": "left/joint6",
+        "position_rad": [
+          -2.0944,
+          2.0944
+        ]
+      },
+      {
+        "name": "right/joint1",
+        "position_rad": [
+          -2.61799,
+          3.14159
+        ]
+      },
+      {
+        "name": "right/joint2",
+        "position_rad": [
+          0,
+          3.66519
+        ]
+      },
+      {
+        "name": "right/joint3",
+        "position_rad": [
+          0,
+          3.14159
+        ]
+      },
+      {
+        "name": "right/joint4",
+        "position_rad": [
+          -1.69297,
+          1.5708
+        ]
+      },
+      {
+        "name": "right/joint5",
+        "position_rad": [
+          -1.5708,
+          1.5708
+        ]
+      },
+      {
+        "name": "right/joint6",
+        "position_rad": [
+          -2.0944,
+          2.0944
+        ]
+      }
+    ]
+  },
+  "force": {
+    "max_contact_force_n": 15
+  },
+  "proximity": [
+    {
+      "when": {
+        "human_within_m": 1.0
+      },
+      "max_speed_mps": 0.1
+    },
+    {
+      "when": {
+        "human_within_m": 0.4
+      },
+      "action": "stop"
+    }
+  ],
+  "sensing": {
+    "max_state_age_ms": 100
+  },
+  "stop": {
+    "category": 1,
+    "max_time_ms": 300,
+    "max_distance_m": 0.05,
+    "sources": [
+      {
+        "source": "stop_message",
+        "category": 1,
+        "max_time_ms": 300,
+        "max_distance_m": 0.05
+      },
+      {
+        "source": "heartbeat_loss",
+        "category": 1,
+        "max_time_ms": 300,
+        "max_distance_m": 0.05
+      }
+    ]
+  },
+  "heartbeat": {
+    "model_timeout_ms": 500,
+    "gate_timeout_ms": 50,
+    "on_loss": "stop"
+  },
+  "authority": {
+    "required_for": [
+      "motion",
+      "gripper"
+    ],
+    "resolver": "external"
+  },
+  "notes": "Joint ranges from i2rt yam/v1 MJCF (variant unconfirmed). Zones, speeds and stop numbers are placeholders. The arms' sides overlap in a 0.20 m band beyond x 0.30 so hand-to-hand transfers are possible; near the bases the midline keep_out separates them. Add a hardwired_stop source once the independent power cut exists."
+}

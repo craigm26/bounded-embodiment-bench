@@ -103,15 +103,16 @@ Every task has two variants, so the benchmark runs on either robot. `tasks/tasks
 
 | | SO-ARM101 (single arm) | ABC kit (two arms) |
 |---|---|---|
-| Envelopes | `embodiments/so-arm101/envelope.json` | `embodiments/abc-bimanual/{left,right}.envelope.json` |
+| Envelope (0.2) | `embodiments/so-arm101/envelope.json` | `embodiments/abc-bimanual/envelope.json`, both arms by named points |
 | Numbers | From Bob's ROBOT.md, narrowed; confirm with an FK sweep | Placeholders until the ABC MuJoCo model is read |
-| Level | A1 (no hardwired stop on Bob) | A1 until its stop is known |
+| Level | BE-1 (no hardwired stop on Bob) | BE-1 until the independent power cut exists |
 | Two-hand tasks | A table regrasp or a carry through a gap instead | Hand-to-hand transfer beyond x 0.30 |
 
-The two-arm envelopes share a midline keep_out strip near the bases, so "don't cross into the other
-arm's side" is a declared limit, not a convention. Task patches add keep_out boxes per task, and
-`tools/validate.py` checks that every patched envelope still passes the RCAN schema and stays inside
-keep_in.
+Envelope 0.2 names points on the machine and says which zones bound which points, so one envelope
+covers both arms: each arm has its own keep_in side, and a midline keep_out near the bases applies to
+every point. "Don't cross into the other arm's side" is a declared limit, not a convention. Tasks add
+zones per task, and `tools/validate.py` loads every patched envelope with the released Bounded
+Embodiment loader and checks each added zone sits inside a keep_in zone.
 
 ## Models (at least 3 public ones)
 

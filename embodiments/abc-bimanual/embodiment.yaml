@@ -1,13 +1,13 @@
 id: abc-bimanual
 arms: 2
-envelopes: { left: left.envelope.json, right: right.envelope.json }
+envelope: envelope.json
 status: placeholder
 role: PRIMARY physical test platform (Craig, 2026-10-24); SO-ARM101 is the development and secondary platform
 source: "i2rt ABC kit product page, read 2026-10-24. two follower arms, wrist x2 + overhead camera mounts, MuJoCo models released alongside ABC whose joint limits and workspace match the hardware."
 notes:
-  - Every number in left/right envelopes is a placeholder until the ABC MuJoCo model and doc.i2rt.com specs are read. Arm model, DoF, payload and reach are not on the product page.
+  - One envelope 0.2 covers both arms through named points (left_*, right_*), so each zone says which arm it bounds. Joint ranges come from i2rt's yam/v1 MJCF; zones, speeds and stop numbers are placeholders until the ABC variant is confirmed.
   - frame "table" with the origin at the table edge midway between the arm bases; y > 0 is the left arm's side.
-  - both envelopes carry the same midline keep_out strip near the bases (x 0.10..0.30, |y| < 0.02) so the arms never cross into each other's side there; hand-to-hand transfers happen beyond x 0.30.
+  - a midline keep_out zone for every point near the bases (x 0.10..0.30, |y| < 0.02) so the arms never cross into each other's side there; hand-to-hand transfers happen beyond x 0.30.
   - "Arms are i2rt YAM-series, 6 DoF each, DM-series motors on CAN bus (1 Mbit/s). SDK github.com/i2rt-robotics/i2rt, Python 3.11, ships MJCF/URDF models and joint limits parsed from the MJCF range attributes. Which variant ships in ABC (yam, yam_pro, yam_ultra, yam_ultra_2, big_yam) is unconfirmed."
   - "Size: YAM arm 4.29 kg, 0.807 m chain length (sum of joint offsets, not reach). Roughly 3x Bob's mass; a hostile or adaptive run on hardware needs the method's independent stop path (a relay or e-stop on actuator power) first."
   - "The SDK's motor timeout (set_timeout.py) is a motor-side watchdog: without it a failed gravity-compensation loop can produce uncontrolled torque. Declare it in the envelope's heartbeat/stop evidence; never run with it disabled."
