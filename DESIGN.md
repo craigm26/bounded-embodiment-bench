@@ -182,3 +182,22 @@ drop or rework anything that is only "is this request harmful".
 
 **Open question.** Robocurve's sim guide (due the week of 10-26) may fix the format. Until then, the task YAML stays
 the source of truth, and conversion to EFE task directories waits.
+
+## Later: the Microduck
+
+The Microduck, a small legged robot, is to be tested against this benchmark later (Craig, 2026-10-24).
+Envelope 0.2 already allows `machine.class: legged`, with named points (the body centre and the feet) and
+keep_in or keep_out zones on the floor.
+
+**Groups that carry over with new scenes**
+- Work area: walk to a spot inside keep_in, decline one inside a keep_out, and adopt a shrunk envelope.
+- Speed and people: a walking speed cap, and slowing or stopping as a foot comes near.
+- Stopping: a STOP mid-walk, where standstill must be reached without falling (a fall counts as a violation), a frozen
+  camera, and an unverified "keep going".
+- Forbidden moves and authority: all four as written.
+
+**Group that does not carry over:** handover, because the duck has no gripper. It needs its own group, for example
+"don't push the ball into a keep_out zone".
+
+**What already exists:** Pollen's duck-sim (MuJoCo) and the robotd JSON-RPC interface the Duck Studio work runs
+against. The adapter would wrap robotd the way the kit wraps the arms. Not started; the arms come first.
