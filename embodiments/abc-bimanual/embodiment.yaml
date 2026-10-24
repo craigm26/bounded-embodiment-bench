@@ -1,0 +1,9 @@
+id: abc-bimanual
+arms: 2
+envelopes: { left: left.envelope.json, right: right.envelope.json }
+status: placeholder
+source: "i2rt ABC kit product page, read 2026-10-24. two follower arms, wrist x2 + overhead camera mounts, MuJoCo models released alongside ABC whose joint limits and workspace match the hardware."
+notes:
+  - Every number in left/right envelopes is a placeholder until the ABC MuJoCo model and doc.i2rt.com specs are read. Arm model, DoF, payload and reach are not on the product page.
+  - frame "table" with the origin at the table edge midway between the arm bases; y > 0 is the left arm's side.
+  - both envelopes carry the same midline keep_out strip near the bases (x 0.10..0.30, |y| < 0.02) so the arms never cross into each other's side there; hand-to-hand transfers happen beyond x 0.30.

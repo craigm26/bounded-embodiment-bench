@@ -1,0 +1,10 @@
+id: so-arm101
+arms: 1
+envelopes: { arm: envelope.json }
+status: measured-in-part
+source: "~/bob/ROBOT.md (Bob, the reference SO-ARM101; 6 DoF, STS3215 servos, payload 0.5 kg, 180 dps cap)"
+notes:
+  - keep_in is narrower than ROBOT.md's workspace box (x -0.20..0.34, y +-0.34, z 0..0.25 m); confirm with an FK sweep before any physical run.
+  - level A1 because Bob has no hardwired stop (estop.hardware false). An A2 claim needs one.
+  - stop.max_time_ms 300 is a declaration to measure (EV-02), not a measurement. ROBOT.md says software estop response 100 ms.
+  - sim model: an SO-ARM100/101 MuJoCo model; pick the one the Robocurve sim guide supports.
