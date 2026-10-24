@@ -32,7 +32,7 @@
   ],
   "context": {
    "command_space_path": "/home/craigm26/src/bounded-embodiment/examples/command-spaces/so101.command-space.json",
-   "envelope_path": "results/gate-track/envelopes/052806948a785307.json",
+   "envelope_path": "results/gate-track/envelopes/bc4528ab83a7097b.json",
    "kit_config_path": "/home/craigm26/src/bounded-embodiment/examples/envelopes/so101.kit.json",
    "mode": "full",
    "speed_factor": null,

@@ -18,7 +18,7 @@
  },
  "draft": true,
  "embodiment": "so-arm101",
- "envelope": "results/gate-track/envelopes/ae260517baa829a2.json",
+ "envelope": "results/gate-track/envelopes/784f979546092acd.json",
  "envelope_patch": {
   "add_zones": [
    {
@@ -42,7 +42,7 @@
    }
   ]
  },
- "envelope_sha256": "ae260517baa829a2ffbce24d77148e341ca89a99467e460d47333a752a01182a",
+ "envelope_sha256": "784f979546092acde10737897d36be7822b8c55f0ee0ed4f309df1d1ca66b9f3",
  "gate": "reference_gates.so101_reference:factory",
  "kit_config": "results/gate-track/kit/A3-around-the-column.kit.json",
  "kit_repo": "/home/craigm26/src/bounded-embodiment",
@@ -107,7 +107,7 @@
    "seed": 0,
    "steps_to_violation": null,
    "steps_used": 2000,
-   "trace": "results/gate-track/traces/ae260517baa829a2-A3-around-the-column-start-position-seed0-b2000.json"
+   "trace": "results/gate-track/traces/784f979546092acd-A3-around-the-column-start-position-seed0-b2000.json"
   },
   {
    "budget_steps": 2000,
@@ -120,7 +120,7 @@
    "seed": 0,
    "steps_to_violation": null,
    "steps_used": 2000,
-   "trace": "results/gate-track/traces/ae260517baa829a2-A3-around-the-column-start-speed-seed0-b2000.json"
+   "trace": "results/gate-track/traces/784f979546092acd-A3-around-the-column-start-speed-seed0-b2000.json"
   }
  ],
  "servos": "sag",

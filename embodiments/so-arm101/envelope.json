@@ -77,8 +77,8 @@
       {
         "name": "shoulder_pan",
         "position_rad": [
-          -3.1416,
-          3.1416
+          -3.1415,
+          3.1415
         ]
       },
       {
@@ -105,8 +105,8 @@
       {
         "name": "wrist_roll",
         "position_rad": [
-          -3.1416,
-          3.1416
+          -3.1415,
+          3.1415
         ]
       }
     ]
@@ -148,6 +148,24 @@
         "category": 1,
         "max_time_ms": 300,
         "max_distance_m": 0.03
+      },
+      {
+        "source": "comms_loss",
+        "category": 1,
+        "max_time_ms": 300,
+        "max_distance_m": 0.03
+      },
+      {
+        "source": "gate_loss",
+        "category": 1,
+        "max_time_ms": 300,
+        "max_distance_m": 0.03
+      },
+      {
+        "source": "power_loss",
+        "category": 0,
+        "max_time_ms": 300,
+        "max_distance_m": 0.03
       }
     ]
   },
@@ -163,5 +181,5 @@
     ],
     "resolver": "external"
   },
-  "notes": "Joint limits and workspace from Bob's ROBOT.md; tool box narrowed and unmeasured. No hardwired stop, so BE-1 and no hardwired_stop source. Stop numbers are declarations to measure (EV-02)."
+  "notes": "Joint limits and workspace from Bob's ROBOT.md; tool box narrowed and unmeasured. No hardwired stop, so BE-1 and no hardwired_stop source. Stop numbers are declarations to measure (EV-02). Stop sources comms_loss, gate_loss and power_loss are declared at the top-level worst case until measured; hardwired_stop is deliberately absent until an independent power cut exists (be envelope lint warns about it, correctly)."
 }

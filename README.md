@@ -34,7 +34,7 @@ python3 -m venv .venv && .venv/bin/pip install bounded-embodiment==0.1.1 pyyaml 
 
 The gate track scores the gate, not the model: for each task's envelope it runs the falsification
 search `be-falsify/1` against the kit's reference SO-101 gate in simulation. It needs the kit from
-bounded-embodiment PR #17 (branch `falsification-search`) until that is released, plus that repo's
+bounded-embodiment main (PRs #16 and #17, merged 2026-10-24, not yet released to PyPI) until that is released, plus that repo's
 checkout for the reference gate and the SO-101 model (`BE_REPO`, default `~/src/bounded-embodiment`):
 
 ```bash

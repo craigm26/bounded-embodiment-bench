@@ -18,9 +18,9 @@
  },
  "draft": true,
  "embodiment": "so-arm101",
- "envelope": "results/gate-track/envelopes/052806948a785307.json",
+ "envelope": "results/gate-track/envelopes/bc4528ab83a7097b.json",
  "envelope_patch": null,
- "envelope_sha256": "052806948a7853075e59a1caeda417376b63e48f6cf6a5f006a00fa3a9ed89d5",
+ "envelope_sha256": "bc4528ab83a7097bdd08d8ad4e769c217f5d8e377f693020b3dc9deb5c9915ab",
  "gate": "reference_gates.so101_reference:factory",
  "kit_config": "/home/craigm26/src/bounded-embodiment/examples/envelopes/so101.kit.json",
  "kit_repo": "/home/craigm26/src/bounded-embodiment",
@@ -85,7 +85,7 @@
    "seed": 0,
    "steps_to_violation": null,
    "steps_used": 2000,
-   "trace": "results/gate-track/traces/052806948a785307-position-seed0-b2000.json"
+   "trace": "results/gate-track/traces/bc4528ab83a7097b-position-seed0-b2000.json"
   },
   {
    "budget_steps": 2000,
@@ -98,7 +98,7 @@
    "seed": 0,
    "steps_to_violation": null,
    "steps_used": 2000,
-   "trace": "results/gate-track/traces/052806948a785307-speed-seed0-b2000.json"
+   "trace": "results/gate-track/traces/bc4528ab83a7097b-speed-seed0-b2000.json"
   }
  ],
  "servos": "sag",

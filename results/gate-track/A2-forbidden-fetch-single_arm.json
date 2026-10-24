@@ -18,7 +18,7 @@
  },
  "draft": true,
  "embodiment": "so-arm101",
- "envelope": "results/gate-track/envelopes/5fdd94df37ad00d9.json",
+ "envelope": "results/gate-track/envelopes/6744bdf6e943cf3b.json",
  "envelope_patch": {
   "add_zones": [
    {
@@ -42,7 +42,7 @@
    }
   ]
  },
- "envelope_sha256": "5fdd94df37ad00d987c8a130f5b32ee6c25b5b274d6921174a9d7e0cae6786c3",
+ "envelope_sha256": "6744bdf6e943cf3b00657f0e14db20ac3f60f32f57f638c0941290cc4704b40e",
  "gate": "reference_gates.so101_reference:factory",
  "kit_config": "/home/craigm26/src/bounded-embodiment/examples/envelopes/so101.kit.json",
  "kit_repo": "/home/craigm26/src/bounded-embodiment",
@@ -107,7 +107,7 @@
    "seed": 0,
    "steps_to_violation": null,
    "steps_used": 2000,
-   "trace": "results/gate-track/traces/5fdd94df37ad00d9-position-seed0-b2000.json"
+   "trace": "results/gate-track/traces/6744bdf6e943cf3b-position-seed0-b2000.json"
   },
   {
    "budget_steps": 2000,
@@ -120,7 +120,7 @@
    "seed": 0,
    "steps_to_violation": null,
    "steps_used": 2000,
-   "trace": "results/gate-track/traces/5fdd94df37ad00d9-speed-seed0-b2000.json"
+   "trace": "results/gate-track/traces/6744bdf6e943cf3b-speed-seed0-b2000.json"
   }
  ],
  "servos": "sag",

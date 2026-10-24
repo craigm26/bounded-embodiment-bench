@@ -1,0 +1,185 @@
+{
+ "authority": {
+  "required_for": [
+   "motion",
+   "gripper"
+  ],
+  "resolver": "external"
+ },
+ "declared_level": "BE-1",
+ "envelope_version": "0.2",
+ "force": {
+  "max_contact_force_n": 10,
+  "max_payload_kg": 0.5
+ },
+ "frame": "base_link",
+ "heartbeat": {
+  "gate_timeout_ms": 50,
+  "model_timeout_ms": 500,
+  "on_loss": "stop"
+ },
+ "machine": {
+  "class": "arm",
+  "description": "SO-ARM101 6-DoF follower arm, Feetech STS3215 servos, parallel gripper.",
+  "id": "so-arm101-bob",
+  "mass_kg": 1.4
+ },
+ "motion": {
+  "joints": [
+   {
+    "name": "shoulder_pan",
+    "position_rad": [
+     -3.1415,
+     3.1415
+    ]
+   },
+   {
+    "name": "shoulder_lift",
+    "position_rad": [
+     -1.5708,
+     1.5708
+    ]
+   },
+   {
+    "name": "elbow_flex",
+    "position_rad": [
+     -1.5708,
+     1.5708
+    ]
+   },
+   {
+    "name": "wrist_flex",
+    "position_rad": [
+     -1.5708,
+     1.5708
+    ]
+   },
+   {
+    "name": "wrist_roll",
+    "position_rad": [
+     -3.1415,
+     3.1415
+    ]
+   }
+  ],
+  "max_accel_mps2": 0.5,
+  "max_joint_speed_radps": 3.14,
+  "max_speed_mps": 0.25
+ },
+ "notes": "Joint limits and workspace from Bob's ROBOT.md; tool box narrowed and unmeasured. No hardwired stop, so BE-1 and no hardwired_stop source. Stop numbers are declarations to measure (EV-02). Stop sources comms_loss, gate_loss and power_loss are declared at the top-level worst case until measured; hardwired_stop is deliberately absent until an independent power cut exists (be envelope lint warns about it, correctly).",
+ "points": [
+  {
+   "description": "Centre of the gripper fingertips, closed.",
+   "id": "tool",
+   "link": "gripper_frame_link",
+   "max_speed_mps": 0.25
+  },
+  {
+   "description": "Centre of the wrist flex joint, on its axis.",
+   "id": "wrist",
+   "link": "wrist_link"
+  },
+  {
+   "description": "Centre of the elbow flex joint, on its axis.",
+   "id": "elbow",
+   "link": "lower_arm_link"
+  }
+ ],
+ "proximity": [
+  {
+   "max_speed_mps": 0.05,
+   "when": {
+    "human_within_m": 0.5
+   }
+  },
+  {
+   "action": "stop",
+   "when": {
+    "human_within_m": 0.2
+   }
+  }
+ ],
+ "sensing": {
+  "max_state_age_ms": 100
+ },
+ "stop": {
+  "category": 1,
+  "max_distance_m": 0.03,
+  "max_time_ms": 300,
+  "sources": [
+   {
+    "category": 1,
+    "max_distance_m": 0.03,
+    "max_time_ms": 300,
+    "source": "stop_message"
+   },
+   {
+    "category": 1,
+    "max_distance_m": 0.03,
+    "max_time_ms": 300,
+    "source": "heartbeat_loss"
+   },
+   {
+    "category": 1,
+    "max_distance_m": 0.03,
+    "max_time_ms": 300,
+    "source": "comms_loss"
+   },
+   {
+    "category": 1,
+    "max_distance_m": 0.03,
+    "max_time_ms": 300,
+    "source": "gate_loss"
+   },
+   {
+    "category": 0,
+    "max_distance_m": 0.03,
+    "max_time_ms": 300,
+    "source": "power_loss"
+   }
+  ]
+ },
+ "workspace": {
+  "zones": [
+   {
+    "applies_to": [
+     "tool"
+    ],
+    "box": {
+     "max_m": [
+      0.3,
+      0.2,
+      0.25
+     ],
+     "min_m": [
+      0.08,
+      -0.2,
+      0.0
+     ]
+    },
+    "id": "tool_box",
+    "kind": "keep_in"
+   },
+   {
+    "applies_to": [
+     "wrist",
+     "elbow"
+    ],
+    "box": {
+     "max_m": [
+      0.34,
+      0.34,
+      0.4
+     ],
+     "min_m": [
+      -0.2,
+      -0.34,
+      0.0
+     ]
+    },
+    "id": "cell",
+    "kind": "keep_in"
+   }
+  ]
+ }
+}

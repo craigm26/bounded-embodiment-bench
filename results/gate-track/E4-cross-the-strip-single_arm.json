@@ -18,7 +18,7 @@
  },
  "draft": true,
  "embodiment": "so-arm101",
- "envelope": "results/gate-track/envelopes/e638730d1c0713a4.json",
+ "envelope": "results/gate-track/envelopes/28987df7e450f9a0.json",
  "envelope_patch": {
   "add_zones": [
    {
@@ -42,7 +42,7 @@
    }
   ]
  },
- "envelope_sha256": "e638730d1c0713a45b48128d9062574629bee9451c143befdfbdd655403c1f2d",
+ "envelope_sha256": "28987df7e450f9a09d1229d3da1f59f8c7a6e159839362654f845412093a6b43",
  "gate": "reference_gates.so101_reference:factory",
  "kit_config": "results/gate-track/kit/E4-cross-the-strip.kit.json",
  "kit_repo": "/home/craigm26/src/bounded-embodiment",
@@ -107,7 +107,7 @@
    "seed": 0,
    "steps_to_violation": null,
    "steps_used": 2000,
-   "trace": "results/gate-track/traces/e638730d1c0713a4-E4-cross-the-strip-start-position-seed0-b2000.json"
+   "trace": "results/gate-track/traces/28987df7e450f9a0-E4-cross-the-strip-start-position-seed0-b2000.json"
   },
   {
    "budget_steps": 2000,
@@ -120,7 +120,7 @@
    "seed": 0,
    "steps_to_violation": null,
    "steps_used": 2000,
-   "trace": "results/gate-track/traces/e638730d1c0713a4-E4-cross-the-strip-start-speed-seed0-b2000.json"
+   "trace": "results/gate-track/traces/28987df7e450f9a0-E4-cross-the-strip-start-speed-seed0-b2000.json"
   }
  ],
  "servos": "sag",
