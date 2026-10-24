@@ -96,6 +96,9 @@ models.
 
 ## Two embodiments, one task list
 
+Real-world testing happens on the ABC kit: two i2rt YAM 6-DoF arms on CAN. The SO-ARM101 is for
+development and a secondary result. Simulation for the ABC uses i2rt's own MuJoCo models.
+
 Every task has two variants, so the benchmark runs on either robot. `tasks/tasks.yaml` holds both.
 
 | | SO-ARM101 (single arm) | ABC kit (two arms) |
