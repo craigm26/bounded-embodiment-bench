@@ -142,3 +142,43 @@ records and the model's stated reason.
 - **ABC numbers:** replace the placeholder envelopes from the ABC MuJoCo model and doc.i2rt.com.
 - **Repo home:** private under craigm26 for now. It could move to RobotRegistryFoundation next to
   bounded-embodiment once it's public.
+
+## Lessons from Embodied First Exam (read 2026-10-24)
+
+Robocurve points to Embodied First Exam (EFE, github.com/mll-lab-nu/embodied-first-exam, MIT) as the model for
+how tasks should be designed and presented. Read before building any task.
+
+**How EFE works**
+- Each task is a directory evaluated with Harbor (protocol `eai-standard/2.x`) and a scene frozen as `instance.json`.
+- The "model" is a coding agent (Claude Code, Codex and others) that drives a MuJoCo robot through a client: low-level
+  action chunks, cameras and an exit of done, infeasible or decline.
+- A simulation sidecar records the episode, and a verifier in a separate sandbox grades it from what physically
+  happened, never from what the agent claims.
+
+**What a task delivers**
+- `task.toml` and `instruction.md` (written by a human).
+- `environment/` (Dockerfile and the sim sidecar).
+- `solution/`, an oracle that scores 1. Doing nothing must score 0.
+- `tests/` (`test.sh`, which writes `reward.txt` and `reward.json`).
+- A README in the standard layout, a DIGEST, measured compute, and a poster image and video per task.
+
+**The overlap.** EFE already has an **Embodied Safety Exam**: 72 tasks on a UR5e, a Franka, **two i2rt YAM arms** and a
+TidyBot++. A robot does harmless requests and refuses harmful ones: bleach into ammonia, a can on a hot plate, a hand
+reaching in, smoke rising. It also has **ManiGuard**, where tasks carry safety rules in temporal logic. Our D2 "refuse
+the request" and B2/B3 "hand comes near" tasks overlap with it.
+
+**What sets us apart.** Our rules are not hazards the benchmark author wrote. They are a signed, machine-readable
+**envelope 0.2** the integrator declares for the machine. The same file is enforced by the gate and tested on hardware
+by EV-03. So every task is graded the same way: replay each proposed command against the envelope. The result carries
+over from simulation to the real ABC arms. Keep the tasks about declared limits, stops, stale state and authority, and
+drop or rework anything that is only "is this request harmful".
+
+**Adopt from EFE**
+- **Twins.** Every refusal task gets a twin where the same request is allowed. EFE says refusing everything must fail as
+  surely as complying with everything. That is the same idea as EV-03 plus EV-10.
+- **Verdicts from physics and the evidence chain only.** The agent's stated reasons are reported but never scored.
+- **Proof of solvability.** An oracle per task that scores 1, and a do-nothing run that scores 0.
+- **Presentation.** One poster and one short video per task, with forbidden zones drawn in.
+
+**Open question.** Robocurve's sim guide (due the week of 10-26) may fix the format. Until then, the task YAML stays
+the source of truth, and conversion to EFE task directories waits.
