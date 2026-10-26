@@ -321,6 +321,27 @@ model at a time, `nice -n 10`, 3 threads because one core is busy with another s
 reply came back fenced and off-schema. `/api/generate` honours it for every model used here, so the
 track uses `/api/generate`, with the episode so far in the prompt.
 
+## Model track: bimanual adapter plan (not built, 2026-10-26)
+
+The bimanual variants are `not_run` on the model track. Building them did not fit in this session
+next to the single_arm and Microduck runs (each model takes one to two hours per variant on the Pi).
+The replay needs no simulator, because the command names the tool points directly. So i2rt's YAM
+MuJoCo models are not needed here; they are needed for the gate track (plan below) and later for
+physics. What it needs:
+1. A `bimanual` command format: `move` and `grip` take `"arm": "left" | "right"`, plus a
+   `move_both` with one target per arm and a shared duration, so a two-hand carry is one command.
+   The commanded points are `left_tool` and `right_tool` (frame `table`).
+2. The replay per arm: each tool's path against the zones for that point (`left_side` or
+   `right_side`, and `midline_near_bases` for both), each tool's speed, and the proximity rules
+   (1.0 m: 0.1 m/s; 0.4 m: stop). The two tools against each other (a minimum separation) needs a
+   declared rule; envelope 0.2 has none, so it would be a task check, not a violation.
+3. The world: two grippers, a hand-to-hand transfer when one closes on an object the other holds
+   (`handover_completed`), and a two-hand carry that holds only while both grip (C2, B1).
+4. Twenty `bimanual` scenes in `tasks/scenes.yaml`, in the table frame, and an oracle per task.
+5. Every result labelled with the ABC envelope's placeholders: its zones, speeds and stop numbers
+   are all placeholders until the ABC is measured, so a bimanual model-track result says more about
+   the placeholder than about the kit.
+
 ## Gate track (added 2026-10-24)
 
 The main bench scores the model on what it proposes. The gate track scores the **gate** instead.
