@@ -19,6 +19,9 @@ from tools.checks import CHECKS
 
 ROOT = Path(__file__).resolve().parent.parent
 VARIANTS = {"bimanual": "abc-bimanual", "single_arm": "so-arm101"}
+#: Variants a task MAY have (only the groups that carry over to that embodiment).
+OPTIONAL_VARIANTS = {"microduck": "microduck"}
+ALL_VARIANTS = {**VARIANTS, **OPTIONAL_VARIANTS}
 GROUPS = ["work_area", "speed_people", "stopping", "forbidden_authority", "handover"]
 TASK_COUNT = 20
 
@@ -51,8 +54,8 @@ def _footprint(zone: dict):
     if "box" in zone:
         lo, hi = zone["box"]["min_m"], zone["box"]["max_m"]
         return lo[0], lo[1], hi[0], hi[1]
-    xs = [p[0] for p in zone["prism"]["polygon"]]
-    ys = [p[1] for p in zone["prism"]["polygon"]]
+    xs = [p[0] for p in zone["prism"]["polygon_m"]]
+    ys = [p[1] for p in zone["prism"]["polygon_m"]]
     return min(xs), min(ys), max(xs), max(ys)
 
 
@@ -76,7 +79,7 @@ def resolve(task: dict, variant: str) -> dict:
 def validate(tasks_path: Path = ROOT / "tasks/tasks.yaml") -> list[str]:
     problems: list[str] = []
     bodies = {}
-    for variant, name in VARIANTS.items():
+    for variant, name in ALL_VARIANTS.items():
         try:
             bodies[variant] = load_embodiment(name)
         except Exception as exc:  # noqa: BLE001 - report, don't crash
@@ -105,7 +108,7 @@ def validate(tasks_path: Path = ROOT / "tasks/tasks.yaml") -> list[str]:
         if missing:
             problems.append(f"{tid}: missing variants {sorted(missing)}")
             continue
-        for variant in VARIANTS:
+        for variant in [v for v in ALL_VARIANTS if v in t["variants"]]:
             r = resolve(t, variant)
             where = f"{tid}[{variant}]"
             for key in ("instruction", "pass"):
@@ -124,7 +127,48 @@ def validate(tasks_path: Path = ROOT / "tasks/tasks.yaml") -> list[str]:
             for z in (r.get("envelope_patch") or {}).get("add_zones", []):
                 if z.get("kind") == "keep_out" and not any(_covers(k, z, point_ids) for k in keep_ins):
                     problems.append(f"{where}: zone {z.get('id')} leaves keep_in")
+    problems += scene_problems(tasks, bodies)
     return problems
+
+
+def scene_problems(tasks: list[dict], bodies: dict, path: Path = ROOT / "tasks/scenes.yaml") -> list[str]:
+    """The model track's scenes: each names a real task variant, its start point is inside the
+    patched envelope, and every object a goal or target names is in the scene."""
+    if not path.exists():
+        return []
+    from bounded_embodiment.envelope import load as load_env
+
+    doc = yaml.safe_load(path.read_text())
+    by_id = {t["id"]: t for t in tasks}
+    out = []
+    for tid, variants in doc["scenes"].items():
+        for variant, scene in variants.items():
+            where = f"scene {tid}[{variant}]"
+            if tid not in by_id or variant not in by_id[tid]["variants"]:
+                out.append(f"{where}: no such task variant")
+                continue
+            if variant not in bodies:
+                continue
+            s = {**doc["defaults"][variant], **scene}
+            objs = s.get("objects", {})
+            names = [x for pair in (s.get("goal") or {}).get("place", []) for x in pair]
+            names += [x for x in (s.get("goal") or {}).get("visit", [])]
+            for key in ("target",):
+                if s.get(key):
+                    names.append(s[key])
+            for g in ("seat", "reach"):
+                if (s.get("goal") or {}).get(g):
+                    names.append(s["goal"][g]["at"])
+            out += [f"{where}: unknown object {n}" for n in names if n not in objs]
+            try:
+                env = load_env(apply_patch(bodies[variant]["envelope"],
+                                           resolve(by_id[tid], variant).get("envelope_patch")))
+            except EnvelopeError:
+                continue  # reported above, with the task variant's envelope
+            c = env.clearance(s["point"], s["start"]["at"])
+            if c <= 0:
+                out.append(f"{where}: start point outside the envelope (clearance {c:.3f} m)")
+    return out
 
 
 def main() -> int:
@@ -132,7 +176,10 @@ def main() -> int:
     for p in problems:
         print("FAIL", p)
     if not problems:
-        print(f"ok: {TASK_COUNT} tasks x {len(VARIANTS)} embodiments, all envelopes load as 0.2")
+        extra = sum(1 for t in yaml.safe_load((ROOT / "tasks/tasks.yaml").read_text())["tasks"]
+                    for v in OPTIONAL_VARIANTS if v in t["variants"])
+        print(f"ok: {TASK_COUNT} tasks x {len(VARIANTS)} embodiments plus {extra} optional variants, "
+              "all envelopes load as 0.2")
     return 1 if problems else 0
 
 
