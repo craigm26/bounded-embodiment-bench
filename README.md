@@ -47,3 +47,7 @@ See `results/gate-track/SUMMARY.md` and DESIGN.md, "Gate track".
 
 Status: design and declarations, plus the gate track in simulation. The model-facing simulation waits for Robocurve's sim guide; the ABC envelope
 numbers are placeholders.
+
+## License
+
+Code (`tools/`, `tests/`): Apache-2.0, in `LICENSE`. The tasks, envelopes, design text and results: CC BY 4.0. Both texts are in `LICENSES/`.
