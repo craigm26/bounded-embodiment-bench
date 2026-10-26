@@ -7,6 +7,8 @@ and authority, and handover. Every task runs on two embodiments:
 - a single SO-ARM101 arm
 - a two-arm ABC kit
 
+Thirteen of them also have a variant for the Microduck, a small legged robot with no gripper.
+
 The model is scored on what it **proposes**: each proposed command is replayed against the signed
 envelope, whether or not the safety gate let it through.
 
@@ -18,10 +20,14 @@ open-source benchmarking program; tasks are due 2026-11-22.
 |---|---|
 | `DESIGN.md` | Design, scoring, models, simulation plan |
 | `tasks/tasks.yaml` | The 20 tasks, each with `bimanual` and `single_arm` variants |
+| `tasks/scenes.yaml` | The model track's scenes: object positions, start states, goals and scripted events |
 | `embodiments/` | One envelope 0.2 per robot (the ABC's covers both arms by named points) and notes |
-| `tools/validate.py` | Checks envelopes, task variants and patched envelopes |
+| `tools/validate.py` | Checks envelopes, task variants, patched envelopes and scenes |
 | `tools/checks.py` | The pass checks a task may name |
+| `tools/model_track.py` | The model track: a model's proposed commands replayed against the envelope, per task |
+| `tools/model_oracle.py` | Hand-written replies that solve each task: the proof of solvability |
 | `tools/gate_track.py` | The gate track: falsification search against the reference gate, per task |
+| `results/model-track/` | Model-track results per model and task, with transcripts, and `SUMMARY.md` |
 | `results/gate-track/` | Gate-track results per task variant, traces and `SUMMARY.md` |
 
 ```bash
@@ -29,6 +35,23 @@ python3 -m venv .venv && .venv/bin/pip install bounded-embodiment==0.1.1 pyyaml 
 .venv/bin/python -m tools.validate
 .venv/bin/python -m pytest -q tests
 ```
+
+### Model track
+
+The model track scores the model on what it proposes. Each model gets the task's envelope (JSON),
+the command format, the scene and the instruction, and replies with schema-constrained JSON
+commands. Every proposed command is replayed against the envelope in force, gate ignored. It runs
+local models through Ollama (`OLLAMA_HOST_URL`, default `http://127.0.0.1:11434`), one at a time:
+
+```bash
+.venv/bin/python -m tools.model_track --controls                       # oracle and do-nothing, no model
+nice -n 10 .venv/bin/python -m tools.model_track --model qwen3.5:2b --model qwen3.5:4b --model gemma3:4b
+nice -n 10 .venv/bin/python -m tools.model_track --variant microduck --model qwen3.5:2b
+.venv/bin/python -m tools.model_track --rescore                        # re-score stored replies, no model
+```
+
+A finished task is skipped on a rerun with the same configuration. See `results/model-track/SUMMARY.md`
+and DESIGN.md, "Model track", for every scoring rule. Simulation only: a kinematic world, no physics.
 
 ### Gate track
 
@@ -45,8 +68,9 @@ nice -n 10 .venv/bin/python -m tools.gate_track     # about a minute on a Pi 5; 
 A found violation is a gate defect in simulation. Nothing found within a budget is never a PASS.
 See `results/gate-track/SUMMARY.md` and DESIGN.md, "Gate track".
 
-Status: design and declarations, plus the gate track in simulation. The model-facing simulation waits for Robocurve's sim guide; the ABC envelope
-numbers are placeholders.
+Status: design and declarations, plus the model track (single_arm and microduck) and the gate track (single_arm) in
+simulation. The physics simulation of the model-facing tasks waits for Robocurve's sim guide. The ABC envelope numbers
+are placeholders, and so are the Microduck's workspace, proximity, state-age and stop numbers.
 
 ## License
 
