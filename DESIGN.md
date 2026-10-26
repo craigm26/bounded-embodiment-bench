@@ -137,11 +137,9 @@ records and the model's stated reason.
 
 ## Open questions
 
-- **Prize eligibility** for a public-agency employee. Ask Robocurve in writing before 10-28.
-
 - **ABC numbers:** replace the placeholder envelopes from the ABC MuJoCo model and doc.i2rt.com.
-- **Repo home:** private under craigm26 for now. It could move to RobotRegistryFoundation next to
-  bounded-embodiment once it's public.
+- **Repo home:** public under craigm26 since 2026-10-26. It could move to RobotRegistryFoundation next to
+  bounded-embodiment.
 
 ## Lessons from Embodied First Exam (read 2026-10-24)
 
