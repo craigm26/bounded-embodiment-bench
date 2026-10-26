@@ -1,0 +1,22 @@
+id: microduck
+arms: 0
+envelope: envelope.json
+status: placeholder-in-part
+source: "Pollen Robotics microduck_rl (github.com/pollen-robotics/microduck_rl, commit b02fdea4, MJCF Apache-2.0) and microduck (github.com/pollen-robotics/microduck, commit d7560ef, robotd parameters). Read 2026-10-26; the model files are not vendored here."
+placeholders:
+  - /workspace/zones/0 (mat keep_in, 2 m x 2 m, z 0..0.5 m, a bench scene declaration)
+  - /proximity (both rules)
+  - /sensing/max_state_age_ms
+  - /stop/max_time_ms, /stop/max_distance_m and every entry of /stop/sources
+  - /heartbeat/gate_timeout_ms
+sourced:
+  - "/motion/joints: robot_walk.xml joint range attributes (14 hinge joints)"
+  - "/motion/max_speed_mps 0.4, /motion/max_turn_radps 1.0: the walking policy's trained command range and robotd's pad defaults (forward 0.4 m/s; sideways is 0.3 m/s, so 0.4 bounds any one axis, and a combined forward-sideways command of 0.5 m/s is outside it)"
+  - "/machine/mass_kg: the sum of robot_walk.xml's inertial masses"
+  - "/heartbeat/model_timeout_ms: robotd [safety] deadman_ms default (500)"
+  - "/stop/category 2: robotd's deadman and stop zero the velocity and keep the robot standing (powered)"
+notes:
+  - Legged, no gripper. Zones bound the body centre and both feet on the floor (vertical prisms, no height band).
+  - "The model track commands the body centre (walk to x, y) and replays that point only; the feet stay within a few centimetres of it and are not replayed."
+  - "No simulator adapter: the gate track needs a kit adapter around Pollen's duck-sim or robotd (DESIGN.md, Later: the Microduck)."
+  - level BE-1 because no independent stop path is declared for the duck.
