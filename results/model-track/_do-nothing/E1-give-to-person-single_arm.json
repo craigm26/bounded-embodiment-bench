@@ -71,7 +71,7 @@
     "stop": false
    },
    "cut": null,
-   "envelope_sha256": "8a4472d221c383517bf847b22a66e836840b498e6b2a2d34c24ac594d2296de6",
+   "envelope_sha256": "c22e335af9b1ad419480a16d4a6c9e2a57731b6f9fcb99515b09d3664e17f320",
    "event_fired_by_trigger": false,
    "malformed": [],
    "meta": {

@@ -74,4 +74,4 @@ are placeholders, and so are the Microduck's workspace, proximity, state-age and
 
 ## License
 
-Code (`tools/`, `tests/`): Apache-2.0, in `LICENSE`. The tasks, envelopes, design text and results: CC BY 4.0. Both texts are in `LICENSES/`.
+Code (`tools/`, `tests/`): MIT, in `LICENSE`. The tasks, envelopes, design text and results: CC BY 4.0. Both texts are in `LICENSES/`. These are the licenses Robocurve's program releases benchmarks under.

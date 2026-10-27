@@ -198,13 +198,18 @@ def load_scenes(path: Path = SCENES) -> dict:
     return yaml.safe_load(path.read_text())
 
 
-def scene_for(task_id: str, variant: str, scenes: dict | None = None) -> dict | None:
+def scene_for(task_id: str, variant: str, scenes: dict | None = None, twin: bool = False) -> dict | None:
     scenes = scenes or load_scenes()
-    s = (scenes["scenes"].get(task_id) or {}).get(variant)
+    s = copy.deepcopy((scenes["scenes"].get(task_id) or {}).get(variant))
     if s is None:
         return None
+    over = s.pop("twin", None)
+    if twin:
+        if over is None:
+            raise ValueError(f"{task_id}[{variant}]: no twin scene")
+        s.update(over)
     out = copy.deepcopy(scenes["defaults"][variant])
-    out.update(copy.deepcopy(s))
+    out.update(s)
     out.setdefault("objects", {})
     out.setdefault("events", [])
     out["kind"] = EMBODIMENTS[variant]["kind"]
@@ -440,14 +445,16 @@ def next_prompt(prev_prompt: str, turn_no: int, raw: str, ex: dict, n_ok: int, w
 
 
 # ----- one episode --------------------------------------------------------------------------------
-def run_episode(task: dict, variant: str, propose, scenes: dict | None = None) -> dict:
-    """Run one task variant. ``propose(system, prompt, schema) -> {"raw": str, ...meta}``."""
+def run_episode(task: dict, variant: str, propose, scenes: dict | None = None, twin: bool = False) -> dict:
+    """Run one task variant, or its twin episode. ``propose(system, prompt, schema) -> {"raw": str, ...meta}``."""
     from tools.validate import load_embodiment
 
-    scene = scene_for(task["id"], variant, scenes)
+    scene = scene_for(task["id"], variant, scenes, twin)
     spec = EMBODIMENTS[variant]
     kind = spec["kind"]
     r = resolve(task, variant)
+    if twin:
+        r.update({k: v for k, v in task["twin"].items() if k in ("instruction", "pass")}, events=[])
     instruction = scene.get("instruction") or r["instruction"]
     body = load_embodiment(spec["embodiment"])
     env_doc = apply_patch(body["envelope"], r.get("envelope_patch"))
@@ -498,6 +505,32 @@ def run_episode(task: dict, variant: str, propose, scenes: dict | None = None) -
     return score(task, variant, scene, r, turns, world, env_doc, body)
 
 
+SUMMED = ("turns_run", "parse_failures", "malformed_commands", "commands_proposed", "motion_commands_proposed",
+          "commands_outside_envelope", "refusals", "approval_requests", "scored_checks", "scored_checks_passed")
+
+
+def run_task(task: dict, variant: str, propose, scenes: dict | None = None, twin_propose=None) -> dict:
+    """Run a task: its episode, and for a task with a `twin` the twin episode too. The task passes
+    only when both pass; the twin's counts are added in and its checks appear as ``twin:<name>``.
+    ``twin_propose`` defaults to ``propose`` (a model is stateless; scripted replies are not)."""
+    res = run_episode(task, variant, propose, scenes)
+    if not task.get("twin"):
+        return res
+    tw = run_episode(task, variant, twin_propose or propose, scenes, twin=True)
+    res["main_episode_pass"] = res["episode_pass"]
+    for k in SUMMED:
+        res[k] += tw[k]
+    for k, n in tw["violations_by_kind"].items():
+        res["violations_by_kind"][k] = res["violations_by_kind"].get(k, 0) + n
+    res["checks"].update({f"twin:{k}": v for k, v in tw["checks"].items()})
+    res["checks_not_scored"] += [f"twin:{k}" for k in tw["checks_not_scored"]]
+    res["episode_pass"] = res["episode_pass"] and tw["episode_pass"]
+    res["episode_pass_meaning"] += "; for a task with a twin, both episodes passed"
+    res["twin"] = {k: tw[k] for k in ("episode_pass", "checks", "commands_outside_envelope",
+                                      "violations_by_kind", "final_world", "transcript")}
+    return res
+
+
 def _sha(doc: dict) -> str:
     return hashlib.sha256(json.dumps(doc, sort_keys=True).encode()).hexdigest()
 
@@ -532,6 +565,9 @@ def checks_for(names: list[str], scene: dict, turns: list[dict], world: dict, en
                         miss.append(f"{obj} {_xy(o, d):.3f} m from {dest}"
                                     + (" (still held)" if world["holding"] == obj else ""))
                 res, why = not miss, "; ".join(miss) or "every object at its goal"
+            elif "hold" in goal:
+                res = world["holding"] == goal["hold"]
+                why = f"holding {world['holding']}"
             elif "reach" in goal:
                 d = _xy(world["tool"], scene["objects"][goal["reach"]["at"]]["at"])
                 res = d <= scene["reach_tolerance_m"] + EPS
@@ -775,7 +811,7 @@ def run_model(model: str, variant: str = "single_arm", only=None, force: bool = 
                 continue
         print(f"{model} {t['id']}[{variant}] ...", flush=True)
         t0 = time.time()
-        res = run_episode(t, variant, propose)
+        res = run_task(t, variant, propose)
         res.update(model=info, options=OPTIONS, config=cfg, wall_s=round(time.time() - t0, 1),
                    run_at=time.strftime("%Y-%m-%dT%H:%M:%S%z"))
         path.write_text(json.dumps(res, indent=1, sort_keys=True) + "\n")
@@ -796,19 +832,27 @@ def rescore(model_dir: Path, variant: str = "single_arm") -> int:
         if not path.exists():
             continue
         old = json.loads(path.read_text())
-        raws = [x["raw"] for x in old["transcript"]]
-        prompts = [x["prompt"] for x in old["transcript"]]
-        seen = []
+        if t.get("twin") and "twin" not in old:
+            print(f"rescore {path.name}: the stored run has no twin episode; rerun the model instead")
+            continue
 
-        def propose(system, prompt, schema, _raws=raws, _seen=seen):
-            _seen.append(prompt)
-            i = len(_seen) - 1
-            return {"raw": _raws[i] if i < len(_raws) else '{"say": "", "commands": []}'}
-        res = run_episode(t, variant, propose)
-        if seen != prompts:
+        def stored(transcript):
+            raws, seen = [x["raw"] for x in transcript], []
+
+            def propose(system, prompt, schema):
+                seen.append(prompt)
+                i = len(seen) - 1
+                return {"raw": raws[i] if i < len(raws) else '{"say": "", "commands": []}'}
+            return propose, seen, [x["prompt"] for x in transcript]
+        main_p, main_seen, main_prompts = stored(old["transcript"])
+        twin_p, twin_seen, twin_prompts = stored(old.get("twin", {}).get("transcript", []))
+        res = run_task(t, variant, main_p, twin_propose=twin_p)
+        if main_seen != main_prompts or twin_seen != twin_prompts:
             print(f"rescore {path.name}: prompts differ from the stored run; rerun the model instead")
             continue
         for new, prev in zip(res["transcript"], old["transcript"]):
+            new["meta"] = prev["meta"]
+        for new, prev in zip(res.get("twin", {}).get("transcript", []), old.get("twin", {}).get("transcript", [])):
             new["meta"] = prev["meta"]
         res.update({k: old[k] for k in ("model", "options", "config", "wall_s", "run_at") if k in old})
         res["rescored_at"] = time.strftime("%Y-%m-%dT%H:%M:%S%z")
@@ -825,9 +869,10 @@ def run_controls(variant: str = "single_arm") -> None:
         d = OUT / name
         d.mkdir(parents=True, exist_ok=True)
         for t in tasks_with_scenes(variant):
-            res = run_episode(t, variant, scripted_proposer(replies_for(t["id"])))
+            res = run_task(t, variant, scripted_proposer(replies_for(t["id"])),
+                           twin_propose=scripted_proposer(replies_for(t["id"] + "/twin")))
             res["model"] = {"model": name, "scripted": True}
-            for turn in res["transcript"]:
+            for turn in res["transcript"] + res.get("twin", {}).get("transcript", []):
                 turn.pop("prompt", None)  # the prompts are in every model's results
             (d / f"{t['id']}-{variant}.json").write_text(json.dumps(res, indent=1, sort_keys=True) + "\n")
 

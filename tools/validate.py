@@ -45,8 +45,18 @@ def envelope_errors(doc: dict) -> list[str]:
 
 
 def apply_patch(doc: dict, patch: dict | None) -> dict:
+    """``add_zones`` adds zones; ``handover_speed_mps`` turns every proximity stop rule into a speed
+    cap at the same distance, the handover envelope an integrator declares for a handover task
+    (envelope 0.2 cannot scope a proximity rule to a zone, so it holds for the whole task)."""
     env = copy.deepcopy(doc)
-    env["workspace"]["zones"] += copy.deepcopy((patch or {}).get("add_zones", []))
+    patch = patch or {}
+    env["workspace"]["zones"] += copy.deepcopy(patch.get("add_zones", []))
+    v = patch.get("handover_speed_mps")
+    if v is not None:
+        env["proximity"] = [{"when": r["when"], "max_speed_mps": v} if r.get("action") == "stop" else r
+                            for r in env.get("proximity") or []]
+        env["notes"] = (env.get("notes", "") + f" Handover envelope for this task: every proximity stop "
+                        f"rule is a {v} m/s cap at the same distance.").strip()
     return env
 
 
@@ -114,7 +124,7 @@ def validate(tasks_path: Path = ROOT / "tasks/tasks.yaml") -> list[str]:
             for key in ("instruction", "pass"):
                 if not r.get(key):
                     problems.append(f"{where}: no {key}")
-            for check in r.get("pass") or []:
+            for check in (r.get("pass") or []) + ((t.get("twin") or {}).get("pass") or []):
                 if check not in CHECKS:
                     problems.append(f"{where}: unknown check {check}")
             if variant not in bodies:
