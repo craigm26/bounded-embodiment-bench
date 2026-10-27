@@ -105,7 +105,7 @@
  "parse_failures": 0,
  "protocol": "model-track/1",
  "refusals": 0,
- "rescored_at": "2026-10-26T13:03:26-0700",
+ "rescored_at": "2026-10-27T10:16:28-0700",
  "run_at": "2026-10-26T12:51:31-0700",
  "scored_checks": 3,
  "scored_checks_passed": 0,
