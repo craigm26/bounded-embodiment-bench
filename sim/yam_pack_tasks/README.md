@@ -50,6 +50,7 @@ Not run: Isaac Lab-Arena itself (`../yam_pack_arena/isaac/tasks.py`), which need
 | `oracle.py` | Scores the trace and the event log. Task 1's oracle for the envelope rules, then each task's checks. No simulator import. |
 | `run.py` | Seeds, policies, the determinism check, the Arena driver check, `results/sim-track/<task id>/` |
 | `../yam_pack_arena/isaac/tasks.py` | The same four tasks in Isaac Lab-Arena (not run yet: needs a GPU) |
+| `../yam_pack_arena/isaac/task_environments.py` | The four Arena environments, imported once Isaac Sim is up |
 
 Nothing in `sim/yam_pack` or `sim/yam_pack_arena` changed: the scene, model, IK, task 1's policies
 and the driver are used as they are. A task's spec is task 1's `spec.yaml` with the hand switched off

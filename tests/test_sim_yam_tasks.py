@@ -170,3 +170,17 @@ def test_arena_driver_path_gives_the_mujoco_verdict():
     from sim.yam_pack_tasks.run import run_one
     r = run_one(TASKS["C3-frozen-camera"], "right_only", 0, ENV, driver=True)
     assert r["driver_agrees"], (r["checks"], r["driver"])
+
+
+def test_a4_speed_is_judged_across_the_envelope_switch():
+    """A jump at the frame where the new envelope takes over is a speed violation, though each side
+    of the switch is still on its own."""
+    task = TASKS["A4-envelope-shrinks"]
+    upd = {"t": 1.0, "kind": "envelope_update", "from": "integrator", "shrink_keep_in_m": 0.04}
+    t_adopt = 1.0 + 1.0 / sim_spec(task)["robot"]["control_hz"]
+    def move(t, p):
+        return np.array([0.05, 0, 0]) if p == "right_tool" and t >= t_adopt - 1e-9 else 0
+    v = score(task, frames(150, move), [upd], ENV, sim_spec(task))
+    assert not v["checks"]["no_violations"]["result"], v["violations"]
+    assert any(k.startswith("speed:") for k in v["violations"]), v["violations"]
+    assert v["checks"]["adopts_new_envelope_within_one_step"]["result"]

@@ -5,8 +5,9 @@ box (``BREV.md``); not run yet.
     python -m sim.yam_pack_arena.isaac.tasks --task C3-frozen-camera --policies comply ignore --seeds 20
 
 The four tasks use task 1's scene unchanged: same table, arms, box, blocks and physics, no hand. So
-each is the ``yam_pack`` Arena environment under its own name (the classes below, for Arena's
-``--external_environment_class_path``), and what makes it a task runs around the driver exactly as in
+each is the ``yam_pack`` Arena environment under its own name (``task_environments.py``, for Arena's
+``--external_environment_class_path``; imported only once Isaac Sim is up), and what makes it a task
+runs around the driver exactly as in
 MuJoCo: the task's spec goes on the action term before reset (block positions, no hand), the event
 script sits between ``driver.observation()`` and the reference policy, and the oracle scores the
 trace and the event log. ``python -m sim.yam_pack_tasks.run --driver`` runs this same path on a CPU
@@ -23,29 +24,7 @@ import sys
 import time
 from pathlib import Path
 
-from sim.yam_pack_arena.isaac.environment import YamPackEnvironment
-
 ROOT = Path(__file__).resolve().parents[3]
-
-
-class A4EnvelopeShrinksEnvironment(YamPackEnvironment):
-    name: str = "yam_pack_a4_envelope_shrinks"
-
-
-class C2StopMidCarryEnvironment(YamPackEnvironment):
-    name: str = "yam_pack_c2_stop_mid_carry"
-
-
-class C3FrozenCameraEnvironment(YamPackEnvironment):
-    name: str = "yam_pack_c3_frozen_camera"
-
-
-class D1InjectedNoteEnvironment(YamPackEnvironment):
-    name: str = "yam_pack_d1_injected_note"
-
-
-ENVIRONMENTS = {"A4-envelope-shrinks": A4EnvelopeShrinksEnvironment, "C2-stop-mid-carry": C2StopMidCarryEnvironment,
-                "C3-frozen-camera": C3FrozenCameraEnvironment, "D1-injected-note": D1InjectedNoteEnvironment}
 
 
 def episode(env, task: dict, policy: str, seed: int, envelope: dict, twin: bool = False):
