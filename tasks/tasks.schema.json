@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/craigm26/bounded-embodiment-bench/tasks/tasks.schema.json",
+  "title": "Bounded Embodiment Bench tasks.yaml",
+  "description": "Strict shape of tasks/tasks.yaml. Every object is closed (additionalProperties: false) and every text field is a non-empty string, so an unquoted comma inside a YAML flow mapping, which splits one value into a key with a null value, fails here. tools/validate.py fills the `pass` check names from tools/checks.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "tasks"],
+  "properties": {
+    "version": {"type": "string"},
+    "tasks": {"type": "array", "items": {"$ref": "#/$defs/task"}}
+  },
+  "$defs": {
+    "text": {"type": "string", "minLength": 1},
+    "checks": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/check"}},
+    "check": {"type": "string"},
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "group", "requirement", "title", "instruction", "pass", "variants"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[A-E][1-4]-[a-z0-9]+(-[a-z0-9]+)*$"},
+        "group": {"enum": ["work_area", "speed_people", "stopping", "forbidden_authority", "handover"]},
+        "requirement": {"enum": ["R1", "R2", "R3", "R4", "R5"]},
+        "title": {"$ref": "#/$defs/text"},
+        "instruction": {"$ref": "#/$defs/text"},
+        "setup": {"$ref": "#/$defs/text"},
+        "pass": {"$ref": "#/$defs/checks"},
+        "events": {"$ref": "#/$defs/events"},
+        "envelope_patch": {"$ref": "#/$defs/envelope_patch"},
+        "twin": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["pass"],
+          "properties": {"note": {"$ref": "#/$defs/text"}, "pass": {"$ref": "#/$defs/checks"}}
+        },
+        "variants": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["bimanual", "single_arm"],
+          "properties": {
+            "bimanual": {"$ref": "#/$defs/variant"},
+            "single_arm": {"$ref": "#/$defs/variant"},
+            "microduck": {"$ref": "#/$defs/variant"}
+          }
+        }
+      }
+    },
+    "variant": {
+      "description": "Overrides for one embodiment; anything not set comes from the task. `note` is for readers only.",
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "setup": {"$ref": "#/$defs/text"},
+        "instruction": {"$ref": "#/$defs/text"},
+        "note": {"$ref": "#/$defs/text"},
+        "pass": {"$ref": "#/$defs/checks"},
+        "events": {"$ref": "#/$defs/events"},
+        "envelope_patch": {"$ref": "#/$defs/envelope_patch"}
+      }
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["at", "kind"],
+        "properties": {
+          "at": {"type": "string", "pattern": "^(mid_[a-z]+|after_first_[a-z]+|plus_[0-9]+s)$"},
+          "kind": {"enum": ["human_approach", "human_leave", "camera_freeze", "rcan_stop", "rcan_resume",
+                            "rcan_authorize", "unauthenticated_voice", "envelope_update"]},
+          "distance_m": {"anyOf": [{"type": "number", "exclusiveMinimum": 0}, {"enum": ["proximity_outer", "proximity_stop"]}]},
+          "principal": {"$ref": "#/$defs/text"},
+          "shrink_keep_in_m": {"type": "number", "exclusiveMinimum": 0},
+          "duration_s": {"type": "number", "exclusiveMinimum": 0},
+          "camera": {"$ref": "#/$defs/text"},
+          "text": {"$ref": "#/$defs/text"}
+        }
+      }
+    },
+    "envelope_patch": {
+      "description": "Zones are checked by the envelope 0.2 loader after the patch is applied; here only their container.",
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "add_zones": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+        "handover_speed_mps": {"type": "number", "exclusiveMinimum": 0}
+      }
+    }
+  }
+}

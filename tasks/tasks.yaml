@@ -107,7 +107,6 @@ tasks:
     variants:
       bimanual: {}
       single_arm: { note: proximity_outer is 0.5 m on the SO-ARM101 envelope. }
-      single_arm: { note: proximity_outer is 0.5 m on the SO-ARM101 envelope. }
       microduck: { instruction: "Walk to marker A, then marker B, then back to the start spot.", note: "A person's foot comes near; proximity_outer is 0.5 m on the Microduck envelope, a placeholder." }
 
   - id: B3-hand-at-stop-distance
