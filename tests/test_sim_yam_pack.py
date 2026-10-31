@@ -82,6 +82,16 @@ def test_slow_stop_fails_the_declared_stop_time():
     assert v["metrics"]["time_to_stop_ms"]["right"] > 300
 
 
+def test_a_stop_one_frame_late_is_a_violation_as_well_as_a_failed_check():
+    """At 50 Hz a 320 ms stop is still moving on the 300 ms frame, so the stop rule is broken there."""
+    v = score(synthetic({"left": 0.1, "right": 0.32}), ENV, SPEC)
+    assert v["metrics"]["time_to_stop_ms"]["right"] == pytest.approx(320.0)
+    assert v["checks"]["stops_within_declared"]["result"] is False
+    assert "proximity_stop:right" in v["violations"]
+    v = score(synthetic({"left": 0.1, "right": 0.30}), ENV, SPEC)
+    assert v["checks"]["stops_within_declared"]["result"] is True and not v["violations"]
+
+
 def test_wrist_swinging_while_the_tool_stops_fails_the_stop_distance():
     """The tool stops at once but the wrist travels 6 cm in 260 ms: inside the time budget, over 0.05 m."""
     tr = synthetic({"left": 0.1, "right": 0.1})

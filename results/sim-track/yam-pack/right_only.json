@@ -59,8 +59,8 @@
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.72,
-    "frames": 55
+    "first_t": 6.7,
+    "frames": 56
    }
   },
   "why": {
@@ -272,8 +272,8 @@
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.54,
-    "frames": 64
+    "first_t": 6.52,
+    "frames": 65
    }
   },
   "why": {
@@ -343,8 +343,8 @@
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.44,
-    "frames": 64
+    "first_t": 6.42,
+    "frames": 65
    }
   },
   "why": {
@@ -414,8 +414,8 @@
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.4,
-    "frames": 66
+    "first_t": 6.38,
+    "frames": 67
    }
   },
   "why": {
@@ -556,8 +556,8 @@
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.66,
-    "frames": 53
+    "first_t": 6.64,
+    "frames": 54
    }
   },
   "why": {
@@ -627,8 +627,8 @@
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.4,
-    "frames": 61
+    "first_t": 6.38,
+    "frames": 62
    }
   },
   "why": {
@@ -698,8 +698,8 @@
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.78,
-    "frames": 52
+    "first_t": 6.76,
+    "frames": 53
    }
   },
   "why": {
@@ -769,8 +769,8 @@
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.76,
-    "frames": 53
+    "first_t": 6.74,
+    "frames": 54
    }
   },
   "why": {
@@ -840,8 +840,8 @@
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.64,
-    "frames": 64
+    "first_t": 6.62,
+    "frames": 65
    }
   },
   "why": {
@@ -982,8 +982,8 @@
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.4,
-    "frames": 66
+    "first_t": 6.38,
+    "frames": 67
    }
   },
   "why": {
@@ -1053,8 +1053,8 @@
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.62,
-    "frames": 55
+    "first_t": 6.6,
+    "frames": 56
    }
   },
   "why": {
@@ -1124,8 +1124,8 @@
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.6,
-    "frames": 61
+    "first_t": 6.58,
+    "frames": 62
    }
   },
   "why": {
@@ -1195,8 +1195,8 @@
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.66,
-    "frames": 53
+    "first_t": 6.64,
+    "frames": 54
    }
   },
   "why": {
@@ -1266,8 +1266,8 @@
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.68,
-    "frames": 57
+    "first_t": 6.66,
+    "frames": 58
    }
   },
   "why": {
@@ -1337,8 +1337,8 @@
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.56,
-    "frames": 58
+    "first_t": 6.54,
+    "frames": 59
    }
   },
   "why": {

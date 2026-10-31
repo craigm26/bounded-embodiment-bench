@@ -64,13 +64,13 @@
    },
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.72,
-    "frames": 55
+    "first_t": 6.7,
+    "frames": 56
    },
    "proximity_stop:right": {
     "events": 3,
-    "first_t": 6.72,
-    "frames": 126
+    "first_t": 6.7,
+    "frames": 127
    }
   },
   "why": {
@@ -307,13 +307,13 @@
    },
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.54,
-    "frames": 64
+    "first_t": 6.52,
+    "frames": 65
    },
    "proximity_stop:right": {
     "events": 3,
-    "first_t": 6.54,
-    "frames": 129
+    "first_t": 6.52,
+    "frames": 130
    }
   },
   "why": {
@@ -388,13 +388,13 @@
    },
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.44,
-    "frames": 64
+    "first_t": 6.42,
+    "frames": 65
    },
    "proximity_stop:right": {
     "events": 3,
-    "first_t": 6.44,
-    "frames": 127
+    "first_t": 6.42,
+    "frames": 128
    }
   },
   "why": {
@@ -469,13 +469,13 @@
    },
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.4,
-    "frames": 66
+    "first_t": 6.38,
+    "frames": 67
    },
    "proximity_stop:right": {
     "events": 2,
-    "first_t": 6.4,
-    "frames": 123
+    "first_t": 6.38,
+    "frames": 124
    }
   },
   "why": {
@@ -631,13 +631,13 @@
    },
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.66,
-    "frames": 53
+    "first_t": 6.64,
+    "frames": 54
    },
    "proximity_stop:right": {
     "events": 3,
-    "first_t": 6.66,
-    "frames": 129
+    "first_t": 6.64,
+    "frames": 130
    }
   },
   "why": {
@@ -712,13 +712,13 @@
    },
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.4,
-    "frames": 61
+    "first_t": 6.38,
+    "frames": 62
    },
    "proximity_stop:right": {
     "events": 3,
-    "first_t": 6.4,
-    "frames": 128
+    "first_t": 6.38,
+    "frames": 129
    }
   },
   "why": {
@@ -793,13 +793,13 @@
    },
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.78,
-    "frames": 52
+    "first_t": 6.76,
+    "frames": 53
    },
    "proximity_stop:right": {
     "events": 3,
-    "first_t": 6.78,
-    "frames": 127
+    "first_t": 6.76,
+    "frames": 128
    }
   },
   "why": {
@@ -874,13 +874,13 @@
    },
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.76,
-    "frames": 53
+    "first_t": 6.74,
+    "frames": 54
    },
    "proximity_stop:right": {
     "events": 3,
-    "first_t": 6.76,
-    "frames": 118
+    "first_t": 6.74,
+    "frames": 119
    }
   },
   "why": {
@@ -955,13 +955,13 @@
    },
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.64,
-    "frames": 64
+    "first_t": 6.62,
+    "frames": 65
    },
    "proximity_stop:right": {
     "events": 3,
-    "first_t": 6.64,
-    "frames": 129
+    "first_t": 6.62,
+    "frames": 130
    }
   },
   "why": {
@@ -1117,13 +1117,13 @@
    },
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.4,
-    "frames": 66
+    "first_t": 6.38,
+    "frames": 67
    },
    "proximity_stop:right": {
     "events": 2,
-    "first_t": 6.4,
-    "frames": 128
+    "first_t": 6.38,
+    "frames": 129
    }
   },
   "why": {
@@ -1198,13 +1198,13 @@
    },
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.62,
-    "frames": 55
+    "first_t": 6.6,
+    "frames": 56
    },
    "proximity_stop:right": {
     "events": 3,
-    "first_t": 6.62,
-    "frames": 126
+    "first_t": 6.6,
+    "frames": 127
    }
   },
   "why": {
@@ -1279,13 +1279,13 @@
    },
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.6,
-    "frames": 61
+    "first_t": 6.58,
+    "frames": 62
    },
    "proximity_stop:right": {
     "events": 3,
-    "first_t": 6.6,
-    "frames": 127
+    "first_t": 6.58,
+    "frames": 128
    }
   },
   "why": {
@@ -1360,13 +1360,13 @@
    },
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.66,
-    "frames": 53
+    "first_t": 6.64,
+    "frames": 54
    },
    "proximity_stop:right": {
     "events": 3,
-    "first_t": 6.66,
-    "frames": 127
+    "first_t": 6.64,
+    "frames": 128
    }
   },
   "why": {
@@ -1441,13 +1441,13 @@
    },
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.68,
-    "frames": 57
+    "first_t": 6.66,
+    "frames": 58
    },
    "proximity_stop:right": {
     "events": 3,
-    "first_t": 6.68,
-    "frames": 125
+    "first_t": 6.66,
+    "frames": 126
    }
   },
   "why": {
@@ -1522,13 +1522,13 @@
    },
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.56,
-    "frames": 58
+    "first_t": 6.54,
+    "frames": 59
    },
    "proximity_stop:right": {
     "events": 3,
-    "first_t": 6.56,
-    "frames": 127
+    "first_t": 6.54,
+    "frames": 128
    }
   },
   "why": {

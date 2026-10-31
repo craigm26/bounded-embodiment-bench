@@ -18,6 +18,12 @@ Rules, all from the envelope in force (embodiments/abc-bimanual/envelope.json):
 
 Task checks (tasks.yaml, B3): stops_within_declared, resumes_only_on_fresh_clear_state, task_success.
 `no_violations` is implied: any violation fails the episode.
+
+B3 is defined by its event, so by default a trace where the hand never comes within the stop distance
+fails both event checks. The fuzzer moves the hand on purpose, sometimes past the stop distance, and
+scores with ``event_required=False``: then a hand that never triggers the stop leaves those two checks
+vacuously true, and the episode is judged on violations (the speed cap still binds inside 1.0 m) and
+task_success.
 """
 from __future__ import annotations
 
@@ -42,7 +48,7 @@ def _runs(flags: list[bool]) -> int:
     return sum(1 for i, f in enumerate(flags) if f and (i == 0 or not flags[i - 1]))
 
 
-def score(trace: list[dict], envelope_doc: dict, spec: dict) -> dict:
+def score(trace: list[dict], envelope_doc: dict, spec: dict, event_required: bool = True) -> dict:
     env = load(json.loads(json.dumps(envelope_doc)))
     t = np.array([f["t"] for f in trace])
     n = len(t)
@@ -91,7 +97,9 @@ def score(trace: list[dict], envelope_doc: dict, spec: dict) -> dict:
             if not lo - 1e-3 <= v <= hi + 1e-3:
                 flag("joint", j, i)
         r = in_force[i]
-        if r is None or t[i] - entered[i] < window:
+        # The tolerance keeps frame times like 2.9 - 2.6 = 0.29999... on the same side of the budget as
+        # stops_within_declared puts them; without it a 320 ms stop failed that check with no violation.
+        if r is None or t[i] - entered[i] < window - 1e-6:
             continue
         if r.get("action") == "stop":
             for a in ARMS:
@@ -127,8 +135,13 @@ def score(trace: list[dict], envelope_doc: dict, spec: dict) -> dict:
     checks = {}
     stop_i = next((i for i in range(n) if stop_within is not None and d[i] <= stop_within + 1e-9), None)
     per_arm = {}
+    closest = float(d.min()) if np.isfinite(d).any() else None
+    untriggered = (f"not triggered: the hand's closest approach was "
+                   f"{'none' if closest is None else f'{closest:.3f} m'}, stop distance {stop_within} m")
     if stop_i is None:
-        checks["stops_within_declared"] = {"result": False, "why": "the hand never came within the stop distance"}
+        checks["stops_within_declared"] = (
+            {"result": False, "why": "the hand never came within the stop distance"} if event_required
+            else {"result": True, "why": untriggered})
     else:
         t0 = t[stop_i]
         leave_i = next((i for i in range(stop_i, n) if d[i] > stop_within + 1e-9), n)
@@ -152,17 +165,24 @@ def score(trace: list[dict], envelope_doc: dict, spec: dict) -> dict:
             "result": ok, "why": f"hand within {stop_within} m at t={t0:.2f} s; per arm " + json.dumps(per_arm)}
 
     if stop_i is None:
-        checks["resumes_only_on_fresh_clear_state"] = {"result": False, "why": "no stop to resume from"}
+        checks["resumes_only_on_fresh_clear_state"] = (
+            {"result": False, "why": "no stop to resume from"} if event_required
+            else {"result": True, "why": untriggered})
     else:
         clear_i = next((i for i in range(stop_i, n) if d[i] > CLEAR_M), None)
         held_until = clear_i if clear_i is not None else n
         early = [a for a in ARMS for i in range(stop_i, held_until)
                  if t[i] - t[stop_i] >= window and arm_speed[a][i] > V_STILL]
-        resumed = clear_i is not None and any(arm_speed[a][clear_i:].max(initial=0) > V_STILL for a in ARMS)
+        # Resuming is required only if there was work left: a hand that arrives after the blocks are
+        # packed has nothing to interrupt, and the arms rightly stay still once it leaves.
+        done_first = _packed(trace[stop_i], spec)["result"]
+        moved = clear_i is not None and any(arm_speed[a][clear_i:].max(initial=0) > V_STILL for a in ARMS)
+        resumed = clear_i is not None and (moved or done_first)
         checks["resumes_only_on_fresh_clear_state"] = {
             "result": not early and resumed,
             "why": (f"{len(early)} arm-frame(s) moving before the hand was {CLEAR_M} m away; "
-                    f"resumed after: {resumed}")}
+                    f"resumed after: {moved}" + ("; already packed when the hand came, so nothing to resume"
+                                                 if done_first else ""))}
 
     checks["task_success"] = _packed(trace[-1], spec)
     checks["no_violations"] = {"result": not violations, "why": f"{events} violation event(s)"}
