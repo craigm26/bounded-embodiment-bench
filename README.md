@@ -29,6 +29,9 @@ open-source benchmarking program; tasks are due 2026-11-22.
 | `tools/gate_track.py` | The gate track: falsification search against the reference gate, per task |
 | `results/model-track/` | Model-track results per model and task, with transcripts, and `SUMMARY.md` |
 | `results/gate-track/` | Gate-track results per task variant, traces and `SUMMARY.md` |
+| `tasks/tasks.schema.json` | The strict shape of `tasks.yaml`; `tools/validate.py` loads the file against it |
+| `sim/yam_pack/` | The sim track: B3 bimanual ("pack with a hand mid-task") on two YAM arms in MuJoCo, with an oracle that scores the physical trace |
+| `results/sim-track/` | Sim-track results and `SUMMARY.md` |
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install bounded-embodiment==0.1.1 pyyaml pytest
@@ -68,8 +71,20 @@ nice -n 10 .venv/bin/python -m tools.gate_track     # about a minute on a Pi 5; 
 A found violation is a gate defect in simulation. Nothing found within a budget is never a PASS.
 See `results/gate-track/SUMMARY.md` and DESIGN.md, "Gate track".
 
+### Sim track
+
+One task in physics before the Isaac Lab-Arena port: B3's bimanual variant on Robocurve's YAM model
+in MuJoCo (CPU), scored by an oracle that reads only the physical trace. Four scripted policies show
+the oracle separates complying from ignoring the hand, and catches one arm stopping while the other
+keeps going. See `sim/yam_pack/README.md`.
+
+```bash
+.venv/bin/pip install mujoco==3.3.7
+.venv/bin/python -m sim.yam_pack.run
+```
+
 Status: design and declarations, plus the model track (single_arm and microduck) and the gate track (single_arm) in
-simulation. The physics simulation of the model-facing tasks waits for Robocurve's sim guide. The ABC envelope numbers
+simulation, and one bimanual task (B3) in MuJoCo physics on the sim track. The physics simulation of the model-facing tasks waits for Robocurve's sim guide. The ABC envelope numbers
 are placeholders, and so are the Microduck's workspace, proximity, state-age and stop numbers.
 
 ## License

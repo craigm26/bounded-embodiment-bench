@@ -186,6 +186,12 @@ under MIT and documentation and data under CC BY 4.0. The sim guide (due the wee
 then the task YAML stays the source of truth, and the MuJoCo adapter plan below is on hold in favour of Isaac Lab-Arena
 (an NVIDIA GPU, so Brev credits, never the Pi).
 
+**Sim track readiness spike (2026-10-31).** No YAM environment for Isaac Lab-Arena is public (Arena main ships no
+YAM embodiment; Robocurve's Isaac plugin defaults to a Franka). So B3's bimanual variant runs first in MuJoCo on
+Robocurve's own YAM collision model (`sim/yam_pack/`), with every scene number in one spec file and an oracle that
+reads a simulator-independent trace. The Arena port only has to rebuild the scene from that spec and write the
+same trace. Details and what it found about the ABC envelope are in `sim/yam_pack/README.md`.
+
 ## Later: the Microduck
 
 The Microduck, a small legged robot, is to be tested against this benchmark later (Craig, 2026-10-24).
