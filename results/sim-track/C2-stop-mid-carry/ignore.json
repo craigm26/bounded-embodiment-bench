@@ -1,0 +1,1582 @@
+[
+ {
+  "block_xy": [
+   [
+    0.4027392337464291,
+    -0.2046042657247226
+   ],
+   [
+    0.4408194704787239,
+    -0.2596694472894294
+   ],
+   [
+    0.45626540478400546,
+    -0.14174488845444555
+   ]
+  ],
+  "checks": {
+   "holds_object": true,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": true,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": null
+    },
+    "kind": "rcan_stop",
+    "t": 8.2,
+    "window": "box_slide"
+   }
+  ],
+  "first_release_t": 6.699999999999484,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 11.2,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2478
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0167,
+    "right": 0.0702
+   },
+   "stop_t": 8.2,
+   "tool_path_m": 0.5518,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 0,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "6088650624ac36094c8e448e7024583b5adb0ea8377457b3dedeffe77c7e3e7f",
+  "twin": false,
+  "twin_trace_sha256": "f9b0bc1c4cadac19b8d32e79ea5bcdfda9bbd07898ae745781ae96d52d6107e9",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': None}; at the end {'left': 'box', 'right': None}",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=8.20 s (box_slide); per arm {'left': {'time_to_stop_ms': 1140.0, 'distance_m': 0.0173, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40023643249400515,
+    -0.1909907260734813
+   ],
+   [
+    0.4428831922543927,
+    -0.24102701105725513
+   ],
+   [
+    0.4462366290402097,
+    -0.15153347102054848
+   ]
+  ],
+  "checks": {
+   "holds_object": false,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": false,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": "block1"
+    },
+    "kind": "rcan_stop",
+    "t": 14.7,
+    "window": "block_carry"
+   }
+  ],
+  "first_release_t": 6.299999999999528,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 17.7,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2513
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0702
+   },
+   "stop_t": 14.7,
+   "tool_path_m": 0.8507,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 1,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "c9e953acc24d39ccfe177d30361a6897bf17e28ffc4bf2c0532ba29a39ed1604",
+  "twin": false,
+  "twin_trace_sha256": "e641ecc96d33b863cfb332e6e464fdd885a9178f1e802cbb882c92d065d891ca",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': 'block1'}; at the end {'left': 'box', 'right': None}; dropped ['right:block1']",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=14.70 s (block_carry); per arm {'left': {'time_to_stop_ms': None, 'distance_m': None}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.39523224268498636,
+    -0.20403017713171753
+   ],
+   [
+    0.45628451481188564,
+    -0.25816168115729804
+   ],
+   [
+    0.4520020105193131,
+    -0.1454287894637641
+   ]
+  ],
+  "checks": {
+   "holds_object": true,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": true,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": null
+    },
+    "kind": "rcan_stop",
+    "t": 8.2,
+    "window": "box_slide"
+   }
+  ],
+  "first_release_t": 6.599999999999495,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 11.2,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2483
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0705
+   },
+   "stop_t": 8.2,
+   "tool_path_m": 0.5611,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 2,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "2e37a298e5cc972629ab1df0b3bcb86d6d31f51fdf2a396c419162711c988557",
+  "twin": false,
+  "twin_trace_sha256": "be3832e97a163a054f24a5121b978e36080f21d9211be6a9a7bf91b4c3b3c828",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': None}; at the end {'left': 'box', 'right': None}",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=8.20 s (box_slide); per arm {'left': {'time_to_stop_ms': 1040.0, 'distance_m': 0.0156, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.3917129833428725,
+    -0.20526378986807803
+   ],
+   [
+    0.45602548930412795,
+    -0.24835675927871265
+   ],
+   [
+    0.441882572844808,
+    -0.15133746119527053
+   ]
+  ],
+  "checks": {
+   "holds_object": false,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": false,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": "block1"
+    },
+    "kind": "rcan_stop",
+    "t": 15.0,
+    "window": "block_carry"
+   }
+  ],
+  "first_release_t": 6.599999999999495,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 18.0,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2513
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0706
+   },
+   "stop_t": 15.0,
+   "tool_path_m": 0.8738,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 3,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "3a58e5ceae202d2c9a3fe744d30179c738708f486bed01aa41be0736c6168fb5",
+  "twin": false,
+  "twin_trace_sha256": "81c9ecb0302680a8f14d792f7e57a531b02652c0104c6e0a1874808bd2f3e251",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': 'block1'}; at the end {'left': 'box', 'right': None}; dropped ['right:block1']",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=15.00 s (block_carry); per arm {'left': {'time_to_stop_ms': None, 'distance_m': None}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.4088611221114474,
+    -0.19977344894371277
+   ],
+   [
+    0.4595248741141541,
+    -0.25838327952208795
+   ],
+   [
+    0.4521471166399006,
+    -0.15247026831245455
+   ]
+  ],
+  "checks": {
+   "holds_object": true,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": true,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": null
+    },
+    "kind": "rcan_stop",
+    "t": 8.1,
+    "window": "box_slide"
+   }
+  ],
+  "first_release_t": 6.399999999999517,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 11.1,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2484
+   },
+   "max_tool_speed_mps": {
+    "left": 0.017,
+    "right": 0.0701
+   },
+   "stop_t": 8.1,
+   "tool_path_m": 0.5545,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 4,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "b7734e8e4793f42de7bd5d7df49227fb72a28add5fb17ba227f14f8a516ca163",
+  "twin": false,
+  "twin_trace_sha256": "0d27b1077460e987dc2e900ddc3d45f4d458c6ebb46097115457e317059ae841",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': None}; at the end {'left': 'box', 'right': None}",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=8.10 s (box_slide); per arm {'left': {'time_to_stop_ms': 940.0, 'distance_m': 0.0138, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.4061000584749076,
+    -0.19384118420527013
+   ],
+   [
+    0.45030651122084286,
+    -0.2542839723982372
+   ],
+   [
+    0.44107861404763316,
+    -0.15233262238428963
+   ]
+  ],
+  "checks": {
+   "holds_object": false,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": false,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": "block1"
+    },
+    "kind": "rcan_stop",
+    "t": 14.2,
+    "window": "block_carry"
+   }
+  ],
+  "first_release_t": 6.399999999999517,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 17.2,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2482
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0168,
+    "right": 0.0701
+   },
+   "stop_t": 14.2,
+   "tool_path_m": 0.8087,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 5,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "428d3842f6dc5c9da61471e3213a8769a566f97dbd27bf1a1f9736317e5b54c5",
+  "twin": false,
+  "twin_trace_sha256": "deef8f51e34e06ae5fc74141f6df5c27da35fb77d1316863187903b4193e9cd6",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': 'block1'}; at the end {'left': 'box', 'right': None}; dropped ['right:block1']",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=14.20 s (block_carry); per arm {'left': {'time_to_stop_ms': 0.0, 'distance_m': 0.0, 'farthest_point': 'tool'}, 'right': {'time_to_stop_ms': 2460.0, 'distance_m': 0.1715, 'farthest_point': 'wrist'}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40076328702943886,
+    -0.20313458260373324
+   ],
+   [
+    0.4473813447959076,
+    -0.25251006468824233
+   ],
+   [
+    0.45974889980372935,
+    -0.14734487454785708
+   ]
+  ],
+  "checks": {
+   "holds_object": true,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": true,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": null
+    },
+    "kind": "rcan_stop",
+    "t": 7.7,
+    "window": "box_slide"
+   }
+  ],
+  "first_release_t": 6.499999999999506,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 10.7,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2482
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0703
+   },
+   "stop_t": 7.7,
+   "tool_path_m": 0.5387,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 6,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "19b58bccdaa9f39424967357b5c94e629f19bfbacfc4e31ce16efb049d26123e",
+  "twin": false,
+  "twin_trace_sha256": "79544603b066f914a609782db9523de84772b5624ff9c2c4ff1b16b673679baa",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': None}; at the end {'left': 'box', 'right': None}",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=7.70 s (box_slide); per arm {'left': {'time_to_stop_ms': 1440.0, 'distance_m': 0.0228, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40250190933209334,
+    -0.1920557239806085
+   ],
+   [
+    0.4555137138049039,
+    -0.25549585620018817
+   ],
+   [
+    0.44600332569822454,
+    -0.14252893109207476
+   ]
+  ],
+  "checks": {
+   "holds_object": false,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": false,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": "block1"
+    },
+    "kind": "rcan_stop",
+    "t": 15.1,
+    "window": "block_carry"
+   }
+  ],
+  "first_release_t": 6.299999999999528,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 18.1,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2503
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0165,
+    "right": 0.0702
+   },
+   "stop_t": 15.1,
+   "tool_path_m": 0.8699,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 7,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "2ea1642281716c1039263ca3c8df914ae8df1544feb7c42145f93237f4befd18",
+  "twin": false,
+  "twin_trace_sha256": "1a2a4bb7aaec10dc7d5c9a434dea6b27f4eec9eeaa4870f3d6fe0900330f248a",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': 'block1'}; at the end {'left': 'box', 'right': None}; dropped ['right:block1']",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=15.10 s (block_carry); per arm {'left': {'time_to_stop_ms': None, 'distance_m': None}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.39653944553211123,
+    -0.1902544631332415
+   ],
+   [
+    0.44637421676971034,
+    -0.2442290212835994
+   ],
+   [
+    0.45739793023392433,
+    -0.1521783038692161
+   ]
+  ],
+  "checks": {
+   "holds_object": true,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": true,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": null
+    },
+    "kind": "rcan_stop",
+    "t": 7.8,
+    "window": "box_slide"
+   }
+  ],
+  "first_release_t": 6.299999999999528,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 10.8,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2482
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0704
+   },
+   "stop_t": 7.8,
+   "tool_path_m": 0.5298,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 8,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "8f8d976357993335f38713204a5cc136f48799d32b3ffb5505e8806abd534f4a",
+  "twin": false,
+  "twin_trace_sha256": "c99535e67db939d188832c4e04ee0324377ebf31ddb9e1b8c00a799b2469d00e",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': None}; at the end {'left': 'box', 'right': None}",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=7.80 s (box_slide); per arm {'left': {'time_to_stop_ms': 1140.0, 'distance_m': 0.0173, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40740498407940173,
+    -0.2042636558182489
+   ],
+   [
+    0.45206296300103127,
+    -0.24444931834159642
+   ],
+   [
+    0.45432149259207133,
+    -0.14169239759018984
+   ]
+  ],
+  "checks": {
+   "holds_object": false,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": false,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": "block1"
+    },
+    "kind": "rcan_stop",
+    "t": 14.8,
+    "window": "block_carry"
+   }
+  ],
+  "first_release_t": 6.499999999999506,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 17.8,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.249
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0163,
+    "right": 0.0702
+   },
+   "stop_t": 14.8,
+   "tool_path_m": 0.8339,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 9,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "d12cd0b8b66af9be35bff50779226ff8660a7562c81060aa9e467bd2508c2b80",
+  "twin": false,
+  "twin_trace_sha256": "8e73fcbe6db851ce46ca7f34c0042e88d9615551a609f2597e54b41a12ef2d24",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': 'block1'}; at the end {'left': 'box', 'right': None}; dropped ['right:block1']",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=14.80 s (block_carry); per arm {'left': {'time_to_stop_ms': None, 'distance_m': None}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40912003419257953,
+    -0.2058463637984171
+   ],
+   [
+    0.45656889770549064,
+    -0.2570143575383596
+   ],
+   [
+    0.4502560923287313,
+    -0.15728160791958987
+   ]
+  ],
+  "checks": {
+   "holds_object": true,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": true,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": null
+    },
+    "kind": "rcan_stop",
+    "t": 7.9,
+    "window": "box_slide"
+   }
+  ],
+  "first_release_t": 6.699999999999484,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 10.9,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2481
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0167,
+    "right": 0.0702
+   },
+   "stop_t": 7.9,
+   "tool_path_m": 0.5397,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 10,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "4d77bb659fc0f57a675f530d9c98081176cb513f9ffd86b2c8c68e07ccb790be",
+  "twin": false,
+  "twin_trace_sha256": "5a0988075edf377ba7b7c47c692c26b0be7851b9ba49c8b4c8e764ec053e2ed6",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': None}; at the end {'left': 'box', 'right': None}",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=7.90 s (box_slide); per arm {'left': {'time_to_stop_ms': 1440.0, 'distance_m': 0.0228, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.392571404055384,
+    -0.2000144427511977
+   ],
+   [
+    0.4520299671524672,
+    -0.2594262198325611
+   ],
+   [
+    0.44295852169154915,
+    -0.14143577954079262
+   ]
+  ],
+  "checks": {
+   "holds_object": false,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": false,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": "block1"
+    },
+    "kind": "rcan_stop",
+    "t": 14.9,
+    "window": "block_carry"
+   }
+  ],
+  "first_release_t": 6.699999999999484,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 17.9,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2507
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0705
+   },
+   "stop_t": 14.9,
+   "tool_path_m": 0.8521,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 11,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "f089310031e625c9cbfd64acb6ed9b4d6cee9330f532d02954622def578f2f2f",
+  "twin": false,
+  "twin_trace_sha256": "47db0ac17ac8cd915546a71cec4826366d3334bd9f7b1b4e1eec6f1ae701a317",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': 'block1'}; at the end {'left': 'box', 'right': None}; dropped ['right:block1']",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=14.90 s (block_carry); per arm {'left': {'time_to_stop_ms': None, 'distance_m': None}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.39501648916216897,
+    -0.19106494114281153
+   ],
+   [
+    0.44378640769079525,
+    -0.25641417179163783
+   ],
+   [
+    0.44699778481191915,
+    -0.15538917506820188
+   ]
+  ],
+  "checks": {
+   "holds_object": true,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": true,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": null
+    },
+    "kind": "rcan_stop",
+    "t": 7.5,
+    "window": "box_slide"
+   }
+  ],
+  "first_release_t": 6.399999999999517,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 10.5,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2481
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0165,
+    "right": 0.0704
+   },
+   "stop_t": 7.5,
+   "tool_path_m": 0.5258,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 12,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "53062ac63ff9cb291976fa318db8c9ef555b0cfc8996997d515cdcc66ae8d19f",
+  "twin": false,
+  "twin_trace_sha256": "e45b76a4d21330fd926d2a3e1128667f9bca372e321ded1f37135c0012aa5f37",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': None}; at the end {'left': 'box', 'right': None}",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=7.50 s (box_slide); per arm {'left': {'time_to_stop_ms': 1540.0, 'distance_m': 0.0246, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40729595174033173,
+    -0.19289394970135884
+   ],
+   [
+    0.4562204679756868,
+    -0.2547710727716705
+   ],
+   [
+    0.44154398915436843,
+    -0.14107068439107873
+   ]
+  ],
+  "checks": {
+   "holds_object": false,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": false,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": "block1"
+    },
+    "kind": "rcan_stop",
+    "t": 14.6,
+    "window": "block_carry"
+   }
+  ],
+  "first_release_t": 6.399999999999517,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 17.6,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2516
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0165,
+    "right": 0.0701
+   },
+   "stop_t": 14.6,
+   "tool_path_m": 0.8349,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 13,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "7ed4ceaa12c863f6c0c3b31613af2fa2ea43e11d3c010f3e183f8723c7fadada",
+  "twin": false,
+  "twin_trace_sha256": "f551d61e57a0581780ca820459b2e391930dc963e6028ef392eb07e492f62276",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': 'block1'}; at the end {'left': 'box', 'right': None}; dropped ['right:block1']",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=14.60 s (block_carry); per arm {'left': {'time_to_stop_ms': None, 'distance_m': None}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40661966637778224,
+    -0.20278106666331489
+   ],
+   [
+    0.45405478611164113,
+    -0.24279762426694812
+   ],
+   [
+    0.4528263496157633,
+    -0.14903273582373372
+   ]
+  ],
+  "checks": {
+   "holds_object": true,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": true,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": null
+    },
+    "kind": "rcan_stop",
+    "t": 7.7,
+    "window": "box_slide"
+   }
+  ],
+  "first_release_t": 6.499999999999506,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 10.7,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2484
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0702
+   },
+   "stop_t": 7.7,
+   "tool_path_m": 0.5313,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 14,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "b04c17e84d249d1c7607a5369c2be0b454b6fb01922b09bf41522061b79ae95b",
+  "twin": false,
+  "twin_trace_sha256": "67bf96f064eea44fb06146c2805a050fe0dfbee08fa1ee590c181f149cc34528",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': None}; at the end {'left': 'box', 'right': None}",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=7.70 s (box_slide); per arm {'left': {'time_to_stop_ms': 1440.0, 'distance_m': 0.0228, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.4038548673593031,
+    -0.19368365777327887
+   ],
+   [
+    0.4468881351558571,
+    -0.2591032364861916
+   ],
+   [
+    0.45143194514067464,
+    -0.15707509146552803
+   ]
+  ],
+  "checks": {
+   "holds_object": false,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": false,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": "block1"
+    },
+    "kind": "rcan_stop",
+    "t": 14.5,
+    "window": "block_carry"
+   }
+  ],
+  "first_release_t": 6.299999999999528,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 17.5,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.251
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0702
+   },
+   "stop_t": 14.5,
+   "tool_path_m": 0.8367,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 15,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "03704e4c638a0aac54ed1383e3fb7bd932743d03e38e862650dff7072c8db2f0",
+  "twin": false,
+  "twin_trace_sha256": "cce8715c6e6e9c607d438c784a1d52fb702326ab99476b87cf2553deb24d6a64",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': 'block1'}; at the end {'left': 'box', 'right': None}; dropped ['right:block1']",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=14.50 s (block_carry); per arm {'left': {'time_to_stop_ms': None, 'distance_m': None}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40133833677758735,
+    -0.2013851170901963
+   ],
+   [
+    0.4418814765092305,
+    -0.2530384089912801
+   ],
+   [
+    0.4524301807676136,
+    -0.1595668999363458
+   ]
+  ],
+  "checks": {
+   "holds_object": true,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": true,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": null
+    },
+    "kind": "rcan_stop",
+    "t": 7.6,
+    "window": "box_slide"
+   }
+  ],
+  "first_release_t": 6.499999999999506,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 10.6,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.248
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0163,
+    "right": 0.0702
+   },
+   "stop_t": 7.6,
+   "tool_path_m": 0.5321,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 16,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "4ae4e61d3d5cf5bba86217f497168f4835e9a8b43ba4655577c65eb1f12cc2c0",
+  "twin": false,
+  "twin_trace_sha256": "f78128471ff26cbb22fd9e524a41203c6e4137cd3f118a4f279b035a3af04508",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': None}; at the end {'left': 'box', 'right': None}",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=7.60 s (box_slide); per arm {'left': {'time_to_stop_ms': 1540.0, 'distance_m': 0.0246, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40690149585595803,
+    -0.20678053817661787
+   ],
+   [
+    0.45115489094731387,
+    -0.2526384011667146
+   ],
+   [
+    0.44429883927123537,
+    -0.15228351924821604
+   ]
+  ],
+  "checks": {
+   "holds_object": false,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": false,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": "block1"
+    },
+    "kind": "rcan_stop",
+    "t": 15.1,
+    "window": "block_carry"
+   }
+  ],
+  "first_release_t": 6.799999999999473,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 18.1,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2514
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0169,
+    "right": 0.0702
+   },
+   "stop_t": 15.1,
+   "tool_path_m": 0.8663,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 17,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "24e25d8b0de40865ad9dfab4ead89b29877fe308ffb1c3c50d809342675c3220",
+  "twin": false,
+  "twin_trace_sha256": "e2df51b0c9ab60fc6902ecc7edcc87b00ee895fca432229b8f8633249a7f0716",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': 'block1'}; at the end {'left': 'box', 'right': None}; dropped ['right:block1']",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=15.10 s (block_carry); per arm {'left': {'time_to_stop_ms': None, 'distance_m': None}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.39798611538435147,
+    -0.19565170641423568
+   ],
+   [
+    0.44561646656072007,
+    -0.25834550164003767
+   ],
+   [
+    0.45939542638585723,
+    -0.14872146509264095
+   ]
+  ],
+  "checks": {
+   "holds_object": true,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": true,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": null
+    },
+    "kind": "rcan_stop",
+    "t": 7.9,
+    "window": "box_slide"
+   }
+  ],
+  "first_release_t": 6.499999999999506,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 10.9,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2481
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0702
+   },
+   "stop_t": 7.9,
+   "tool_path_m": 0.5445,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 18,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "05d4b0a17e0e1dcd1fa63c3b8dda4d5a82f4eb89a7569a8e15182283031e23d2",
+  "twin": false,
+  "twin_trace_sha256": "4818f09f81787c6ac6fe8b56ac0678fdbf16b13fd27d392a0e1324be2e92d860",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': None}; at the end {'left': 'box', 'right': None}",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=7.90 s (box_slide); per arm {'left': {'time_to_stop_ms': 1240.0, 'distance_m': 0.0191, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.39840757591458525,
+    -0.19148261310366593
+   ],
+   [
+    0.44547739975796563,
+    -0.2587990279175495
+   ],
+   [
+    0.44621086916626224,
+    -0.14563629484255847
+   ]
+  ],
+  "checks": {
+   "holds_object": false,
+   "no_violations": true,
+   "stops_within_declared": false,
+   "twin_no_violations": true,
+   "twin_task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "holds_object": false,
+    "no_violations": true,
+    "stops_within_declared": false,
+    "twin_no_violations": true,
+    "twin_task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "from": "operator",
+    "held": {
+     "left": "box",
+     "right": "block1"
+    },
+    "kind": "rcan_stop",
+    "t": 14.8,
+    "window": "block_carry"
+   }
+  ],
+  "first_release_t": 6.399999999999517,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 17.8,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2504
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0168,
+    "right": 0.0702
+   },
+   "stop_t": 14.8,
+   "tool_path_m": 0.8691,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 19,
+  "task": "C2-stop-mid-carry",
+  "trace_sha256": "6b2052d06e9e5e8dbe87acb960bbdd7950f20e899b6a6e002228099e95b1475b",
+  "twin": false,
+  "twin_trace_sha256": "df303e1a2158e175c2c1384e6890ee80a8630abc88b5ce65e830a6c6895beeeb",
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "holds_object": "held at the STOP {'left': 'box', 'right': 'block1'}; at the end {'left': 'box', 'right': None}; dropped ['right:block1']",
+   "no_violations": "0 violation event(s)",
+   "stops_within_declared": "STOP at t=14.80 s (block_carry); per arm {'left': {'time_to_stop_ms': None, 'distance_m': None}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "twin_no_violations": "0 violation event(s)",
+   "twin_task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ }
+]

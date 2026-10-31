@@ -1,0 +1,1422 @@
+[
+ {
+  "block_xy": [
+   [
+    0.4027392337464291,
+    -0.2046042657247226
+   ],
+   [
+    0.4408194704787239,
+    -0.2596694472894294
+   ],
+   [
+    0.45626540478400546,
+    -0.14174488845444555
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 8.2
+   },
+   {
+    "kind": "state_fresh",
+    "t": 12.2
+   }
+  ],
+  "first_release_t": 6.699999999999484,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 29.0,
+   "freeze_t": 8.2,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.3109
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0167,
+    "right": 0.0703
+   },
+   "tool_path_m": 1.3285,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 0,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "f9b0bc1c4cadac19b8d32e79ea5bcdfda9bbd07898ae745781ae96d52d6107e9",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=8.20 s, stale from 8.30 s, fresh at 12.20 s; per arm {'left': {'time_to_stop_ms': 1040.0, 'distance_m': 0.0156, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': 3560.0, 'distance_m': 0.1888, 'farthest_point': 'wrist'}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40023643249400515,
+    -0.1909907260734813
+   ],
+   [
+    0.4428831922543927,
+    -0.24102701105725513
+   ],
+   [
+    0.4462366290402097,
+    -0.15153347102054848
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 7.9
+   },
+   {
+    "kind": "state_fresh",
+    "t": 11.9
+   }
+  ],
+  "first_release_t": 6.299999999999528,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.2,
+   "freeze_t": 7.9,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2513
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0702
+   },
+   "tool_path_m": 1.2815,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 1,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "e641ecc96d33b863cfb332e6e464fdd885a9178f1e802cbb882c92d065d891ca",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=7.90 s, stale from 8.00 s, fresh at 11.90 s; per arm {'left': {'time_to_stop_ms': 940.0, 'distance_m': 0.0138, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.39523224268498636,
+    -0.20403017713171753
+   ],
+   [
+    0.45628451481188564,
+    -0.25816168115729804
+   ],
+   [
+    0.4520020105193131,
+    -0.1454287894637641
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 8.2
+   },
+   {
+    "kind": "state_fresh",
+    "t": 12.2
+   }
+  ],
+  "first_release_t": 6.599999999999495,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.9,
+   "freeze_t": 8.2,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.249
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0705
+   },
+   "tool_path_m": 1.3353,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 2,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "be3832e97a163a054f24a5121b978e36080f21d9211be6a9a7bf91b4c3b3c828",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=8.20 s, stale from 8.30 s, fresh at 12.20 s; per arm {'left': {'time_to_stop_ms': 940.0, 'distance_m': 0.0138, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': 3460.0, 'distance_m': 0.1853, 'farthest_point': 'wrist'}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.3917129833428725,
+    -0.20526378986807803
+   ],
+   [
+    0.45602548930412795,
+    -0.24835675927871265
+   ],
+   [
+    0.441882572844808,
+    -0.15133746119527053
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 8.2
+   },
+   {
+    "kind": "state_fresh",
+    "t": 12.2
+   }
+  ],
+  "first_release_t": 6.599999999999495,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.9,
+   "freeze_t": 8.2,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2513
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0706
+   },
+   "tool_path_m": 1.3182,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 3,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "81c9ecb0302680a8f14d792f7e57a531b02652c0104c6e0a1874808bd2f3e251",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=8.20 s, stale from 8.30 s, fresh at 12.20 s; per arm {'left': {'time_to_stop_ms': 940.0, 'distance_m': 0.0138, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.4088611221114474,
+    -0.19977344894371277
+   ],
+   [
+    0.4595248741141541,
+    -0.25838327952208795
+   ],
+   [
+    0.4521471166399006,
+    -0.15247026831245455
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 8.1
+   },
+   {
+    "kind": "state_fresh",
+    "t": 12.1
+   }
+  ],
+  "first_release_t": 6.399999999999517,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.9,
+   "freeze_t": 8.1,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2499
+   },
+   "max_tool_speed_mps": {
+    "left": 0.017,
+    "right": 0.0702
+   },
+   "tool_path_m": 1.3402,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 4,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "0d27b1077460e987dc2e900ddc3d45f4d458c6ebb46097115457e317059ae841",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=8.10 s, stale from 8.20 s, fresh at 12.10 s; per arm {'left': {'time_to_stop_ms': 840.0, 'distance_m': 0.0121, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': 3460.0, 'distance_m': 0.1794, 'farthest_point': 'wrist'}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.4061000584749076,
+    -0.19384118420527013
+   ],
+   [
+    0.45030651122084286,
+    -0.2542839723982372
+   ],
+   [
+    0.44107861404763316,
+    -0.15233262238428963
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 7.6
+   },
+   {
+    "kind": "state_fresh",
+    "t": 11.6
+   }
+  ],
+  "first_release_t": 6.399999999999517,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.5,
+   "freeze_t": 7.6,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2511
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0168,
+    "right": 0.0702
+   },
+   "tool_path_m": 1.3069,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 5,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "deef8f51e34e06ae5fc74141f6df5c27da35fb77d1316863187903b4193e9cd6",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=7.60 s, stale from 7.70 s, fresh at 11.60 s; per arm {'left': {'time_to_stop_ms': 1340.0, 'distance_m': 0.0209, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': 3860.0, 'distance_m': 0.2097, 'farthest_point': 'wrist'}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40076328702943886,
+    -0.20313458260373324
+   ],
+   [
+    0.4473813447959076,
+    -0.25251006468824233
+   ],
+   [
+    0.45974889980372935,
+    -0.14734487454785708
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 7.7
+   },
+   {
+    "kind": "state_fresh",
+    "t": 11.7
+   }
+  ],
+  "first_release_t": 6.499999999999506,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.8,
+   "freeze_t": 7.7,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.4172
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0712
+   },
+   "tool_path_m": 1.3388,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 6,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "79544603b066f914a609782db9523de84772b5624ff9c2c4ff1b16b673679baa",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=7.70 s, stale from 7.80 s, fresh at 11.70 s; per arm {'left': {'time_to_stop_ms': 1340.0, 'distance_m': 0.0209, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': 3760.0, 'distance_m': 0.2067, 'farthest_point': 'wrist'}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40250190933209334,
+    -0.1920557239806085
+   ],
+   [
+    0.4555137138049039,
+    -0.25549585620018817
+   ],
+   [
+    0.44600332569822454,
+    -0.14252893109207476
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 8.0
+   },
+   {
+    "kind": "state_fresh",
+    "t": 12.0
+   }
+  ],
+  "first_release_t": 6.299999999999528,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.6,
+   "freeze_t": 8.0,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2503
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0165,
+    "right": 0.0703
+   },
+   "tool_path_m": 1.3043,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 7,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "1a2a4bb7aaec10dc7d5c9a434dea6b27f4eec9eeaa4870f3d6fe0900330f248a",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=8.00 s, stale from 8.10 s, fresh at 12.00 s; per arm {'left': {'time_to_stop_ms': 840.0, 'distance_m': 0.0121, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': 3460.0, 'distance_m': 0.175, 'farthest_point': 'wrist'}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.39653944553211123,
+    -0.1902544631332415
+   ],
+   [
+    0.44637421676971034,
+    -0.2442290212835994
+   ],
+   [
+    0.45739793023392433,
+    -0.1521783038692161
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 7.8
+   },
+   {
+    "kind": "state_fresh",
+    "t": 11.8
+   }
+  ],
+  "first_release_t": 6.299999999999528,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.8,
+   "freeze_t": 7.8,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.249
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0704
+   },
+   "tool_path_m": 1.3096,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 8,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "c99535e67db939d188832c4e04ee0324377ebf31ddb9e1b8c00a799b2469d00e",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=7.80 s, stale from 7.90 s, fresh at 11.80 s; per arm {'left': {'time_to_stop_ms': 1040.0, 'distance_m': 0.0156, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': 3560.0, 'distance_m': 0.177, 'farthest_point': 'wrist'}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40740498407940173,
+    -0.2042636558182489
+   ],
+   [
+    0.45206296300103127,
+    -0.24444931834159642
+   ],
+   [
+    0.45432149259207133,
+    -0.14169239759018984
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 8.0
+   },
+   {
+    "kind": "state_fresh",
+    "t": 12.0
+   }
+  ],
+  "first_release_t": 6.499999999999506,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.8,
+   "freeze_t": 8.0,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.249
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0702
+   },
+   "tool_path_m": 1.304,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 9,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "8e73fcbe6db851ce46ca7f34c0042e88d9615551a609f2597e54b41a12ef2d24",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=8.00 s, stale from 8.10 s, fresh at 12.00 s; per arm {'left': {'time_to_stop_ms': 1040.0, 'distance_m': 0.0156, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': 3560.0, 'distance_m': 0.179, 'farthest_point': 'wrist'}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40912003419257953,
+    -0.2058463637984171
+   ],
+   [
+    0.45656889770549064,
+    -0.2570143575383596
+   ],
+   [
+    0.4502560923287313,
+    -0.15728160791958987
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 7.9
+   },
+   {
+    "kind": "state_fresh",
+    "t": 11.9
+   }
+  ],
+  "first_release_t": 6.699999999999484,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 29.6,
+   "freeze_t": 7.9,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.251
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0167,
+    "right": 0.0702
+   },
+   "tool_path_m": 1.3493,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 10,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "5a0988075edf377ba7b7c47c692c26b0be7851b9ba49c8b4c8e764ec053e2ed6",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=7.90 s, stale from 8.00 s, fresh at 11.90 s; per arm {'left': {'time_to_stop_ms': 1340.0, 'distance_m': 0.0209, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.392571404055384,
+    -0.2000144427511977
+   ],
+   [
+    0.4520299671524672,
+    -0.2594262198325611
+   ],
+   [
+    0.44295852169154915,
+    -0.14143577954079262
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 8.1
+   },
+   {
+    "kind": "state_fresh",
+    "t": 12.1
+   }
+  ],
+  "first_release_t": 6.699999999999484,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.8,
+   "freeze_t": 8.1,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2507
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0705
+   },
+   "tool_path_m": 1.3151,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 11,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "47db0ac17ac8cd915546a71cec4826366d3334bd9f7b1b4e1eec6f1ae701a317",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=8.10 s, stale from 8.20 s, fresh at 12.10 s; per arm {'left': {'time_to_stop_ms': 1140.0, 'distance_m': 0.0173, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': 3660.0, 'distance_m': 0.2001, 'farthest_point': 'wrist'}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.39501648916216897,
+    -0.19106494114281153
+   ],
+   [
+    0.44378640769079525,
+    -0.25641417179163783
+   ],
+   [
+    0.44699778481191915,
+    -0.15538917506820188
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 7.5
+   },
+   {
+    "kind": "state_fresh",
+    "t": 11.5
+   }
+  ],
+  "first_release_t": 6.399999999999517,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 29.1,
+   "freeze_t": 7.5,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2513
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0165,
+    "right": 0.0704
+   },
+   "tool_path_m": 1.3213,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 12,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "e45b76a4d21330fd926d2a3e1128667f9bca372e321ded1f37135c0012aa5f37",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=7.50 s, stale from 7.60 s, fresh at 11.50 s; per arm {'left': {'time_to_stop_ms': 1440.0, 'distance_m': 0.0228, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40729595174033173,
+    -0.19289394970135884
+   ],
+   [
+    0.4562204679756868,
+    -0.2547710727716705
+   ],
+   [
+    0.44154398915436843,
+    -0.14107068439107873
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 7.8
+   },
+   {
+    "kind": "state_fresh",
+    "t": 11.8
+   }
+  ],
+  "first_release_t": 6.399999999999517,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.7,
+   "freeze_t": 7.8,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2516
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0165,
+    "right": 0.0702
+   },
+   "tool_path_m": 1.2974,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 13,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "f551d61e57a0581780ca820459b2e391930dc963e6028ef392eb07e492f62276",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=7.80 s, stale from 7.90 s, fresh at 11.80 s; per arm {'left': {'time_to_stop_ms': 1140.0, 'distance_m': 0.0173, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': 3660.0, 'distance_m': 0.1974, 'farthest_point': 'wrist'}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40661966637778224,
+    -0.20278106666331489
+   ],
+   [
+    0.45405478611164113,
+    -0.24279762426694812
+   ],
+   [
+    0.4528263496157633,
+    -0.14903273582373372
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 7.7
+   },
+   {
+    "kind": "state_fresh",
+    "t": 11.7
+   }
+  ],
+  "first_release_t": 6.499999999999506,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.6,
+   "freeze_t": 7.7,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2493
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0702
+   },
+   "tool_path_m": 1.3076,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 14,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "67bf96f064eea44fb06146c2805a050fe0dfbee08fa1ee590c181f149cc34528",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=7.70 s, stale from 7.80 s, fresh at 11.70 s; per arm {'left': {'time_to_stop_ms': 1340.0, 'distance_m': 0.0209, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': 3760.0, 'distance_m': 0.2002, 'farthest_point': 'wrist'}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.4038548673593031,
+    -0.19368365777327887
+   ],
+   [
+    0.4468881351558571,
+    -0.2591032364861916
+   ],
+   [
+    0.45143194514067464,
+    -0.15707509146552803
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 7.7
+   },
+   {
+    "kind": "state_fresh",
+    "t": 11.7
+   }
+  ],
+  "first_release_t": 6.299999999999528,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.8,
+   "freeze_t": 7.7,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.251
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0702
+   },
+   "tool_path_m": 1.3334,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 15,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "cce8715c6e6e9c607d438c784a1d52fb702326ab99476b87cf2553deb24d6a64",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=7.70 s, stale from 7.80 s, fresh at 11.70 s; per arm {'left': {'time_to_stop_ms': 1140.0, 'distance_m': 0.0173, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': 3660.0, 'distance_m': 0.198, 'farthest_point': 'wrist'}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40133833677758735,
+    -0.2013851170901963
+   ],
+   [
+    0.4418814765092305,
+    -0.2530384089912801
+   ],
+   [
+    0.4524301807676136,
+    -0.1595668999363458
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 7.6
+   },
+   {
+    "kind": "state_fresh",
+    "t": 11.6
+   }
+  ],
+  "first_release_t": 6.499999999999506,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.8,
+   "freeze_t": 7.6,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.251
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0163,
+    "right": 0.0702
+   },
+   "tool_path_m": 1.3312,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 16,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "f78128471ff26cbb22fd9e524a41203c6e4137cd3f118a4f279b035a3af04508",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=7.60 s, stale from 7.70 s, fresh at 11.60 s; per arm {'left': {'time_to_stop_ms': 1440.0, 'distance_m': 0.0228, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': 3860.0, 'distance_m': 0.2131, 'farthest_point': 'wrist'}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.40690149585595803,
+    -0.20678053817661787
+   ],
+   [
+    0.45115489094731387,
+    -0.2526384011667146
+   ],
+   [
+    0.44429883927123537,
+    -0.15228351924821604
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 8.3
+   },
+   {
+    "kind": "state_fresh",
+    "t": 12.3
+   }
+  ],
+  "first_release_t": 6.799999999999473,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.9,
+   "freeze_t": 8.3,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2514
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0169,
+    "right": 0.0702
+   },
+   "tool_path_m": 1.3214,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 17,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "e2df51b0c9ab60fc6902ecc7edcc87b00ee895fca432229b8f8633249a7f0716",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=8.30 s, stale from 8.40 s, fresh at 12.30 s; per arm {'left': {'time_to_stop_ms': 1040.0, 'distance_m': 0.0156, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': 3460.0, 'distance_m': 0.1854, 'farthest_point': 'wrist'}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.39798611538435147,
+    -0.19565170641423568
+   ],
+   [
+    0.44561646656072007,
+    -0.25834550164003767
+   ],
+   [
+    0.45939542638585723,
+    -0.14872146509264095
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 7.9
+   },
+   {
+    "kind": "state_fresh",
+    "t": 11.9
+   }
+  ],
+  "first_release_t": 6.499999999999506,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.8,
+   "freeze_t": 7.9,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.3774
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0164,
+    "right": 0.0703
+   },
+   "tool_path_m": 1.3395,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 18,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "4818f09f81787c6ac6fe8b56ac0678fdbf16b13fd27d392a0e1324be2e92d860",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=7.90 s, stale from 8.00 s, fresh at 11.90 s; per arm {'left': {'time_to_stop_ms': 1140.0, 'distance_m': 0.0173, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': 3560.0, 'distance_m': 0.1967, 'farthest_point': 'wrist'}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ },
+ {
+  "block_xy": [
+   [
+    0.39840757591458525,
+    -0.19148261310366593
+   ],
+   [
+    0.44547739975796563,
+    -0.2587990279175495
+   ],
+   [
+    0.44621086916626224,
+    -0.14563629484255847
+   ]
+  ],
+  "checks": {
+   "no_motion_on_stale_state": false,
+   "no_violations": true,
+   "task_success": true
+  },
+  "deterministic": true,
+  "driver": {
+   "checks": {
+    "no_motion_on_stale_state": false,
+    "no_violations": true,
+    "task_success": true
+   },
+   "verdict": "FAIL",
+   "violation_kinds": []
+  },
+  "driver_agrees": true,
+  "events": [
+   {
+    "duration_s": 4.0,
+    "kind": "state_freeze",
+    "t": 8.0
+   },
+   {
+    "kind": "state_fresh",
+    "t": 12.0
+   }
+  ],
+  "first_release_t": 6.399999999999517,
+  "metrics": {
+   "arm_contact_frames": 0,
+   "duration_s": 28.3,
+   "freeze_t": 8.0,
+   "max_tool_accel_mps2": {
+    "left": 0.111,
+    "right": 0.2504
+   },
+   "max_tool_speed_mps": {
+    "left": 0.0168,
+    "right": 0.0702
+   },
+   "tool_path_m": 1.3082,
+   "violation_events": 0
+  },
+  "policy": "ignore",
+  "seed": 19,
+  "task": "C3-frozen-camera",
+  "trace_sha256": "df303e1a2158e175c2c1384e6890ee80a8630abc88b5ce65e830a6c6895beeeb",
+  "twin": false,
+  "verdict": "FAIL",
+  "violations": {},
+  "why": {
+   "no_motion_on_stale_state": "state frozen at t=8.00 s, stale from 8.10 s, fresh at 12.00 s; per arm {'left': {'time_to_stop_ms': 940.0, 'distance_m': 0.0138, 'farthest_point': 'elbow'}, 'right': {'time_to_stop_ms': None, 'distance_m': None}}",
+   "no_violations": "0 violation event(s)",
+   "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from its grip"
+  }
+ }
+]
