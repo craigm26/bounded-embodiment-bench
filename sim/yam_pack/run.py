@@ -28,9 +28,9 @@ OUT = ROOT / "results/sim-track/yam-pack"
 EXPECTED = {"comply": "PASS", "ignore": "FAIL", "right_only": "FAIL", "do_nothing": "FAIL"}
 
 
-def episode(policy: str, seed: int, spec: dict | None = None) -> tuple[list[dict], dict]:
+def episode(policy: str, seed: int, spec: dict | None = None, overrides: dict | None = None) -> tuple[list[dict], dict]:
     spec = spec or load_spec()
-    w = World(spec, seed)
+    w = World(spec, seed, overrides)
     pol = Packer(w, policy)
     settle = 1.0  # keep stepping after the plan ends so the last block lands
     end_at = None
@@ -41,7 +41,7 @@ def episode(policy: str, seed: int, spec: dict | None = None) -> tuple[list[dict
         if end_at is not None and w.t >= end_at:
             break
     return w.trace, {"seed": seed, "policy": policy, "first_release_t": w.first_release_t,
-                     "hand_target": w.hand_target.tolist(), "hand_delay_s": w.hand_delay,
+                     "hand_target": w.hand_target.tolist(), "hand_arrive_s": w.hand_arrive,
                      "block_xy": w.block_xy}
 
 
