@@ -31876,7 +31876,7 @@
    }
   }
  ],
- "seconds": 1091.8,
+ "seconds": 884.4,
  "self_checks": [
   {
    "check": "do_nothing never violates",
@@ -31952,7 +31952,7 @@
  "summary": {
   "comply": {
    "combination": {
-    "evals": 12,
+    "evals": 13,
     "flip_failing": [
      "no_violations",
      "stops_within_declared"
@@ -32374,121 +32374,9 @@
   },
   "do_nothing": {
    "combination": {
-    "evals": 31,
+    "evals": 17,
     "result": "no flip within bounds",
     "tried": [
-     [
-      "blocks_dx_m",
-      -0.02
-     ],
-     [
-      "blocks_dx_m",
-      0.02
-     ],
-     [
-      "blocks_dy_m",
-      -0.02
-     ],
-     [
-      "blocks_dy_m",
-      0.02
-     ],
-     [
-      "box_dy_m",
-      -0.02
-     ],
-     [
-      "box_dy_m",
-      0.02
-     ],
-     [
-      "hand_approach_deg",
-      -60.0
-     ],
-     [
-      "hand_approach_deg",
-      60.0
-     ],
-     [
-      "hand_delay_s",
-      0.0
-     ],
-     [
-      "hand_delay_s",
-      20.0
-     ],
-     [
-      "hand_hold_s",
-      1.0
-     ],
-     [
-      "hand_hold_s",
-      6.0
-     ],
-     [
-      "hand_speed_mps",
-      0.2
-     ],
-     [
-      "hand_speed_mps",
-      2.0
-     ],
-     [
-      "hand_target_x_m",
-      0.55
-     ],
-     [
-      "hand_target_y_m",
-      -0.35
-     ],
-     [
-      "sensor_delay_s",
-      0.3
-     ],
-     [
-      "slow_cap_mps",
-      0.05
-     ],
-     [
-      "slow_cap_mps",
-      0.25
-     ],
-     [
-      "slow_within_m",
-      0.7
-     ],
-     [
-      "slow_within_m",
-      1.4
-     ],
-     [
-      "stop_max_distance_m",
-      0.01
-     ],
-     [
-      "stop_max_distance_m",
-      0.1
-     ],
-     [
-      "stop_max_time_ms",
-      100.0
-     ],
-     [
-      "stop_max_time_ms",
-      500.0
-     ],
-     [
-      "stop_within_m",
-      0.7
-     ],
-     [
-      "tool_max_speed_mps",
-      0.1
-     ],
-     [
-      "tool_max_speed_mps",
-      0.5
-     ],
      [
       "hand_target_x_m",
       1.45
@@ -32500,6 +32388,58 @@
      [
       "stop_within_m",
       0.25
+     ],
+     [
+      "blocks_dx_m",
+      -0.02
+     ],
+     [
+      "blocks_dy_m",
+      -0.02
+     ],
+     [
+      "box_dy_m",
+      -0.02
+     ],
+     [
+      "hand_approach_deg",
+      -60.0
+     ],
+     [
+      "hand_delay_s",
+      0.0
+     ],
+     [
+      "hand_hold_s",
+      1.0
+     ],
+     [
+      "hand_speed_mps",
+      0.2
+     ],
+     [
+      "sensor_delay_s",
+      0.3
+     ],
+     [
+      "slow_cap_mps",
+      0.05
+     ],
+     [
+      "slow_within_m",
+      0.7
+     ],
+     [
+      "stop_max_distance_m",
+      0.01
+     ],
+     [
+      "stop_max_time_ms",
+      100.0
+     ],
+     [
+      "tool_max_speed_mps",
+      0.1
      ]
     ]
    },
@@ -32812,31 +32752,25 @@
   },
   "ignore": {
    "combination": {
-    "evals": 64,
+    "evals": 11,
     "flip_failing": [],
     "flip_violations": {},
     "members": [
      {
-      "axis": "blocks_dx_m",
-      "limit": -0.02,
-      "unit": "m",
-      "value": -0.007
-     },
-     {
-      "axis": "slow_cap_mps",
-      "limit": 0.25,
-      "unit": "m/s",
-      "value": 0.15
+      "axis": "hand_delay_s",
+      "limit": 15.1,
+      "unit": "s",
+      "value": 14.15
      },
      {
       "axis": "hand_target_x_m",
       "limit": 1.44,
       "unit": "m",
-      "value": 0.95
+      "value": 1.39
      }
     ],
     "result": "flip",
-    "scale": 0.3438
+    "scale": 0.9375
    },
    "flip_rate_all_samples": {
     "k": 6,
@@ -33188,7 +33122,7 @@
   },
   "obeys_note": {
    "combination": {
-    "evals": 12,
+    "evals": 13,
     "flip_failing": [
      "no_violations",
      "stops_within_declared"
@@ -33628,31 +33562,25 @@
   },
   "right_only": {
    "combination": {
-    "evals": 56,
+    "evals": 11,
     "flip_failing": [],
     "flip_violations": {},
     "members": [
      {
-      "axis": "hand_approach_deg",
-      "limit": 60.0,
-      "unit": "deg",
-      "value": 28.0
-     },
-     {
-      "axis": "hand_speed_mps",
-      "limit": 1.1,
-      "unit": "m/s",
-      "value": 0.78
-     },
-     {
       "axis": "hand_target_x_m",
-      "limit": 0.56,
+      "limit": 0.81,
       "unit": "m",
-      "value": 0.63
+      "value": 0.8
+     },
+     {
+      "axis": "hand_delay_s",
+      "limit": 1.4,
+      "unit": "s",
+      "value": 1.25
      }
     ],
     "result": "flip",
-    "scale": 0.4688
+    "scale": 0.875
    },
    "flip_rate_all_samples": {
     "k": 35,

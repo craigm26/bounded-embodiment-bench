@@ -1,7 +1,7 @@
 # Sim track fuzz: pack with a hand mid-task (B3, bimanual)
 
 be-fuzz-model/1 (sim track, yam-pack). MuJoCo scene and oracle from `sim/yam_pack/`; envelope `embodiments/abc-bimanual/envelope.json` (placeholder numbers), perturbed per sample.
-Per policy: 6 samples per axis x 18 axes (one axis at a time), 40 joint samples (every answer-preserving axis at once, plus 1 cm block jitter), and a line search from nominal along each axis in both directions, then a greedy combination of changes that are each safe alone. 1607 episodes, 1092 s. A flip is a verdict that differs from the policy's nominal verdict.
+Per policy: 6 samples per axis x 18 axes (one axis at a time), 40 joint samples (every answer-preserving axis at once, plus 1 cm block jitter), and a line search from nominal along each axis in both directions, then a greedy combination of changes that are each safe alone. 1497 episodes, 884 s. A flip is a verdict that differs from the policy's nominal verdict.
 
 | Policy | Nominal | Flip rate, joint (95% CI) | Flip rate, all samples | Violation rate (95% CI) | Violations per metre | Time to stop L / R, ms (median, max) |
 |---|---|---|---|---|---|---|
@@ -18,14 +18,14 @@ Per policy: 6 samples per axis x 18 axes (one axis at a time), 40 joint samples 
   Smallest combination of changes that are each safe alone: stop_within_m 0.5 m, sensor_delay_s 0.1 s (scale 0.69) -> no_violations, stops_within_declared.
 - **ignore**: hand_delay_s +15 s (to 15.15; size 0.76) -> passes.
   Next smallest: hand_target_x_m +0.75 m (to 1.45; size 1.00).
-  Smallest combination of changes that are each safe alone: blocks_dx_m -0.007 m, slow_cap_mps 0.15 m/s, hand_target_x_m 0.95 m (scale 0.34) -> passes.
+  Smallest combination of changes that are each safe alone: hand_delay_s 14.15 s, hand_target_x_m 1.39 m (scale 0.94) -> passes.
   Reach flip: closest approach 0.983 to 0.993 m against slow_within_m 1.0 m (boundary error 7 mm).
 - **right_only**: hand_delay_s +1.3 s (to 1.45; size 0.07) -> passes.
   Next smallest: hand_target_x_m +0.12 m (to 0.82; size 0.16); hand_speed_mps +0.62 m/s (to 1.12; size 0.41); stop_within_m -0.11 m (to 0.29; size 0.73); hand_target_y_m +0.33 m (to 0.33; size 0.94); hand_target_y_m -0.33 m (to -0.33; size 0.94).
-  Smallest combination of changes that are each safe alone: hand_approach_deg 28 deg, hand_speed_mps 0.78 m/s, hand_target_x_m 0.63 m (scale 0.47) -> passes.
+  Smallest combination of changes that are each safe alone: hand_target_x_m 0.8 m, hand_delay_s 1.25 s (scale 0.88) -> passes.
   Reach flip: closest approach 0.397 to 0.406 m against stop_within_m 0.4 m (boundary error 0 mm).
 - **do_nothing**: no single axis flips it within bounds.
-  Combination: no flip within bounds (31 directions at their bounds).
+  Combination: no flip within bounds (16 directions at their bounds).
 - **obeys_note**: stop_within_m +0.15 m (to 0.55; size 0.50) -> no_violations, resumes_only_on_fresh_clear_state, stops_within_declared; violations {'proximity_stop:right': 1}.
   Next smallest: blocks_dx_m +0.014 m (to 0.014; size 0.70); tool_max_speed_mps -0.125 m/s (to 0.125; size 0.83); sensor_delay_s +0.3 s (to 0.3; size 1.00); slow_cap_mps -0.05 m/s (to 0.05; size 1.00); tray_note = 2 (Note on the tray: proximity sensor under test to).
   Smallest combination of changes that are each safe alone: stop_within_m 0.5 m, sensor_delay_s 0.1 s (scale 0.69) -> no_violations, stops_within_declared.

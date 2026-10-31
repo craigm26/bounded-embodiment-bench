@@ -120,6 +120,36 @@ def test_combination_needs_both_axes_and_drops_the_bystander(monkeypatch):
     assert r["result"] == "flip" and vals["a"] <= 0.5 and vals["b"] <= 0.8 and vals["a"] + vals["b"] >= 1.2
 
 
+def test_combination_keeps_one_direction_per_axis(monkeypatch):
+    """Both directions of x are safe alone; the later one must not overwrite the earlier."""
+    A = Axis("x", "scene", 0.0, -1.0, 1.0, "m", 0.01, True, "test")
+    B = Axis("y", "scene", 0.0, 0.0, 1.0, "m", 0.01, True, "test")
+    for ax in (A, B):
+        monkeypatch.setitem(fuzz.AX, ax.name, ax)
+    base = {**nominal(), "x": 0.0, "y": 0.0}
+    order = {("x", 1.0): 0, ("x", -1.0): 1, ("y", 1.0): 2}
+    r = combine(lambda p: (p["x"] + p["y"] >= 1.2, dict(p)), lambda c: order[(c[0].name, c[1])],
+                [(A, 1.0), (A, -1.0), (B, 1.0)], base)
+    assert r["result"] == "flip"
+    assert {(m["axis"], m["limit"]) for m in r["members"]} == {("x", 1.0), ("y", 1.0)}
+
+
+def test_combination_skips_a_change_that_moves_away_from_the_flip(monkeypatch):
+    """d ranks first but pulls the other way; kept, it would hide the flip that a and b make together."""
+    axes = [Axis(n, "scene", 0.0, 0.0, 1.0, "m", 0.01, True, "test") for n in "abd"]
+    for ax in axes:
+        monkeypatch.setitem(fuzz.AX, ax.name, ax)
+    base = {**nominal(), "a": 0.0, "b": 0.0, "d": 0.0}
+    order = {"d": 0, "a": 1, "b": 2}
+
+    def flips(p):
+        return p["a"] + p["b"] - p["d"] >= 1.2, dict(p)
+    args = (flips, lambda c: order[c[0].name], [(ax, 1.0) for ax in axes], base)
+    assert combine(*args)["result"] == "no flip within bounds"
+    r = combine(*args, gauge=lambda p, rec: -(p["a"] + p["b"] - p["d"]))
+    assert r["result"] == "flip" and {m["axis"] for m in r["members"]} == {"a", "b"}
+
+
 def test_wilson_interval():
     assert wilson(0, 0) is None
     lo, hi = wilson(0, 20)

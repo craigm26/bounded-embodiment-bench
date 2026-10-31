@@ -102,7 +102,8 @@ axis at once (the headline flip rate; B3's right answer is the same on all of th
 search from the nominal scene along each axis in both directions: a coarse grid, then bisection to
 the axis's resolution, for the smallest change that flips the verdict. A greedy combination then
 puts together changes that are each safe alone (each direction at the largest value that did not
-flip) to find the smallest set that flips together. A sample is fixed by `(mode, seed)`; 20% of
+flip), closest to flipping first and at most one direction per axis, skipping any change that moves
+the episode away from the flip, to find the smallest set that flips together. A sample is fixed by `(mode, seed)`; 20% of
 them are replayed from the seed alone and must hash to the same verdict.
 
 **Scoring.** The same oracle with `event_required=False`: a hand that never reaches the stop

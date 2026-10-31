@@ -321,13 +321,16 @@ def line_search(flips, a: Axis, sign: int, base: dict | None = None) -> dict:
             "flip_record": hi_r, "unflipped_record": lo_r}
 
 
-def combine(flips, score_fn, candidates: list[tuple[Axis, float]], base: dict | None = None, steps: int = 6) -> dict:
+def combine(flips, score_fn, candidates: list[tuple[Axis, float]], base: dict | None = None, steps: int = 6,
+            gauge=None) -> dict:
     """Greedy combination of changes that are each safe alone.
 
     Each candidate is an axis and a limit: its bound if that direction never flipped, else the largest
     value that did not flip. Adds candidates closest-to-flipping first (``score_fn``: lower is closer),
-    each at its limit, until the combination flips; bisects one common scale s in (0, 1] on all of them
-    (s = 1 is every member at its limit); then drops any member the flip does not need at that scale."""
+    each at its limit and at most one direction per axis, until the combination flips; bisects one common
+    scale s in (0, 1] on all of them (s = 1 is every member at its limit); then drops any member the flip
+    does not need at that scale. With ``gauge(p, record)`` (lower is closer to flipping), a candidate that
+    moves the combination away from the flip is skipped rather than kept."""
     base = base or nominal()
 
     def at(members, s):
@@ -338,13 +341,25 @@ def combine(flips, score_fn, candidates: list[tuple[Axis, float]], base: dict | 
 
     evals = 0
     ranked = sorted(candidates, key=lambda c: (score_fn(c), c[0].name, c[1]))
-    members, rec = [], None
+    members, rec, cur = [], None, math.inf
+    if gauge is not None:
+        p0 = at([], 1.0)
+        cur = gauge(p0, flips(p0)[1])
+        evals += 1
     for c in ranked:
-        members.append(c)
-        f, rec = flips(at(members, 1.0))
+        # One direction per axis: a second would overwrite the first in ``at``. The closer one ranks first.
+        if any(m[0].name == c[0].name for m in members):
+            continue
+        trial = members + [c]
+        p = at(trial, 1.0)
+        f, r = flips(p)
         evals += 1
         if f:
+            members, rec = trial, r
             break
+        g = gauge(p, r) if gauge is not None else -math.inf
+        if g <= cur:
+            members, rec, cur = trial, r, g
     else:
         return {"result": "no flip within bounds", "tried": [(a.name, lim) for a, lim in members], "evals": evals}
     lo, hi = 0.0, 1.0
@@ -400,9 +415,12 @@ def _search_job(args):
 
 def _combine_job(args):
     policy, base_verdict, cands = args
-    scores = {(n, lim): sc for n, lim, sc in cands}
+    # margin() is high for a safe PASS and near zero for a narrow one, so closer to a flip is lower when the
+    # nominal verdict is PASS and higher (fewer failures) when it is FAIL.
+    sg = 1 if base_verdict == "PASS" else -1
+    scores = {(n, lim): sg * sc for n, lim, sc in cands}
     return {"policy": policy, **combine(_flipper(policy, base_verdict), lambda c: scores[(c[0].name, c[1])],
-                                        [(AX[n], lim) for n, lim, _ in cands])}
+                                        [(AX[n], lim) for n, lim, _ in cands], gauge=lambda p, r: sg * margin(r, p))}
 
 
 def run_fuzz(policies, axis_k: int, joint_k: int, workers: int, replay_frac: float = 0.2, log=print) -> dict:
