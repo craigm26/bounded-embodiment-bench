@@ -23,6 +23,8 @@ from pathlib import Path
 import mujoco
 import numpy as np
 
+from sim.yam_pack.episode import HandScript, ProximitySensor, draw, make_frame
+
 HERE = Path(__file__).resolve().parent
 SIDES = ("left", "right")
 ARM_DOF = 6
@@ -115,23 +117,10 @@ class World:
 
     def __init__(self, spec: dict, seed: int, overrides: dict | None = None):
         self.spec, self.seed = spec, seed
-        ov = overrides or {}
-        rng = np.random.default_rng(seed)
-        jit = spec["objects"]["blocks"]["jitter"]
-        self.block_xy = [[x + rng.uniform(-jit, jit), y + rng.uniform(-jit, jit)]
-                         for x, y, _ in spec["objects"]["blocks"]["at"]]
-        h = spec["hand"]
-        self.hand_target = np.array(h["target"], float) + [0, rng.uniform(-h["target_jitter_y"], h["target_jitter_y"]), 0]
-        self.hand_arrive = float(rng.uniform(*h["arrive_after_first_release"]))
-        if "block_xy" in ov:
-            self.block_xy = [[float(x), float(y)] for x, y in ov["block_xy"]]
-        if "hand_target" in ov:
-            self.hand_target = np.array(ov["hand_target"], float)
-        if "hand_arrive" in ov:
-            self.hand_arrive = float(ov["hand_arrive"])
-        self.hand_start = np.array(ov.get("hand_start", h["start"]), float)
-        self.sensor_delay_s = float(ov.get("sensor_delay_s", 0.0))
-        self._seen: list[float | None] = []   # proximity readings, one per observation
+        dr = draw(spec, seed, overrides)   # shared with the Isaac Lab-Arena port (episode.py)
+        self.block_xy, self.hand_target, self.hand_arrive = dr.block_xy, dr.hand_target, dr.hand_arrive
+        self.hand_start, self.sensor_delay_s = dr.hand_start, dr.sensor_delay_s
+        self.hand_script = HandScript(spec, self.hand_start, self.hand_target, self.hand_arrive)
         self.m = build_model(spec, self.block_xy)
         self.d = mujoco.MjData(self.m)
         m = self.m
@@ -161,13 +150,10 @@ class World:
         self.grip = {"left": 1.0, "right": 1.0}
         self.held = {"left": None, "right": None}
         self.first_release_t: float | None = None
-        self.hand_launch_t: float | None = None   # set at the first release, from hand_arrive
-        self.hand_phase = "away"
-        self.hand_t0: float | None = None
-        self.hand_done = False  # one visit per episode
         self.trace: list[dict] = []
         self._next_trace = 0.0
         self.control_dt = 1.0 / spec["robot"]["control_hz"]
+        self.sensor = ProximitySensor(self.sensor_delay_s, self.control_dt)
         self._record()
 
     # ----- state ---------------------------------------------------------------------------------
@@ -182,13 +168,27 @@ class World:
         kind, i = self._pt[pid]
         return (self.d.site_xpos[i] if kind == "site" else self.d.xpos[i]).copy()
 
+    @property
+    def hand_done(self) -> bool:
+        return self.hand_script.done
+
+    @property
+    def hand_phase(self) -> str:
+        return self.hand_script.phase
+
+    @property
+    def hand_launch_t(self) -> float | None:
+        return self.hand_script.launch_t
+
+    def points(self) -> np.ndarray:
+        return np.array([self.point(p) for p in self.point_ids])
+
     def hand(self) -> np.ndarray | None:
         return None if self.hand_phase == "away" else self.d.mocap_pos[0].copy()
 
     def human_distance(self) -> float | None:
         """What the proximity sensor reports: hand to the nearest named point of either arm."""
-        h = self.hand()
-        return None if h is None else min(float(np.linalg.norm(self.point(p) - h)) for p in self.point_ids)
+        return ProximitySensor.distance(self.hand(), self.points())
 
     def obj_pos(self, name: str) -> np.ndarray:
         return self.d.xpos[self.m.body(name).id].copy()
@@ -198,10 +198,9 @@ class World:
 
     def observation(self) -> dict:
         # The proximity reading is ``sensor_delay_s`` old, in whole control periods (0 by default).
-        self._seen.append(self.human_distance())
-        k = min(int(round(self.sensor_delay_s / self.control_dt)), len(self._seen) - 1)
+        reading, age_ms = self.sensor.read(self.hand(), self.points())
         return {"t": self.t, "q": {s: self.q(s) for s in SIDES}, "grip": dict(self.grip),
-                "human_distance_m": self._seen[-1 - k], "state_age_ms": round(k * self.control_dt * 1000, 3),
+                "human_distance_m": reading, "state_age_ms": age_ms,
                 "instruction": self.spec.get("instruction", ""), "scene_text": self.spec.get("scene_text", "")}
 
     # ----- control -------------------------------------------------------------------------------
@@ -240,7 +239,7 @@ class World:
             self.held[side] = None
             if side == "right" and self.first_release_t is None:
                 self.first_release_t = self.t
-                self.hand_launch_t = self.t + max(0.0, self.hand_arrive - self._lead_time())
+                self.hand_script.release(self.t, self.points())
         self.grip[side] = 0.0 if closed else 1.0
 
     def _weld(self, obj: str, on: bool) -> None:
@@ -262,63 +261,24 @@ class World:
             self.m.eq_data[eq, 10] = 1.0
         self.d.eq_active[eq] = 1 if on else 0
 
-    def _lead_time(self) -> float:
-        """How long the hand needs from its start to come within ``cross_within_m`` of the robot, taking
-        the named points where they are now (the first release). With a target that never gets that close,
-        the time to the target. The arms keep moving, so the hand arrives within a control period or two of
-        ``hand_arrive``; the trace, not this estimate, is what the oracle scores."""
-        h = self.spec["hand"]
-        pts = np.array([self.point(p) for p in self.point_ids])
-        path = float(np.linalg.norm(self.hand_target - self.hand_start))
-        n = max(1, int(path / 0.001))
-        for i in range(n + 1):
-            x = self.hand_start + (self.hand_target - self.hand_start) * (i / n)
-            if np.min(np.linalg.norm(pts - x, axis=1)) <= h["cross_within_m"]:
-                return path * (i / n) / h["speed"]
-        return path / h["speed"]
-
     def _move_hand(self) -> None:
-        h = self.spec["hand"]
-        if self.hand_phase == "away":
-            if self.hand_done:
-                return
-            launch = self.hand_launch_t
-            if (launch is not None and self.t >= launch) or self.t >= h["fallback_at"]:
-                self.hand_phase, self.hand_t0 = "approach", self.t
-                self.d.mocap_pos[0] = self.hand_start
-            return
-        start = self.hand_start
-        path = float(np.linalg.norm(self.hand_target - start))
-        travel = path / h["speed"]
-        el = self.t - self.hand_t0
-        if el <= travel:
-            self.hand_phase = "approach"
-            pos = start + (self.hand_target - start) * (el / travel)
-        elif el <= travel + h["hold"]:
-            self.hand_phase = "hold"
-            pos = self.hand_target
-        elif el <= 2 * travel + h["hold"]:
-            self.hand_phase = "leave"
-            pos = self.hand_target + (start - self.hand_target) * ((el - travel - h["hold"]) / travel)
-        else:
-            self.hand_phase, self.hand_done = "away", True
-            self.d.mocap_pos[0] = start
-            return
-        self.d.mocap_pos[0] = pos
+        hs = self.hand_script
+        hs.step(self.t)
+        if hs.phase != "away" or hs.done:
+            self.d.mocap_pos[0] = hs.pos
 
     # ----- trace ---------------------------------------------------------------------------------
     def _record(self) -> None:
-        h = self.hand()
-        self.trace.append({
-            "t": round(self.t, 6),
-            "points": {p: self.point(p).tolist() for p in self.point_ids},
-            "joints": {f"{s}/joint{j + 1}": float(v) for s in SIDES for j, v in enumerate(self.q(s))},
-            "hand": None if h is None else h.tolist(),
-            "objects": {n: self.obj_pos(n).tolist() for n in ["box"] + [f"block{i}" for i in range(self.n_blocks)]},
-            "box_quat": self.d.xquat[self.m.body("box").id].tolist(),
-            "grip": dict(self.grip),
-            "arm_contacts": self._arm_contacts(),
-        })
+        self.trace.append(make_frame(
+            t=self.t,
+            points={p: self.point(p) for p in self.point_ids},
+            joints={f"{s}/joint{j + 1}": v for s in SIDES for j, v in enumerate(self.q(s))},
+            hand=self.hand(),
+            objects={n: self.obj_pos(n) for n in ["box"] + [f"block{i}" for i in range(self.n_blocks)]},
+            box_quat=self.d.xquat[self.m.body("box").id],
+            grip=self.grip,
+            arm_contacts=self._arm_contacts(),
+        ))
         self._next_trace += 1.0 / self.spec["episode"]["trace_hz"]
 
     def _arm_contacts(self) -> list[list[str]]:
