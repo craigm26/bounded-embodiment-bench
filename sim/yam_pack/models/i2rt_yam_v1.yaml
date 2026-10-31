@@ -1,0 +1,39 @@
+# i2rt robotics' own YAM description (github.com/i2rt-robotics/i2rt v1.4.0 = fe78bae, 2026-10-28): arm
+# yam/v1 with the LINEAR_4310 gripper, Robocurve's adapter default. Built by build_i2rt.py; numbers from
+# fit.py (python -m sim.yam_pack.models.fit --check i2rt_yam_v1 reproduces the comparison).
+#
+# What differs from the canonical model, and what the map does about it:
+# - Joint zeros, signs and axes: none. The fitted offsets are below 5e-6 rad, the rounding in i2rt's
+#   0.70711 quaternions, so the map is the identity. (Body frames differ; joint zeros do not.)
+# - Joint ranges: joint1 up to 3.14159 (canonical 3.05433), joint3 up to 3.14159 (3.66519), joint4 down to
+#   -1.69297 (-1.5708). The scene runs this model's ranges; the map clamps commands to them and counts.
+# - Body names: link3, link5 and gripper for link_3, link_5 and link_6; fingers joint7/joint8 (open at 0).
+# - Geometry: everything from joint 2 up sits 9.5 mm higher (joint 2 at z 0.1135 against 0.104), the same
+#   at every pose. No joint map can remove it; the scene puts the arm where this model says it is.
+# - Named points: i2rt's grasp_site is the tips' distal facet, 9.9 mm beyond the canonical tool point
+#   (the fingertip centre), so the tool point is placed on the gripper body instead, at the canonical
+#   point's place: 0.1344 m out from i2rt's flange against 0.1347 m from the canonical flange, which
+#   itself sits 0.3 mm further out. The elbow is moved 34.9 mm along the joint 3 axis onto the arm's
+#   midplane, where the canonical elbow point is; the wrist 1 mm along the joint 5 axis.
+name: i2rt_yam_v1
+model: ../assets/i2rt_yam_v1/yam_linear_4310.xml
+source:
+  repo: github.com/i2rt-robotics/i2rt
+  commit: fe78bae67334b9af0b79833dd8ba141a61767f2a
+  files: [i2rt/robot_models/arm/yam/v1/yam.xml, i2rt/robot_models/gripper/linear_4310/linear_4310.xml,
+          i2rt/robots/config/linear_4310.yml]
+joints:
+  - { canonical: joint1, native: joint1, sign: 1, offset: 0.0 }
+  - { canonical: joint2, native: joint2, sign: 1, offset: 0.0 }
+  - { canonical: joint3, native: joint3, sign: 1, offset: 0.0 }
+  - { canonical: joint4, native: joint4, sign: 1, offset: 0.0 }
+  - { canonical: joint5, native: joint5, sign: 1, offset: 0.0 }
+  - { canonical: joint6, native: joint6, sign: 1, offset: 0.0 }
+points:
+  tool: { body: gripper, pos: [0.0, 0.0, 0.134401] }
+  wrist: { body: link5, pos: [0.001001, 0.0, 0.0] }
+  elbow: { body: link3, pos: [0.0, -0.034925, 0.0] }
+weld_body: gripper
+fingers:
+  - { joint: joint7, open: 0.0 }
+  - { joint: joint8, open: 0.0 }

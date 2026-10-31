@@ -75,9 +75,14 @@ def qrot(a, v) -> np.ndarray:
 
 
 class PackDriver:
+    """``joint_map`` (``sim.yam_pack.joint_map.JointMap``) converts between the canonical joints the
+    policies, the trace and ``ctrl`` speak and the backend's own model; None means the backend's
+    model is the canonical one. Commands are clamped to the map's ranges once per action."""
+
     def __init__(self, backend: Backend, spec: dict, seed: int, overrides: dict | None = None,
-                 draws=None):
+                 draws=None, joint_map=None):
         self.b, self.spec, self.seed = backend, spec, seed
+        self.joint_map = joint_map
         dr = draws or draw(spec, seed, overrides)
         self.block_xy, self.hand_target, self.hand_arrive = dr.block_xy, dr.hand_target, dr.hand_arrive
         self.hand_start = dr.hand_start
@@ -113,7 +118,8 @@ class PackDriver:
         return self.hand_script.position()
 
     def q(self, side: str) -> np.ndarray:
-        return np.asarray(self.b.joint_q(side), float)
+        q = np.asarray(self.b.joint_q(side), float)
+        return q if self.joint_map is None else self.joint_map.to_canonical(q)
 
     def observation(self) -> dict:
         self.flush()
@@ -129,6 +135,9 @@ class PackDriver:
         assert a.shape == (14,), a.shape
         self._start = {s: self.ctrl[s].copy() for s in SIDES}
         self._target = {"left": a[0:6].copy(), "right": a[7:13].copy()}
+        if self.joint_map is not None:   # clamp to the model's ranges, in canonical terms
+            jm = self.joint_map
+            self._target = {s: jm.to_canonical(jm.to_native(v)) for s, v in self._target.items()}
         for s, g in (("left", a[6]), ("right", a[13])):
             self._gripper(s, g)
         self._k = 0
@@ -138,7 +147,8 @@ class PackDriver:
         self._k = min(self._k + 1, self.n_sub)
         for s in SIDES:
             self.ctrl[s] = self._start[s] + (self._target[s] - self._start[s]) * self._k / self.n_sub
-            self.b.set_arm_target(s, self.ctrl[s])
+            self.b.set_arm_target(s, self.ctrl[s] if self.joint_map is None
+                                  else self.joint_map.to_native(self.ctrl[s], clamp=False))
         hs = self.hand_script
         hs.step(self.t)
         if hs.phase != "away" or hs.done:
@@ -219,32 +229,35 @@ class MujocoBackend:
     """``sim/yam_pack``'s MuJoCo scene behind the ``Backend`` protocol, with the welds never switched
     on. Used to check the carry and the driver on a CPU; the shipped MuJoCo results stay on ``World``."""
 
-    def __init__(self, spec: dict, block_xy: list[list[float]]):
+    def __init__(self, spec: dict, block_xy: list[list[float]], model=None):
         from sim.yam_pack import scene
+        from sim.yam_pack.joint_map import JointMap
 
         self.scene = scene
-        self.m = scene.build_model(spec, block_xy)
+        self.config = cfg = scene.model_config(spec, model)
+        self.m = scene.build_model(spec, block_xy, cfg)
         self.d = mujoco.MjData(self.m)
         m = self.m
         self.physics_dt = float(m.opt.timestep)
-        self._jq = {s: [m.jnt_qposadr[m.joint(f"{s}_joint{j}").id] for j in range(1, ARM_DOF + 1)] for s in SIDES}
+        jids = {s: [m.joint(f"{s}_{js.native}").id for js in cfg.joints] for s in SIDES}
+        self._jq = {s: [m.jnt_qposadr[j] for j in jids[s]] for s in SIDES}
         self._act = {s: [m.actuator(f"{s}_a{j}").id for j in range(1, ARM_DOF + 1)] for s in SIDES}
+        self.joint_map = JointMap(cfg, m.jnt_range[jids["left"]])
         self._pt = {}
         for s in SIDES:
-            for p, ref in spec["robot"]["points"].items():
-                self._pt[f"{s}_{p}"] = ("site", m.site(f"{s}_{ref['site']}").id) if "site" in ref \
-                    else ("body", m.body(f"{s}_{ref['body']}").id)
+            for p in spec["robot"]["points"]:
+                kind, name = scene.point_ref(cfg, s, p)
+                self._pt[f"{s}_{p}"] = (kind, m.site(name).id if kind == "site" else m.body(name).id)
         for s in SIDES:
-            q0 = spec["robot"]["start_q"][s]
+            q0 = self.joint_map.to_native(spec["robot"]["start_q"][s])
             for a, v in zip(self._jq[s], q0):
                 self.d.qpos[a] = v
             for a, v in zip(self._act[s], q0):
                 self.d.ctrl[a] = v
-            for f in ("left_finger", "right_finger"):
-                a, j = m.actuator(f"{s}_{f}_a").id, m.joint(f"{s}_{f}").id
-                lo, hi = m.jnt_range[j]
-                self.d.ctrl[a] = hi if f == "left_finger" else lo
-                self.d.qpos[m.jnt_qposadr[j]] = self.d.ctrl[a]
+            for f in cfg.fingers:
+                a, j = m.actuator(f"{s}_{f['joint']}_a").id, m.joint(f"{s}_{f['joint']}").id
+                self.d.ctrl[a] = f["open"]
+                self.d.qpos[m.jnt_qposadr[j]] = f["open"]
         mujoco.mj_forward(m, self.d)
 
     def physics_step(self) -> None:
@@ -269,7 +282,7 @@ class MujocoBackend:
         return self.d.site_xpos[self.m.site(f"{name}_grip").id].copy()
 
     def link6_state(self, side):
-        b = self.m.body(f"{side}_link_6").id
+        b = self.m.body(f"{side}_{self.config.weld_body}").id   # link_6 on the canonical model
         v = np.zeros(6)
         mujoco.mj_objectVelocity(self.m, self.d, mujoco.mjtObj.mjOBJ_BODY, b, v, 0)
         w, lin_com = v[:3], v[3:]
@@ -312,14 +325,19 @@ class PolicyView:
         return self.driver.q(side)
 
 
-def episode(policy: str, seed: int, spec: dict, overrides: dict | None = None) -> tuple[list[dict], PackDriver]:
-    """``sim.yam_pack.run.episode`` through the driver and the MuJoCo backend (kinematic carry)."""
+def episode(policy: str, seed: int, spec: dict, overrides: dict | None = None,
+            model=None) -> tuple[list[dict], PackDriver]:
+    """``sim.yam_pack.run.episode`` through the driver and the MuJoCo backend (kinematic carry).
+    ``model`` is a YAM model config (``sim.yam_pack.joint_map``); the policies plan on the canonical
+    model and the driver's joint map carries their joints onto this one."""
+    from sim.yam_pack.joint_map import CANONICAL
     from sim.yam_pack.policies import Packer
 
     dr = draw(spec, seed, overrides)
-    be = MujocoBackend(spec, dr.block_xy)
-    drv = PackDriver(be, spec, seed, draws=dr)
-    pol = Packer(PolicyView(drv, be.m), policy)
+    be = MujocoBackend(spec, dr.block_xy, model)
+    canonical = be.config.name == CANONICAL
+    drv = PackDriver(be, spec, seed, draws=dr, joint_map=None if canonical else be.joint_map)
+    pol = Packer(PolicyView(drv, be.m if canonical else be.scene.build_model(spec, dr.block_xy, CANONICAL)), policy)
     settle, end_at = 1.0, None
     while drv.t < spec["episode"]["max_time"]:
         drv.step(pol.act(drv.observation()), be.physics_step)

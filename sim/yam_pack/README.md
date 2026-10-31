@@ -32,6 +32,9 @@ python3 -m venv .venv && .venv/bin/pip install bounded-embodiment==0.1.1 pyyaml 
 | `oracle.py` | Scores a trace against `embodiments/abc-bimanual/envelope.json`. No MuJoCo import. |
 | `run.py` | Runs seeds and policies, checks determinism, writes `results/sim-track/yam-pack/` |
 | `fuzz.py` | The fuzzer: seeded perturbations of the scene, the hand, the envelope numbers and the wording; flip rates and the minimal breaking change per policy. Writes `results/sim-track/yam-pack/fuzz/` |
+| `joint_map.py` | The joint-mapping layer: model configs and the canonical <-> native joint map. No MuJoCo import. |
+| `models/` | One config per YAM model (`menagerie_yam.yaml`, `i2rt_yam_v1.yaml`); `build_i2rt.py` builds i2rt's model from an i2rt checkout; `fit.py` derives and checks a config; `synthetic.py` writes a scrambled test model |
+| `compare_models.py` | Runs the four policies on every model and checks the verdicts do not move. Writes `results/sim-track/yam-pack/models/` |
 
 ## The oracle
 
@@ -71,6 +74,36 @@ Lab-Arena run below plugs in.
 
 They read the proximity sensor (`human_distance_m`) and nothing privileged about the hand. They do
 use the scene's kinematics for IK, the way StationeryBench's scripted oracle reads its goal.
+
+## Other YAM models
+
+Policies, the oracle and the trace speak one joint convention: Robocurve's 14-D wire format, whose
+joint values go to i2rt's driver unchanged. A simulator model can name, zero, orient or limit its joints
+differently; a config in `models/` says how (`native = sign * canonical + offset` per joint, the bodies
+that carry the envelope's named points, the weld body, the finger joints), and swapping models is
+`World(spec, seed, model="i2rt_yam_v1")`. Commands past a model's limits are clamped and counted.
+
+```bash
+.venv/bin/python -m sim.yam_pack.compare_models          # 20 seeds x 4 policies x 3 models, about 4 min on 4 CPUs
+.venv/bin/python -m sim.yam_pack.models.fit --check i2rt_yam_v1
+.venv/bin/python -m sim.yam_pack.models.fit --fit new_yam.xml --joints j1,j2,j3,j4,j5,j6 --bodies link3,link5,gripper --finger j7
+.venv/bin/python -m pytest -q tests/test_sim_yam_models.py
+```
+
+- `menagerie_yam` is the canonical model, the one above. With its own config the layer is the
+  identity, and every committed trace hashes the same.
+- `i2rt_yam_v1` is i2rt's release (v1.4.0, `fe78bae`): arm `yam/v1` with the `linear_4310` gripper
+  Robocurve's adapter defaults to. Its joint zeros, axes and names are the canonical ones (fitted offsets
+  below 5e-6 rad), so its config maps names and points, not angles. Its shoulder sits 9.5 mm higher, its
+  tool point is placed at the canonical pad centre on its gripper body, and three limits differ.
+  `models/build_i2rt.py` builds it from an i2rt checkout, read as data, and adds what i2rt's file lacks
+  to run in this scene (collision capsules, gravity compensation, armature); see its docstring.
+- `yam_scrambled` is the canonical arm with renamed, reversed and re-zeroed joints, written fresh by
+  `models/synthetic.py`. It exists to prove the map does arithmetic: `fit.py` recovers its signs and
+  offsets from the file alone, and its episodes reproduce the canonical ones.
+
+Results: `results/sim-track/yam-pack/models/SUMMARY.md`. The Isaac backend still loads only the
+canonical model's USD.
 
 ## The fuzzer
 
