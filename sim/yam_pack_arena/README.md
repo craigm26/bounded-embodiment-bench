@@ -52,9 +52,13 @@ Everything outside `isaac/` runs on a CPU with MuJoCo and usd-core and is tested
 
 The USD comes from Robocurve's vendored collision model (inspect-robots-yam `9b5ebb5`, a reduction of
 Menagerie `i2rt_yam` at `71f066a`), so the port and the MuJoCo results describe the same arm. i2rt's
-own release (v1.4.0, `fe78bae`, 2026-10-28) is a different description of the YAM: different body
-frames and joint zeros, joint1 height 0.068 m against 0.0631 m, joint3 up to 3.14 rad against 3.67 rad,
-joint4 down to -1.69 rad against -1.57 rad. The reference policies stay inside both ranges
-(joint3 at most 2.56 rad, joint4 at least -1.57 rad over seed 0), but their joint angles do not carry
-over to i2rt's model without a mapping. Which description ships with the ABC kit is still unconfirmed
-(`embodiments/abc-bimanual/embodiment.yaml`).
+own release (v1.4.0, `fe78bae`, 2026-10-28) describes the same joints differently in body frames
+only: the joint zeros, axis directions and names are the same, so the 14-D wire format's angles mean the
+same pose on both. What differs is the shoulder (everything from joint 2 up sits 9.5 mm higher in i2rt's
+model), the gripper bodies, the masses, and three limits (joint1 up to 3.14 rad against 3.05 rad,
+joint3 up to 3.14 rad against 3.67 rad, joint4 down to -1.69 rad against -1.57 rad). An earlier version
+of this note said the joint zeros differ; they do not (`sim/yam_pack/models/fit.py --check i2rt_yam_v1`).
+The joint-mapping layer (`sim/yam_pack/joint_map.py`, `sim/yam_pack/README.md`, "Other YAM models")
+runs the MuJoCo scene and this driver on i2rt's model with the same verdicts; `MujocoBackend` and
+`core.episode` take `model=`. The Isaac backend still loads the canonical USD only. Which description
+ships with the ABC kit is still unconfirmed (`embodiments/abc-bimanual/embodiment.yaml`).
