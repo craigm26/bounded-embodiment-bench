@@ -1,5 +1,8 @@
-"""Validate the benchmark's declarations. Every embodiment envelope, and every task variant's
-envelope with its patch applied, must load with the released Bounded Embodiment loader
+"""Validate the benchmark's declarations. tasks.yaml is loaded strictly first: a duplicate key is an
+error, and the result must match tasks/tasks.schema.json, where every object is closed and every text
+field is a non-empty string (an unquoted comma in a flow mapping turns half a value into a stray key
+with a null value; this catches it). Every embodiment envelope, and every task variant's envelope with
+its patch applied, must load with the released Bounded Embodiment loader
 (`bounded_embodiment.envelope.load`, envelope 0.2), which runs the schema and the loader's own
 semantic checks. Each zone a task adds must sit, in x-y, inside a keep_in zone for the same points.
 
@@ -14,6 +17,7 @@ from pathlib import Path
 
 import yaml
 from bounded_embodiment.envelope import EnvelopeError, load
+from jsonschema import Draft202012Validator
 
 from tools.checks import CHECKS
 
@@ -24,6 +28,59 @@ OPTIONAL_VARIANTS = {"microduck": "microduck"}
 ALL_VARIANTS = {**VARIANTS, **OPTIONAL_VARIANTS}
 GROUPS = ["work_area", "speed_people", "stopping", "forbidden_authority", "handover"]
 TASK_COUNT = 20
+SCHEMA = ROOT / "tasks/tasks.schema.json"
+
+
+class StrictLoader(yaml.SafeLoader):
+    """safe_load, except a mapping that repeats a key is an error instead of keeping the last value."""
+
+
+def _no_duplicates(loader: StrictLoader, node: yaml.MappingNode, deep: bool = False) -> dict:
+    seen = {}
+    for key_node, _ in node.value:
+        key = loader.construct_object(key_node, deep=deep)
+        if key in seen:
+            raise yaml.constructor.ConstructorError(
+                "while constructing a mapping", node.start_mark,
+                f"duplicate key {key!r} (first at line {seen[key] + 1})", key_node.start_mark)
+        seen[key] = key_node.start_mark.line
+    return loader.construct_mapping(node, deep=deep)
+
+
+StrictLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, _no_duplicates)
+
+
+def load_tasks(path: Path) -> tuple[dict | None, list[str]]:
+    """Load tasks.yaml strictly and check it against the schema. Returns (data, problems); data is None
+    when the file does not parse."""
+    try:
+        data = yaml.load(path.read_text(), Loader=StrictLoader)  # noqa: S506 - SafeLoader subclass
+    except yaml.YAMLError as exc:
+        mark = getattr(exc, "problem_mark", None)
+        at = f" line {mark.line + 1}" if mark else ""
+        return None, [f"tasks.yaml{at}: {getattr(exc, 'problem', None) or exc}"]
+    schema = json.loads(SCHEMA.read_text())
+    schema["$defs"]["check"]["enum"] = sorted(CHECKS)
+    problems = []
+    for err in sorted(Draft202012Validator(schema).iter_errors(data), key=lambda e: list(e.absolute_path)):
+        where = _where(data, list(err.absolute_path))
+        problems.append(f"schema {where}: {err.message}")
+    return data, problems
+
+
+def _where(data, path: list) -> str:
+    """A readable location: the task id in place of its list index."""
+    out, node = [], data
+    for part in path:
+        if isinstance(node, list) and isinstance(part, int) and isinstance(node[part], dict) and "id" in node[part]:
+            out.append(str(node[part]["id"]))
+        else:
+            out.append(str(part))
+        try:
+            node = node[part]
+        except (KeyError, IndexError, TypeError):
+            node = None
+    return ".".join(out[1:] if out[:1] == ["tasks"] else out) or "(top)"
 
 
 def load_embodiment(name: str) -> dict:
@@ -97,7 +154,11 @@ def validate(tasks_path: Path = ROOT / "tasks/tasks.yaml") -> list[str]:
             continue
         problems += [f"{name}: {e}" for e in envelope_errors(bodies[variant]["envelope"])]
 
-    tasks = yaml.safe_load(tasks_path.read_text())["tasks"]
+    data, schema_problems = load_tasks(tasks_path)
+    problems += schema_problems
+    if data is None or not isinstance(data.get("tasks"), list):
+        return problems
+    tasks = [t for t in data["tasks"] if isinstance(t, dict) and "id" in t]
     ids = [t["id"] for t in tasks]
     if len(tasks) != TASK_COUNT:
         problems.append(f"expected {TASK_COUNT} tasks, found {len(tasks)}")
@@ -114,6 +175,8 @@ def validate(tasks_path: Path = ROOT / "tasks/tasks.yaml") -> list[str]:
             problems.append(f"{tid}: unknown group {t.get('group')}")
         if t.get("requirement") not in {"R1", "R2", "R3", "R4", "R5"}:
             problems.append(f"{tid}: requirement must be R1-R5")
+        if not isinstance(t.get("variants"), dict):
+            continue  # the schema reported it
         missing = set(VARIANTS) - set(t.get("variants") or {})
         if missing:
             problems.append(f"{tid}: missing variants {sorted(missing)}")
@@ -186,7 +249,7 @@ def main() -> int:
     for p in problems:
         print("FAIL", p)
     if not problems:
-        extra = sum(1 for t in yaml.safe_load((ROOT / "tasks/tasks.yaml").read_text())["tasks"]
+        extra = sum(1 for t in load_tasks(ROOT / "tasks/tasks.yaml")[0]["tasks"]
                     for v in OPTIONAL_VARIANTS if v in t["variants"])
         print(f"ok: {TASK_COUNT} tasks x {len(VARIANTS)} embodiments plus {extra} optional variants, "
               "all envelopes load as 0.2")
