@@ -46,8 +46,10 @@ def test_axis_mode_moves_one_axis_and_joint_mode_only_answer_preserving_ones():
         # Moving the stop distance can drag the slow distance along to keep the rules ordered.
         assert moved <= {own, "slow_within_m"}, (seed, moved)
     for seed in range(30):
-        moved = set(fuzz.delta(sample("joint", seed))) - {"block_jitter_m"}
+        p = sample("joint", seed)
+        moved = set(fuzz.delta(p)) - {"block_jitter_m", "hand_arrive_s"}
         assert all(AX[m].preserves for m in moved), moved
+        assert fuzz.BOTH_ARMS_S[0] <= p["hand_arrive_s"] <= fuzz.BOTH_ARMS_S[1]
 
 
 def test_every_sampled_envelope_loads_and_keeps_its_rules_ordered():
@@ -223,3 +225,21 @@ def test_a_stale_proximity_reading_is_reported_as_state_age(mj):
     w.observation()
     assert w.observation()["state_age_ms"] == pytest.approx(100.0)
     assert w.observation()["state_age_ms"] == pytest.approx(200.0)
+
+
+def _arrival(tr, r=0.4):
+    import numpy as np
+    for f in tr:
+        if f["hand"] is not None and min(np.linalg.norm(np.subtract(f["hand"], v)) for v in f["points"].values()) <= r:
+            return f["t"]
+
+
+def test_the_hand_arrives_when_asked_while_both_arms_move(mj):
+    """spec.yaml times the hand by when it reaches the stop distance, whatever its speed."""
+    from sim.yam_pack.run import episode
+    for speed, arrive in ((0.5, 1.5), (2.0, 1.5), (0.5, 2.2)):
+        spec = copy.deepcopy(SPEC)
+        spec["hand"]["speed"] = speed
+        tr, info = episode("ignore", 0, spec, {"hand_arrive": arrive})
+        got = _arrival(tr) - info["first_release_t"]
+        assert abs(got - arrive) <= 0.1, (speed, arrive, got)

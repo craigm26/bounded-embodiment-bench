@@ -7,8 +7,8 @@ Seeds 0..19 (20 per policy); every episode run twice from its seed.
 | Policy | Expected | PASS | FAIL | Deterministic | Violation events (mean) | Violations per metre (mean) | Time to stop L / R, ms (max) |
 |---|---|---|---|---|---|---|---|
 | comply | PASS | 20 | 0 | 20/20 | 0.0 | 0.00 | 0 / 20 |
-| ignore | FAIL | 0 | 20 | 20/20 | 5.8 | 4.43 | 1760 / never |
-| right_only | FAIL | 0 | 20 | 20/20 | 2.0 | 1.52 | 1760 / 0 |
+| ignore | FAIL | 0 | 20 | 20/20 | 6.7 | 5.08 | 1400 / never |
+| right_only | FAIL | 0 | 20 | 20/20 | 2.0 | 1.52 | 1400 / 0 |
 | do_nothing | FAIL | 0 | 20 | 20/20 | 0.0 | 0.00 | 0 / 0 |
 
 Failing checks and violation kinds, per policy:

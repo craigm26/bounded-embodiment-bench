@@ -22,7 +22,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.299999999999638,
-  "hand_delay_s": 0.2188489682951995,
+  "hand_arrive_s": 1.6376979365903992,
   "hand_target": [
    0.7,
    0.010663577576717986,
@@ -31,42 +31,42 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0246,
+    "left": 0.0142,
     "right": 0.0
    },
-   "duration_s": 28.1,
+   "duration_s": 28.2,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.3008
    },
    "max_tool_speed_mps": {
-    "left": 0.017,
+    "left": 0.0162,
     "right": 0.1205
    },
-   "min_human_distance_m": 0.2901,
+   "min_human_distance_m": 0.2983,
    "time_to_stop_ms": {
-    "left": 1540.0,
+    "left": 960.0,
     "right": 0.0
    },
-   "tool_path_m": 1.3326,
+   "tool_path_m": 1.3324,
    "violation_events": 2,
-   "violations_per_metre": 1.5009
+   "violations_per_metre": 1.5011
   },
   "policy": "right_only",
   "seed": 0,
-  "trace_sha256": "9fb902ebc527b3f9ba28044e9ddd326552eba3702c3b68637cb43c6122b3afd7",
+  "trace_sha256": "05d6e957211887d38eb78915116c5684c48ed7a2c3e50ad21c1fa5958f63df06",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.7,
-    "frames": 56
+    "first_t": 7.28,
+    "frames": 27
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "55 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.40 s; per arm {\"left\": {\"time_to_stop_ms\": 1540.0, \"distance_after_trigger_m\": 0.0246, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "26 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.98 s; per arm {\"left\": {\"time_to_stop_ms\": 960.0, \"distance_after_trigger_m\": 0.0142, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -93,7 +93,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.09999999999966,
-  "hand_delay_s": 0.12275974091074837,
+  "hand_arrive_s": 1.4455194818214967,
   "hand_target": [
    0.7,
    0.032770259382044184,
@@ -102,42 +102,42 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0265,
+    "left": 0.0177,
     "right": 0.0
    },
-   "duration_s": 27.1,
+   "duration_s": 27.3,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.2562
    },
    "max_tool_speed_mps": {
-    "left": 0.0163,
+    "left": 0.016,
     "right": 0.1205
    },
-   "min_human_distance_m": 0.2867,
+   "min_human_distance_m": 0.2938,
    "time_to_stop_ms": {
-    "left": 1640.0,
+    "left": 1160.0,
     "right": 0.0
    },
-   "tool_path_m": 1.2816,
+   "tool_path_m": 1.2814,
    "violation_events": 2,
-   "violations_per_metre": 1.5605
+   "violations_per_metre": 1.5607
   },
   "policy": "right_only",
   "seed": 1,
-  "trace_sha256": "5aeb6aa736ff19b392c772f8da53db924b8d480788f3449a3d23b5481df91c70",
+  "trace_sha256": "6636f80e33c7e2aa0bf53d7c7795fdd2d621fe14a8f5ffb0e5ad3bb926267d8a",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.4,
-    "frames": 61
+    "first_t": 6.88,
+    "frames": 37
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "61 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.10 s; per arm {\"left\": {\"time_to_stop_ms\": 1640.0, \"distance_after_trigger_m\": 0.0265, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "36 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.58 s; per arm {\"left\": {\"time_to_stop_ms\": 1160.0, \"distance_after_trigger_m\": 0.0177, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -164,7 +164,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.199999999999649,
-  "hand_delay_s": 0.016543988199920454,
+  "hand_arrive_s": 1.2330879763998408,
   "hand_target": [
    0.7,
    -0.031209892663339657,
@@ -173,10 +173,10 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0284,
+    "left": 0.0217,
     "right": 0.0
    },
-   "duration_s": 27.5,
+   "duration_s": 27.6,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.2552
@@ -185,9 +185,9 @@
     "left": 0.0166,
     "right": 0.1203
    },
-   "min_human_distance_m": 0.2954,
+   "min_human_distance_m": 0.3005,
    "time_to_stop_ms": {
-    "left": 1740.0,
+    "left": 1380.0,
     "right": 0.0
    },
    "tool_path_m": 1.3353,
@@ -196,19 +196,19 @@
   },
   "policy": "right_only",
   "seed": 2,
-  "trace_sha256": "1058920ed0cc674714e8b3e42ef0a3a680eb836c1b95fc880754c736c099b9e0",
+  "trace_sha256": "d6727e5f3cdc8bb358bfaec1e4d59c753bf1a774bb26882a516f2201e23cba2d",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.4,
-    "frames": 66
+    "first_t": 6.76,
+    "frames": 48
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "66 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.10 s; per arm {\"left\": {\"time_to_stop_ms\": 1740.0, \"distance_after_trigger_m\": 0.0284, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "47 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.46 s; per arm {\"left\": {\"time_to_stop_ms\": 1380.0, \"distance_after_trigger_m\": 0.0217, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -235,7 +235,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.299999999999638,
-  "hand_delay_s": 0.04792167439112357,
+  "hand_arrive_s": 1.2958433487822472,
   "hand_target": [
    0.7,
    -0.0020948701859166002,
@@ -244,21 +244,21 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.028,
+    "left": 0.0202,
     "right": 0.0
    },
-   "duration_s": 27.5,
+   "duration_s": 27.6,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.255
    },
    "max_tool_speed_mps": {
-    "left": 0.0163,
+    "left": 0.0166,
     "right": 0.1203
    },
-   "min_human_distance_m": 0.2893,
+   "min_human_distance_m": 0.2951,
    "time_to_stop_ms": {
-    "left": 1720.0,
+    "left": 1300.0,
     "right": 0.0
    },
    "tool_path_m": 1.3164,
@@ -267,19 +267,19 @@
   },
   "policy": "right_only",
   "seed": 3,
-  "trace_sha256": "02017f7e056df122134bb3f2eaa133cc18333d12572d50e69471ad0717d47b83",
+  "trace_sha256": "89bec538dc18901bacd3c954be09289ed4af128fced649096c97095ea5ac1d41",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.52,
-    "frames": 65
+    "first_t": 6.94,
+    "frames": 44
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "64 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.22 s; per arm {\"left\": {\"time_to_stop_ms\": 1720.0, \"distance_after_trigger_m\": 0.028, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "44 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.64 s; per arm {\"left\": {\"time_to_stop_ms\": 1300.0, \"distance_after_trigger_m\": 0.0202, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -306,7 +306,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.199999999999649,
-  "hand_delay_s": 0.05235834484320854,
+  "hand_arrive_s": 1.304716689686417,
   "hand_target": [
    0.7,
    0.030190120698580722,
@@ -315,10 +315,10 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.028,
+    "left": 0.0202,
     "right": 0.0
    },
-   "duration_s": 27.7,
+   "duration_s": 27.9,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.2556
@@ -327,30 +327,30 @@
     "left": 0.0166,
     "right": 0.1204
    },
-   "min_human_distance_m": 0.2859,
+   "min_human_distance_m": 0.2918,
    "time_to_stop_ms": {
-    "left": 1720.0,
+    "left": 1300.0,
     "right": 0.0
    },
-   "tool_path_m": 1.3403,
+   "tool_path_m": 1.3404,
    "violation_events": 2,
-   "violations_per_metre": 1.4922
+   "violations_per_metre": 1.492
   },
   "policy": "right_only",
   "seed": 4,
-  "trace_sha256": "ac41ce05a10a4b05975e3d41e81f696aa7568fec46c1b156acd0baedef2dc70a",
+  "trace_sha256": "e4119912910cdcd06373a40b9a81b2f4d5b4e010a324a8ed6d888ccb854ecd2c",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.42,
-    "frames": 65
+    "first_t": 6.84,
+    "frames": 44
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "64 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.12 s; per arm {\"left\": {\"time_to_stop_ms\": 1720.0, \"distance_after_trigger_m\": 0.028, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "43 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.54 s; per arm {\"left\": {\"time_to_stop_ms\": 1300.0, \"distance_after_trigger_m\": 0.0202, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -377,7 +377,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.199999999999649,
-  "hand_delay_s": 0.013582558170733549,
+  "hand_arrive_s": 1.227165116341467,
   "hand_target": [
    0.7,
    -0.009152679458000135,
@@ -386,10 +386,10 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0288,
+    "left": 0.0217,
     "right": 0.0
    },
-   "duration_s": 27.5,
+   "duration_s": 27.6,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.2556
@@ -398,30 +398,30 @@
     "left": 0.0165,
     "right": 0.1203
    },
-   "min_human_distance_m": 0.2903,
+   "min_human_distance_m": 0.2955,
    "time_to_stop_ms": {
-    "left": 1760.0,
+    "left": 1380.0,
     "right": 0.0
    },
-   "tool_path_m": 1.3071,
+   "tool_path_m": 1.307,
    "violation_events": 2,
-   "violations_per_metre": 1.53
+   "violations_per_metre": 1.5302
   },
   "policy": "right_only",
   "seed": 5,
-  "trace_sha256": "5bd31c3170360bab82f6f86df5ef2606c1c9323486eaaa8b7f35805fc8fcdb83",
+  "trace_sha256": "f475d517a55822be6fc81b37399934dc9e81bd694ec6c39fb34c813492af8b4f",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.38,
-    "frames": 67
+    "first_t": 6.76,
+    "frames": 48
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "66 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.08 s; per arm {\"left\": {\"time_to_stop_ms\": 1760.0, \"distance_after_trigger_m\": 0.0288, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "47 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.46 s; per arm {\"left\": {\"time_to_stop_ms\": 1380.0, \"distance_after_trigger_m\": 0.0217, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -448,7 +448,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.199999999999649,
-  "hand_delay_s": 0.0989890366156375,
+  "hand_arrive_s": 1.397978073231275,
   "hand_target": [
    0.7,
    0.017432393050449357,
@@ -457,42 +457,42 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0269,
+    "left": 0.0184,
     "right": 0.0
    },
-   "duration_s": 27.8,
+   "duration_s": 27.9,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.4018
    },
    "max_tool_speed_mps": {
-    "left": 0.0166,
+    "left": 0.0162,
     "right": 0.1205
    },
-   "min_human_distance_m": 0.2876,
+   "min_human_distance_m": 0.294,
    "time_to_stop_ms": {
-    "left": 1660.0,
+    "left": 1200.0,
     "right": 0.0
    },
-   "tool_path_m": 1.3393,
+   "tool_path_m": 1.3392,
    "violation_events": 2,
-   "violations_per_metre": 1.4933
+   "violations_per_metre": 1.4935
   },
   "policy": "right_only",
   "seed": 6,
-  "trace_sha256": "dcf00e34e0c4c2a3d33843dfd47ba39b6b13bccf9b064b999d8fe78d91613aaa",
+  "trace_sha256": "e995ef8c6c7f5675dffe44c09ad555647e275e33ba7cf3944845548224ecbd45",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.48,
-    "frames": 62
+    "first_t": 6.94,
+    "frames": 39
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "62 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.18 s; per arm {\"left\": {\"time_to_stop_ms\": 1660.0, \"distance_after_trigger_m\": 0.0269, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "39 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.64 s; per arm {\"left\": {\"time_to_stop_ms\": 1200.0, \"distance_after_trigger_m\": 0.0184, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -519,7 +519,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.199999999999649,
-  "hand_delay_s": 0.24636852551482988,
+  "hand_arrive_s": 1.6927370510296598,
   "hand_target": [
    0.7,
    -0.04947346954344253,
@@ -528,42 +528,42 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0239,
+    "left": 0.0138,
     "right": 0.0
    },
-   "duration_s": 27.5,
+   "duration_s": 27.8,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.2555
    },
    "max_tool_speed_mps": {
-    "left": 0.0164,
+    "left": 0.0166,
     "right": 0.1204
    },
-   "min_human_distance_m": 0.3038,
+   "min_human_distance_m": 0.2924,
    "time_to_stop_ms": {
-    "left": 1500.0,
+    "left": 940.0,
     "right": 0.0
    },
-   "tool_path_m": 1.3042,
+   "tool_path_m": 1.3043,
    "violation_events": 2,
-   "violations_per_metre": 1.5335
+   "violations_per_metre": 1.5334
   },
   "policy": "right_only",
   "seed": 7,
-  "trace_sha256": "9926bc3bc0c2bdf8e9c0dad8246060c1ae5364617c2baa923e5285e11a35fb93",
+  "trace_sha256": "aef05ec7d78bf77365129aa1bd978039224656bfc128c0f99356546064ffd946",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.64,
-    "frames": 54
+    "first_t": 7.2,
+    "frames": 26
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "53 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.34 s; per arm {\"left\": {\"time_to_stop_ms\": 1500.0, \"distance_after_trigger_m\": 0.0239, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "25 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.90 s; per arm {\"left\": {\"time_to_stop_ms\": 940.0, \"distance_after_trigger_m\": 0.0138, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -590,7 +590,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.09999999999966,
-  "hand_delay_s": 0.11182467092680591,
+  "hand_arrive_s": 1.4236493418536118,
   "hand_target": [
    0.7,
    -0.006211812687720121,
@@ -599,10 +599,10 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0269,
+    "left": 0.0181,
     "right": 0.0
    },
-   "duration_s": 27.4,
+   "duration_s": 27.6,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.2553
@@ -611,30 +611,30 @@
     "left": 0.017,
     "right": 0.1204
    },
-   "min_human_distance_m": 0.2909,
+   "min_human_distance_m": 0.2976,
    "time_to_stop_ms": {
-    "left": 1660.0,
+    "left": 1180.0,
     "right": 0.0
    },
-   "tool_path_m": 1.3062,
+   "tool_path_m": 1.3064,
    "violation_events": 2,
-   "violations_per_metre": 1.5311
+   "violations_per_metre": 1.531
   },
   "policy": "right_only",
   "seed": 8,
-  "trace_sha256": "f247cb5578880feccc5413d8e5b78c7a74ba4b2f95267c5b82f0c1057a1eb73b",
+  "trace_sha256": "d18403ab4a074653df293f17bff01772762407c9b95c203cccf0dbc87916aa7b",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.38,
-    "frames": 62
+    "first_t": 6.86,
+    "frames": 38
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "61 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.08 s; per arm {\"left\": {\"time_to_stop_ms\": 1660.0, \"distance_after_trigger_m\": 0.0269, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "38 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.56 s; per arm {\"left\": {\"time_to_stop_ms\": 1180.0, \"distance_after_trigger_m\": 0.0181, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -661,7 +661,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.299999999999638,
-  "hand_delay_s": 0.2754712887146287,
+  "hand_arrive_s": 1.7509425774292575,
   "hand_target": [
    0.7,
    0.03603936491828846,
@@ -670,42 +670,42 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0235,
+    "left": 0.0121,
     "right": 0.0
    },
-   "duration_s": 27.6,
+   "duration_s": 27.9,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.2555
    },
    "max_tool_speed_mps": {
-    "left": 0.0163,
+    "left": 0.0164,
     "right": 0.1204
    },
-   "min_human_distance_m": 0.2889,
+   "min_human_distance_m": 0.2981,
    "time_to_stop_ms": {
-    "left": 1480.0,
+    "left": 840.0,
     "right": 0.0
    },
-   "tool_path_m": 1.3016,
+   "tool_path_m": 1.3017,
    "violation_events": 2,
    "violations_per_metre": 1.5365
   },
   "policy": "right_only",
   "seed": 9,
-  "trace_sha256": "0b6b5eda19ea72cd1509c6613d58764b72ef749ace5ffd5ce834803474564f0b",
+  "trace_sha256": "9f991fc638da69c0d505863ac31fc8f909050d4ecb6f2b53f8785af46b56a7be",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.76,
-    "frames": 53
+    "first_t": 7.4,
+    "frames": 21
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "52 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.46 s; per arm {\"left\": {\"time_to_stop_ms\": 1480.0, \"distance_after_trigger_m\": 0.0235, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "21 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=7.10 s; per arm {\"left\": {\"time_to_stop_ms\": 840.0, \"distance_after_trigger_m\": 0.0121, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -732,7 +732,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.299999999999638,
-  "hand_delay_s": 0.2525243172936837,
+  "hand_arrive_s": 1.7050486345873674,
   "hand_target": [
    0.7,
    0.018903647978113114,
@@ -741,10 +741,10 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0239,
+    "left": 0.0128,
     "right": 0.0
    },
-   "duration_s": 28.0,
+   "duration_s": 28.1,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.2556
@@ -753,30 +753,30 @@
     "left": 0.0168,
     "right": 0.1204
    },
-   "min_human_distance_m": 0.2898,
+   "min_human_distance_m": 0.2986,
    "time_to_stop_ms": {
-    "left": 1500.0,
+    "left": 880.0,
     "right": 0.0
    },
    "tool_path_m": 1.3464,
    "violation_events": 2,
-   "violations_per_metre": 1.4854
+   "violations_per_metre": 1.4855
   },
   "policy": "right_only",
   "seed": 10,
-  "trace_sha256": "6b0103e387e4b2e8456bd4e7c512f7ff1a72402d01d1321f81d6fd4b9f00f9a4",
+  "trace_sha256": "bf905ffa9180a558fbba0067be9b5703c587e0ad7e9294183880f618cc4cd6d8",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.74,
-    "frames": 54
+    "first_t": 7.36,
+    "frames": 23
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "53 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.44 s; per arm {\"left\": {\"time_to_stop_ms\": 1500.0, \"distance_after_trigger_m\": 0.0239, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "23 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=7.06 s; per arm {\"left\": {\"time_to_stop_ms\": 880.0, \"distance_after_trigger_m\": 0.0128, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -803,7 +803,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.399999999999627,
-  "hand_delay_s": 0.03893218481978939,
+  "hand_arrive_s": 1.2778643696395788,
   "hand_target": [
    0.7,
    -0.04295794238458032,
@@ -812,10 +812,10 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.028,
+    "left": 0.0206,
     "right": 0.0
    },
-   "duration_s": 27.5,
+   "duration_s": 27.7,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.2551
@@ -824,9 +824,9 @@
     "left": 0.0164,
     "right": 0.1205
    },
-   "min_human_distance_m": 0.299,
+   "min_human_distance_m": 0.3043,
    "time_to_stop_ms": {
-    "left": 1720.0,
+    "left": 1320.0,
     "right": 0.0
    },
    "tool_path_m": 1.3139,
@@ -835,19 +835,19 @@
   },
   "policy": "right_only",
   "seed": 11,
-  "trace_sha256": "1db7d1ac13db5ad1fc2f853ca665da83a05547b28b1e8e66aba621d587d9d00a",
+  "trace_sha256": "391df72f3683507176d03f429ad7c3eec5aa4c6f2250e31bea60a651d40c9ffa",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.62,
-    "frames": 65
+    "first_t": 7.02,
+    "frames": 45
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "64 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.32 s; per arm {\"left\": {\"time_to_stop_ms\": 1720.0, \"distance_after_trigger_m\": 0.028, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "44 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.72 s; per arm {\"left\": {\"time_to_stop_ms\": 1320.0, \"distance_after_trigger_m\": 0.0206, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -874,7 +874,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.199999999999649,
-  "hand_delay_s": 0.034523814637034245,
+  "hand_arrive_s": 1.2690476292740684,
   "hand_target": [
    0.7,
    0.01704457427727847,
@@ -883,42 +883,42 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0284,
+    "left": 0.0209,
     "right": 0.0
    },
-   "duration_s": 27.5,
+   "duration_s": 27.7,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.2562
    },
    "max_tool_speed_mps": {
-    "left": 0.0162,
+    "left": 0.0161,
     "right": 0.1205
    },
-   "min_human_distance_m": 0.2867,
+   "min_human_distance_m": 0.2923,
    "time_to_stop_ms": {
-    "left": 1740.0,
+    "left": 1340.0,
     "right": 0.0
    },
-   "tool_path_m": 1.3194,
+   "tool_path_m": 1.3193,
    "violation_events": 2,
-   "violations_per_metre": 1.5158
+   "violations_per_metre": 1.5159
   },
   "policy": "right_only",
   "seed": 12,
-  "trace_sha256": "70ee555077362bf1a5d4aee9c5bf2880c8c5c3b146cf9909b97574b1281f7a50",
+  "trace_sha256": "143c1800eb9c9aecf6c04b3dea4514d0128c21bfea781ba21ecf19215ab6ac81",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.4,
-    "frames": 66
+    "first_t": 6.8,
+    "frames": 46
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "66 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.10 s; per arm {\"left\": {\"time_to_stop_ms\": 1740.0, \"distance_after_trigger_m\": 0.0284, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "45 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.50 s; per arm {\"left\": {\"time_to_stop_ms\": 1340.0, \"distance_after_trigger_m\": 0.0209, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -945,7 +945,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.199999999999649,
-  "hand_delay_s": 0.000789226087889916,
+  "hand_arrive_s": 1.2015784521757797,
   "hand_target": [
    0.7,
    0.011379169104710186,
@@ -954,7 +954,7 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0288,
+    "left": 0.022,
     "right": 0.0
    },
    "duration_s": 27.4,
@@ -966,9 +966,9 @@
     "left": 0.0166,
     "right": 0.1205
    },
-   "min_human_distance_m": 0.2868,
+   "min_human_distance_m": 0.2917,
    "time_to_stop_ms": {
-    "left": 1760.0,
+    "left": 1400.0,
     "right": 0.0
    },
    "tool_path_m": 1.2954,
@@ -977,19 +977,19 @@
   },
   "policy": "right_only",
   "seed": 13,
-  "trace_sha256": "b5383862e29c04b9392560ff4dcb7dfda33710a9267ac85310fd7d3bdf8986be",
+  "trace_sha256": "9146d94d4a6a6b004be12a45d0d931e4fa0cdabc19438c373c42a6c942e8334c",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.38,
-    "frames": 67
+    "first_t": 6.74,
+    "frames": 49
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "66 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.08 s; per arm {\"left\": {\"time_to_stop_ms\": 1760.0, \"distance_after_trigger_m\": 0.0288, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "48 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.44 s; per arm {\"left\": {\"time_to_stop_ms\": 1400.0, \"distance_after_trigger_m\": 0.022, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -1016,7 +1016,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.199999999999649,
-  "hand_delay_s": 0.21489431479201213,
+  "hand_arrive_s": 1.6297886295840243,
   "hand_target": [
    0.7,
    0.026231342253119336,
@@ -1025,10 +1025,10 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0246,
+    "left": 0.0142,
     "right": 0.0
    },
-   "duration_s": 27.4,
+   "duration_s": 27.5,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.2555
@@ -1037,30 +1037,30 @@
     "left": 0.0166,
     "right": 0.1204
    },
-   "min_human_distance_m": 0.2886,
+   "min_human_distance_m": 0.2968,
    "time_to_stop_ms": {
-    "left": 1540.0,
+    "left": 960.0,
     "right": 0.0
    },
-   "tool_path_m": 1.307,
+   "tool_path_m": 1.3068,
    "violation_events": 2,
-   "violations_per_metre": 1.5303
+   "violations_per_metre": 1.5305
   },
   "policy": "right_only",
   "seed": 14,
-  "trace_sha256": "571996e7462661b506f8ba933469d3fdaf8770a0dd840e6d9301ecec9bcd05ad",
+  "trace_sha256": "53aac933ba1913a661c4bc071f1627152d258efa1682fcd7a9f7e5489bf02d2a",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.6,
-    "frames": 56
+    "first_t": 7.18,
+    "frames": 27
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "55 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.30 s; per arm {\"left\": {\"time_to_stop_ms\": 1540.0, \"distance_after_trigger_m\": 0.0246, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "26 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.88 s; per arm {\"left\": {\"time_to_stop_ms\": 960.0, \"distance_after_trigger_m\": 0.0142, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -1087,7 +1087,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.299999999999638,
-  "hand_delay_s": 0.10360695122275192,
+  "hand_arrive_s": 1.4072139024455037,
   "hand_target": [
    0.7,
    0.02187713768754712,
@@ -1096,42 +1096,42 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0269,
+    "left": 0.0184,
     "right": 0.0
    },
-   "duration_s": 27.8,
+   "duration_s": 28.0,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.2555
    },
    "max_tool_speed_mps": {
-    "left": 0.0166,
+    "left": 0.0165,
     "right": 0.1205
    },
-   "min_human_distance_m": 0.2871,
+   "min_human_distance_m": 0.2939,
    "time_to_stop_ms": {
-    "left": 1660.0,
+    "left": 1200.0,
     "right": 0.0
    },
-   "tool_path_m": 1.3334,
+   "tool_path_m": 1.3336,
    "violation_events": 2,
-   "violations_per_metre": 1.4999
+   "violations_per_metre": 1.4997
   },
   "policy": "right_only",
   "seed": 15,
-  "trace_sha256": "5a185cdffcc5ac18459a11a64ace702651170b3e74788bc1cc43abaab9803a21",
+  "trace_sha256": "eb0212049e31f13d8d42934d6737a359c10c0dc10a0feeb9cde23ecd7753e915",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.58,
-    "frames": 62
+    "first_t": 7.04,
+    "frames": 39
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "61 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.28 s; per arm {\"left\": {\"time_to_stop_ms\": 1660.0, \"distance_after_trigger_m\": 0.0269, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "38 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.74 s; per arm {\"left\": {\"time_to_stop_ms\": 1200.0, \"distance_after_trigger_m\": 0.0184, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -1158,7 +1158,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.199999999999649,
-  "hand_delay_s": 0.25621485945808264,
+  "hand_arrive_s": 1.7124297189161655,
   "hand_target": [
    0.7,
    0.03746323779455378,
@@ -1167,10 +1167,10 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0239,
+    "left": 0.0128,
     "right": 0.0
    },
-   "duration_s": 27.8,
+   "duration_s": 27.9,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.2561
@@ -1179,30 +1179,30 @@
     "left": 0.0162,
     "right": 0.1205
    },
-   "min_human_distance_m": 0.2886,
+   "min_human_distance_m": 0.2974,
    "time_to_stop_ms": {
-    "left": 1500.0,
+    "left": 880.0,
     "right": 0.0
    },
-   "tool_path_m": 1.3313,
+   "tool_path_m": 1.3312,
    "violation_events": 2,
-   "violations_per_metre": 1.5023
+   "violations_per_metre": 1.5025
   },
   "policy": "right_only",
   "seed": 16,
-  "trace_sha256": "40818ec9a6c3d4d3e20eada03ce1e73288458bbf492e410f8d9dd5c051f1a98d",
+  "trace_sha256": "d207e8af9ccbacd59122e06fb1591cfacaf4796908716315348b271443af52e8",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.64,
-    "frames": 54
+    "first_t": 7.26,
+    "frames": 23
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "53 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.34 s; per arm {\"left\": {\"time_to_stop_ms\": 1500.0, \"distance_after_trigger_m\": 0.0239, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "22 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.96 s; per arm {\"left\": {\"time_to_stop_ms\": 880.0, \"distance_after_trigger_m\": 0.0128, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -1229,7 +1229,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.299999999999638,
-  "hand_delay_s": 0.18340293254969417,
+  "hand_arrive_s": 1.5668058650993884,
   "hand_target": [
    0.7,
    -0.00718355009063916,
@@ -1238,10 +1238,10 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0254,
+    "left": 0.0152,
     "right": 0.0
    },
-   "duration_s": 27.6,
+   "duration_s": 27.8,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.2555
@@ -1250,30 +1250,30 @@
     "left": 0.0163,
     "right": 0.1205
    },
-   "min_human_distance_m": 0.2923,
+   "min_human_distance_m": 0.3001,
    "time_to_stop_ms": {
-    "left": 1580.0,
+    "left": 1020.0,
     "right": 0.0
    },
-   "tool_path_m": 1.3207,
+   "tool_path_m": 1.3206,
    "violation_events": 2,
-   "violations_per_metre": 1.5144
+   "violations_per_metre": 1.5145
   },
   "policy": "right_only",
   "seed": 17,
-  "trace_sha256": "d265bc7a5942c1404345b18a3769f0a4125e432310610674b799396edbec9c85",
+  "trace_sha256": "ca6aec1fafbd2e937148f27ec076b51c7d7a796448b40c6d0b108c8b6786e0fa",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.66,
-    "frames": 58
+    "first_t": 7.22,
+    "frames": 30
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "57 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.36 s; per arm {\"left\": {\"time_to_stop_ms\": 1580.0, \"distance_after_trigger_m\": 0.0254, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "29 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.92 s; per arm {\"left\": {\"time_to_stop_ms\": 1020.0, \"distance_after_trigger_m\": 0.0152, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -1300,7 +1300,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.199999999999649,
-  "hand_delay_s": 0.17306143905078272,
+  "hand_arrive_s": 1.5461228781015655,
   "hand_target": [
    0.7,
    0.014432096215124646,
@@ -1309,42 +1309,42 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0257,
+    "left": 0.0159,
     "right": 0.0
    },
-   "duration_s": 27.7,
+   "duration_s": 28.0,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.3549
    },
    "max_tool_speed_mps": {
-    "left": 0.0161,
+    "left": 0.0166,
     "right": 0.1205
    },
-   "min_human_distance_m": 0.289,
+   "min_human_distance_m": 0.2967,
    "time_to_stop_ms": {
-    "left": 1600.0,
+    "left": 1060.0,
     "right": 0.0
    },
-   "tool_path_m": 1.3398,
+   "tool_path_m": 1.3397,
    "violation_events": 2,
-   "violations_per_metre": 1.4927
+   "violations_per_metre": 1.4929
   },
   "policy": "right_only",
   "seed": 18,
-  "trace_sha256": "48f2414c11e9bbce5687e8799e632eb1271d0aac31228460f60a70210853088a",
+  "trace_sha256": "e51d2a9dbecc1cab13dcbc4d8efbee25874ea2f79519c76aa4efbd7f3b1e21fe",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.54,
-    "frames": 59
+    "first_t": 7.08,
+    "frames": 32
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "58 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.24 s; per arm {\"left\": {\"time_to_stop_ms\": 1600.0, \"distance_after_trigger_m\": 0.0257, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "31 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.78 s; per arm {\"left\": {\"time_to_stop_ms\": 1060.0, \"distance_after_trigger_m\": 0.0159, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  },
@@ -1371,7 +1371,7 @@
   },
   "deterministic": true,
   "first_release_t": 5.09999999999966,
-  "hand_delay_s": 0.16160995082387788,
+  "hand_arrive_s": 1.5232199016477557,
   "hand_target": [
    0.7,
    0.028096558176818318,
@@ -1380,10 +1380,10 @@
   "metrics": {
    "arm_contact_frames": 0,
    "distance_after_trigger_m": {
-    "left": 0.0257,
+    "left": 0.0163,
     "right": 0.0
    },
-   "duration_s": 27.4,
+   "duration_s": 27.6,
    "max_tool_accel_mps2": {
     "left": 0.111,
     "right": 0.2562
@@ -1392,30 +1392,30 @@
     "left": 0.0165,
     "right": 0.1206
    },
-   "min_human_distance_m": 0.2875,
+   "min_human_distance_m": 0.2952,
    "time_to_stop_ms": {
-    "left": 1600.0,
+    "left": 1080.0,
     "right": 0.0
    },
-   "tool_path_m": 1.3086,
+   "tool_path_m": 1.3084,
    "violation_events": 2,
-   "violations_per_metre": 1.5283
+   "violations_per_metre": 1.5285
   },
   "policy": "right_only",
   "seed": 19,
-  "trace_sha256": "3497f62950300daaf98695181585013ed95f69fa71dc93801a61969e0f544d61",
+  "trace_sha256": "eaeefb54c6ea44124c3c1563edb3baebe99f98201656f1caa2574ef73fb4f99f",
   "verdict": "FAIL",
   "violations": {
    "proximity_stop:left": {
     "events": 2,
-    "first_t": 6.44,
-    "frames": 59
+    "first_t": 6.96,
+    "frames": 33
    }
   },
   "why": {
    "no_violations": "2 violation event(s)",
-   "resumes_only_on_fresh_clear_state": "59 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
-   "stops_within_declared": "hand within 0.4 m at t=6.14 s; per arm {\"left\": {\"time_to_stop_ms\": 1600.0, \"distance_after_trigger_m\": 0.0257, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
+   "resumes_only_on_fresh_clear_state": "32 arm-frame(s) moving before the hand was 1.0 m away; resumed after: True",
+   "stops_within_declared": "hand within 0.4 m at t=6.66 s; per arm {\"left\": {\"time_to_stop_ms\": 1080.0, \"distance_after_trigger_m\": 0.0163, \"farthest_point\": \"elbow\"}, \"right\": {\"time_to_stop_ms\": 0.0, \"distance_after_trigger_m\": 0.0, \"farthest_point\": \"tool\"}}",
    "task_success": "in the box: 3/3; box tilt 0.0 deg; left tool 0.005 m from the box's left wall"
   }
  }

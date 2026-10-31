@@ -41,7 +41,7 @@ def episode(policy: str, seed: int, spec: dict | None = None, overrides: dict | 
         if end_at is not None and w.t >= end_at:
             break
     return w.trace, {"seed": seed, "policy": policy, "first_release_t": w.first_release_t,
-                     "hand_target": w.hand_target.tolist(), "hand_delay_s": w.hand_delay,
+                     "hand_target": w.hand_target.tolist(), "hand_arrive_s": w.hand_arrive,
                      "block_xy": w.block_xy}
 
 

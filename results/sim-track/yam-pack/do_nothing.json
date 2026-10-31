@@ -22,7 +22,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.2188489682951995,
+  "hand_arrive_s": 1.6376979365903992,
   "hand_target": [
    0.7,
    0.010663577576717986,
@@ -87,7 +87,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.12275974091074837,
+  "hand_arrive_s": 1.4455194818214967,
   "hand_target": [
    0.7,
    0.032770259382044184,
@@ -152,7 +152,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.016543988199920454,
+  "hand_arrive_s": 1.2330879763998408,
   "hand_target": [
    0.7,
    -0.031209892663339657,
@@ -217,7 +217,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.04792167439112357,
+  "hand_arrive_s": 1.2958433487822472,
   "hand_target": [
    0.7,
    -0.0020948701859166002,
@@ -282,7 +282,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.05235834484320854,
+  "hand_arrive_s": 1.304716689686417,
   "hand_target": [
    0.7,
    0.030190120698580722,
@@ -347,7 +347,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.013582558170733549,
+  "hand_arrive_s": 1.227165116341467,
   "hand_target": [
    0.7,
    -0.009152679458000135,
@@ -412,7 +412,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.0989890366156375,
+  "hand_arrive_s": 1.397978073231275,
   "hand_target": [
    0.7,
    0.017432393050449357,
@@ -477,7 +477,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.24636852551482988,
+  "hand_arrive_s": 1.6927370510296598,
   "hand_target": [
    0.7,
    -0.04947346954344253,
@@ -542,7 +542,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.11182467092680591,
+  "hand_arrive_s": 1.4236493418536118,
   "hand_target": [
    0.7,
    -0.006211812687720121,
@@ -607,7 +607,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.2754712887146287,
+  "hand_arrive_s": 1.7509425774292575,
   "hand_target": [
    0.7,
    0.03603936491828846,
@@ -672,7 +672,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.2525243172936837,
+  "hand_arrive_s": 1.7050486345873674,
   "hand_target": [
    0.7,
    0.018903647978113114,
@@ -737,7 +737,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.03893218481978939,
+  "hand_arrive_s": 1.2778643696395788,
   "hand_target": [
    0.7,
    -0.04295794238458032,
@@ -802,7 +802,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.034523814637034245,
+  "hand_arrive_s": 1.2690476292740684,
   "hand_target": [
    0.7,
    0.01704457427727847,
@@ -867,7 +867,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.000789226087889916,
+  "hand_arrive_s": 1.2015784521757797,
   "hand_target": [
    0.7,
    0.011379169104710186,
@@ -932,7 +932,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.21489431479201213,
+  "hand_arrive_s": 1.6297886295840243,
   "hand_target": [
    0.7,
    0.026231342253119336,
@@ -997,7 +997,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.10360695122275192,
+  "hand_arrive_s": 1.4072139024455037,
   "hand_target": [
    0.7,
    0.02187713768754712,
@@ -1062,7 +1062,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.25621485945808264,
+  "hand_arrive_s": 1.7124297189161655,
   "hand_target": [
    0.7,
    0.03746323779455378,
@@ -1127,7 +1127,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.18340293254969417,
+  "hand_arrive_s": 1.5668058650993884,
   "hand_target": [
    0.7,
    -0.00718355009063916,
@@ -1192,7 +1192,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.17306143905078272,
+  "hand_arrive_s": 1.5461228781015655,
   "hand_target": [
    0.7,
    0.014432096215124646,
@@ -1257,7 +1257,7 @@
   },
   "deterministic": true,
   "first_release_t": null,
-  "hand_delay_s": 0.16160995082387788,
+  "hand_arrive_s": 1.5232199016477557,
   "hand_target": [
    0.7,
    0.028096558176818318,

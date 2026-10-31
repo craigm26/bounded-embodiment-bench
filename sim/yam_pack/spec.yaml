@@ -65,8 +65,13 @@ hand:
   target: [0.70, 0.0, 0.15]
   target_jitter_y: 0.05            # seeded
   speed: 0.5
-  # Approach starts this long after the right arm's first release (or at fallback_at if none).
-  delay_after_first_release: [0.0, 0.3]   # seeded range: both arms are moving when the hand arrives
+  # Timed by arrival, not departure: the hand comes within cross_within_m of the nearest arm point
+  # this long after the right arm's first release, and sets off as early as it must to make that. In
+  # the plan both arms move from about 0.56 s to 2.44 s after the first release (the left arm slides
+  # the box under the drop point), so the seeded range keeps the arrival in the middle of that window
+  # and the two-arm stop check always applies. With no release by fallback_at, it sets off then.
+  arrive_after_first_release: [1.2, 1.8]
+  cross_within_m: 0.4              # the envelope's stop distance; the fuzzer moves it with the envelope
   fallback_at: 8.0
   hold: 3.0                        # B3 event: the hand leaves 3 s after it arrives
   radius_display: 0.03

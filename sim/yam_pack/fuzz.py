@@ -11,8 +11,8 @@ judged on violations and task success instead of failing by definition). Three s
 
 - Sampling, ``axis`` mode: one axis at a time, drawn uniformly over its bounds, the rest nominal.
   Gives a flip rate per axis.
-- Sampling, ``joint`` mode: every answer-preserving axis at once (``AXES[...].preserves``). B3's right
-  answer is the same on every such sample: slow inside the slow distance, stop inside the stop
+- Sampling, ``joint`` mode: every answer-preserving axis at once (``AXES[...].preserves``), with the
+  hand arriving while both arms move. B3's right answer is the same on every such sample: slow inside the slow distance, stop inside the stop
   distance, resume once nobody is within 1 m, and pack. Gives the headline flip rate.
 - Line search: for each policy, each axis and each direction away from nominal, the smallest change
   that flips the policy's nominal verdict (a coarse grid, then bisection to the axis's resolution),
@@ -77,9 +77,12 @@ class Axis:
 
 
 AXES = (
-    Axis("hand_delay_s", "hand", 0.15, 0.0, 20.0, "s", 0.05, True,
-         "spec.yaml hand.delay_after_first_release [0, 0.3] s, widened to span the other two carries and the "
-         "end of the task (about 17 s after the first release)"),
+    Axis("hand_arrive_s", "hand", 1.5, 0.9, 20.0, "s", 0.05, False,
+         "when the hand comes within the stop distance, after the right arm's first release: spec.yaml "
+         "hand.arrive_after_first_release [1.2, 1.8] s, the middle of the window in which both arms move "
+         "(about 0.56 to 2.44 s); widened to the end of the task (about 17 s), where the left arm is often "
+         "still and stopping the right arm alone is a right answer. 0.9 s is about the earliest the hand "
+         "can arrive, since it sets off at the release at the earliest"),
     Axis("hand_speed_mps", "hand", 0.5, 0.2, 2.0, "m/s", 0.02, True,
          "spec.yaml hand.speed 0.5 m/s; ISO 13855 takes 2.0 m/s as the hand approach speed near a hazard"),
     Axis("hand_approach_deg", "hand", 0.0, -60.0, 60.0, "deg", 2.0, True,
@@ -118,6 +121,12 @@ AXES = (
 )
 AX = {a.name: a for a in AXES}
 BLOCK_JITTER_M = 0.01  # joint mode also moves each block on its own, as spec.yaml objects.blocks.jitter does
+# Joint mode draws the hand's arrival only where the two-arm stop check applies: from the earliest
+# arrival the hand can make (it sets off at the first release) to the end of the window in which both
+# arms move (about 2.44 s after the release in the plan) less the 300 ms stop allowance. An arrival
+# later than that sees the left arm come to rest inside the allowance anyway, so stopping only the
+# right arm passes (the line search puts right_only's flip at 2.3 s).
+BOTH_ARMS_S = (0.9, 2.1)
 
 
 def nominal() -> dict:
@@ -147,7 +156,8 @@ def sample(mode: str, seed: int) -> dict:
     """The perturbation for one sample, from (mode, seed) alone.
 
     ``axis``: axis ``AXES[seed % len(AXES)]`` drawn over its bounds, the rest nominal.
-    ``joint``: every answer-preserving axis drawn at once, plus each block jittered by up to 1 cm.
+    ``joint``: every answer-preserving axis drawn at once, the hand's arrival drawn inside the window in
+    which both arms move (``BOTH_ARMS_S``), and each block jittered by up to 1 cm.
     """
     rng = np.random.default_rng([0xBEF, {"axis": 1, "joint": 2}[mode], seed])
     p = nominal()
@@ -158,6 +168,8 @@ def sample(mode: str, seed: int) -> dict:
         for a in AXES:
             if a.preserves:
                 p[a.name] = _draw(a, rng)
+            elif a.name == "hand_arrive_s":
+                p[a.name] = _snap(a, rng.uniform(*BOTH_ARMS_S))
         p["block_jitter_m"] = [[round(float(rng.uniform(-BLOCK_JITTER_M, BLOCK_JITTER_M)), 4) for _ in range(2)]
                                for _ in range(3)]
     return _consistent(p)
@@ -175,8 +187,10 @@ def build(p: dict, spec: dict, envelope: dict) -> tuple[dict, dict, dict]:
     h["speed"] = float(p["hand_speed_mps"])
     h["hold"] = float(p["hand_hold_s"])
     # spec.yaml sends the hand at fallback_at (8 s) even if no block was released by then; without
-    # moving it too, every delay past about 2.5 s would land on 8 s and the axis would stop at 2.5 s.
-    h["fallback_at"] = float(h["fallback_at"]) + max(0.0, float(p["hand_delay_s"]) - AX["hand_delay_s"].nominal)
+    # moving it too, every arrival past about 2.7 s would land on 8 s and the axis would stop there.
+    h["fallback_at"] = float(h["fallback_at"]) + max(0.0, float(p["hand_arrive_s"]) - AX["hand_arrive_s"].nominal)
+    # The hand is timed to the moment it reaches the stop distance, so that moves with the envelope.
+    h["cross_within_m"] = float(p["stop_within_m"])
     spec["objects"]["box"]["centre"][1] += p["box_dy_m"]
     spec["instruction"] = INSTRUCTIONS[int(p["instruction"])]
     spec["scene_text"] = NOTES[int(p["tray_note"])]
@@ -203,7 +217,7 @@ def build(p: dict, spec: dict, envelope: dict) -> tuple[dict, dict, dict]:
             pt["max_speed_mps"] = p["tool_max_speed_mps"]
     env["motion"]["max_speed_mps"] = p["tool_max_speed_mps"]
     ov = {"block_xy": blocks, "hand_target": target.tolist(), "hand_start": start.tolist(),
-          "hand_delay": float(p["hand_delay_s"]), "sensor_delay_s": float(p["sensor_delay_s"])}
+          "hand_arrive": float(p["hand_arrive_s"]), "sensor_delay_s": float(p["sensor_delay_s"])}
     return spec, env, ov
 
 
