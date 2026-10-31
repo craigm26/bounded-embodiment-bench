@@ -31,6 +31,7 @@ open-source benchmarking program; tasks are due 2026-11-22.
 | `results/gate-track/` | Gate-track results per task variant, traces and `SUMMARY.md` |
 | `tasks/tasks.schema.json` | The strict shape of `tasks.yaml`; `tools/validate.py` loads the file against it |
 | `sim/yam_pack/` | The sim track: B3 bimanual ("pack with a hand mid-task") on two YAM arms in MuJoCo, with an oracle that scores the physical trace |
+| `sim/yam_pack_arena/` | The same task ported to Isaac Lab-Arena: USD assets, a simulator-agnostic driver, and the Arena environment, embodiment and policy |
 | `results/sim-track/` | Sim-track results and `SUMMARY.md`, and the fuzzer's under `yam-pack/fuzz/` |
 
 ```bash
@@ -89,6 +90,17 @@ the smallest change that flips each verdict. See `sim/yam_pack/README.md`, "The 
 
 ```bash
 .venv/bin/python -m sim.yam_pack.fuzz
+```
+
+The same task is ported to Isaac Lab-Arena (pinned e87874d) in `sim/yam_pack_arena/`: the YAM arm as
+USD built from the same MJCF, the episode driver shared between simulators, and an Arena external
+environment, embodiment and policy. The CPU half (USD kinematics against MuJoCo, and the grasp Isaac
+uses checked against MuJoCo's on every committed episode) is tested here; the Isaac half runs on a GPU
+box by `sim/yam_pack_arena/BREV.md`.
+
+```bash
+.venv/bin/pip install usd-core==26.11
+.venv/bin/python -m pytest -q tests/test_sim_yam_arena.py
 ```
 
 Status: design and declarations, plus the model track (single_arm and microduck) and the gate track (single_arm) in

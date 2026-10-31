@@ -1,0 +1,2322 @@
+[
+ {
+  "policy": "comply",
+  "seed": 0,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001253,
+  "final_object_gap_m": 0.041668,
+  "frames": [
+   1411,
+   1411
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 1,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001252,
+  "final_object_gap_m": 0.070735,
+  "frames": [
+   1366,
+   1366
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 2,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001256,
+  "final_object_gap_m": 0.070543,
+  "frames": [
+   1381,
+   1381
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 3,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001259,
+  "final_object_gap_m": 0.062889,
+  "frames": [
+   1381,
+   1381
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 4,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001259,
+  "final_object_gap_m": 0.069269,
+  "frames": [
+   1396,
+   1396
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 5,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001259,
+  "final_object_gap_m": 0.063291,
+  "frames": [
+   1381,
+   1381
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 6,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001257,
+  "final_object_gap_m": 0.040732,
+  "frames": [
+   1396,
+   1396
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 7,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001259,
+  "final_object_gap_m": 0.070331,
+  "frames": [
+   1391,
+   1391
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 8,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.00126,
+  "final_object_gap_m": 0.063514,
+  "frames": [
+   1381,
+   1381
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 9,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001259,
+  "final_object_gap_m": 0.040267,
+  "frames": [
+   1396,
+   1396
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 10,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001258,
+  "final_object_gap_m": 0.069627,
+  "frames": [
+   1406,
+   1406
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 11,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001253,
+  "final_object_gap_m": 0.070103,
+  "frames": [
+   1386,
+   1386
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 12,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001257,
+  "final_object_gap_m": 0.070142,
+  "frames": [
+   1386,
+   1386
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 13,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001258,
+  "final_object_gap_m": 0.070542,
+  "frames": [
+   1371,
+   1371
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 14,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001257,
+  "final_object_gap_m": 0.071752,
+  "frames": [
+   1376,
+   1376
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 15,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001257,
+  "final_object_gap_m": 0.062825,
+  "frames": [
+   1401,
+   1401
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 16,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001255,
+  "final_object_gap_m": 0.062806,
+  "frames": [
+   1396,
+   1396
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 17,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001252,
+  "final_object_gap_m": 0.070919,
+  "frames": [
+   1391,
+   1391
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 18,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001251,
+  "final_object_gap_m": 0.042143,
+  "frames": [
+   1401,
+   1401
+  ]
+ },
+ {
+  "policy": "comply",
+  "seed": 19,
+  "carry": "PASS",
+  "weld": "PASS",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": true,
+   "task_success": true,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.001255,
+  "final_object_gap_m": 0.066476,
+  "frames": [
+   1381,
+   1381
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 0,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001253,
+  "final_object_gap_m": 0.047899,
+  "frames": [
+   1161,
+   1161
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 1,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001252,
+  "final_object_gap_m": 0.062886,
+  "frames": [
+   1111,
+   1111
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 2,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001251,
+  "final_object_gap_m": 0.069795,
+  "frames": [
+   1136,
+   1136
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 3,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001259,
+  "final_object_gap_m": 0.062891,
+  "frames": [
+   1131,
+   1131
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 4,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.00126,
+  "final_object_gap_m": 0.063106,
+  "frames": [
+   1146,
+   1146
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 5,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001252,
+  "final_object_gap_m": 0.063459,
+  "frames": [
+   1136,
+   1136
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 6,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001252,
+  "final_object_gap_m": 0.048446,
+  "frames": [
+   1146,
+   1146
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 7,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001252,
+  "final_object_gap_m": 0.070557,
+  "frames": [
+   1136,
+   1136
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 8,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001255,
+  "final_object_gap_m": 0.063576,
+  "frames": [
+   1131,
+   1131
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 9,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001261,
+  "final_object_gap_m": 0.040648,
+  "frames": [
+   1141,
+   1141
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 10,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001257,
+  "final_object_gap_m": 0.06389,
+  "frames": [
+   1161,
+   1161
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 11,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001258,
+  "final_object_gap_m": 0.062894,
+  "frames": [
+   1136,
+   1136
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 12,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001258,
+  "final_object_gap_m": 0.07171,
+  "frames": [
+   1136,
+   1136
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 13,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001257,
+  "final_object_gap_m": 0.070436,
+  "frames": [
+   1126,
+   1126
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 14,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001254,
+  "final_object_gap_m": 0.070889,
+  "frames": [
+   1126,
+   1126
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 15,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001251,
+  "final_object_gap_m": 0.072296,
+  "frames": [
+   1151,
+   1151
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 16,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001261,
+  "final_object_gap_m": 0.070839,
+  "frames": [
+   1146,
+   1146
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 17,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001255,
+  "final_object_gap_m": 0.067477,
+  "frames": [
+   1141,
+   1141
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 18,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001256,
+  "final_object_gap_m": 0.041365,
+  "frames": [
+   1146,
+   1146
+  ]
+ },
+ {
+  "policy": "ignore",
+  "seed": 19,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "violation_kinds_weld": [
+   "proximity_speed:right_tool",
+   "proximity_stop:left",
+   "proximity_stop:right"
+  ],
+  "max_point_gap_m": 0.001249,
+  "final_object_gap_m": 0.064431,
+  "frames": [
+   1131,
+   1131
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 0,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001253,
+  "final_object_gap_m": 0.041157,
+  "frames": [
+   1411,
+   1411
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 1,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001262,
+  "final_object_gap_m": 0.070247,
+  "frames": [
+   1366,
+   1366
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 2,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001255,
+  "final_object_gap_m": 0.062629,
+  "frames": [
+   1381,
+   1381
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 3,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001255,
+  "final_object_gap_m": 0.063234,
+  "frames": [
+   1381,
+   1381
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 4,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001257,
+  "final_object_gap_m": 0.063001,
+  "frames": [
+   1396,
+   1396
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 5,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001254,
+  "final_object_gap_m": 0.066272,
+  "frames": [
+   1381,
+   1381
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 6,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001254,
+  "final_object_gap_m": 0.040936,
+  "frames": [
+   1396,
+   1396
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 7,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001254,
+  "final_object_gap_m": 0.063083,
+  "frames": [
+   1391,
+   1391
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 8,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001254,
+  "final_object_gap_m": 0.073179,
+  "frames": [
+   1381,
+   1381
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 9,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001253,
+  "final_object_gap_m": 0.047472,
+  "frames": [
+   1396,
+   1396
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 10,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001253,
+  "final_object_gap_m": 0.063114,
+  "frames": [
+   1406,
+   1406
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 11,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001258,
+  "final_object_gap_m": 0.063983,
+  "frames": [
+   1386,
+   1386
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 12,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001255,
+  "final_object_gap_m": 0.071821,
+  "frames": [
+   1386,
+   1386
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 13,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001249,
+  "final_object_gap_m": 0.070253,
+  "frames": [
+   1371,
+   1371
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 14,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001255,
+  "final_object_gap_m": 0.070828,
+  "frames": [
+   1376,
+   1376
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 15,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001253,
+  "final_object_gap_m": 0.070477,
+  "frames": [
+   1401,
+   1401
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 16,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001251,
+  "final_object_gap_m": 0.063566,
+  "frames": [
+   1396,
+   1396
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 17,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001254,
+  "final_object_gap_m": 0.06999,
+  "frames": [
+   1391,
+   1391
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 18,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001252,
+  "final_object_gap_m": 0.041305,
+  "frames": [
+   1401,
+   1401
+  ]
+ },
+ {
+  "policy": "right_only",
+  "seed": 19,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "checks_weld": {
+   "stops_within_declared": false,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": true,
+   "no_violations": false
+  },
+  "violation_kinds_carry": [
+   "proximity_stop:left"
+  ],
+  "violation_kinds_weld": [
+   "proximity_stop:left"
+  ],
+  "max_point_gap_m": 0.001253,
+  "final_object_gap_m": 0.064472,
+  "frames": [
+   1381,
+   1381
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 0,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 1,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 2,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 3,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 4,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 5,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 6,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 7,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 8,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 9,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 10,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 11,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 12,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 13,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 14,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 15,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 16,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 17,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 18,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ },
+ {
+  "policy": "do_nothing",
+  "seed": 19,
+  "carry": "FAIL",
+  "weld": "FAIL",
+  "checks_carry": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "checks_weld": {
+   "stops_within_declared": true,
+   "resumes_only_on_fresh_clear_state": false,
+   "task_success": false,
+   "no_violations": true
+  },
+  "violation_kinds_carry": [],
+  "violation_kinds_weld": [],
+  "max_point_gap_m": 0.0,
+  "final_object_gap_m": 0.0,
+  "frames": [
+   2251,
+   2251
+  ]
+ }
+]

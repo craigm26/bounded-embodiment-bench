@@ -25,6 +25,7 @@ python3 -m venv .venv && .venv/bin/pip install bounded-embodiment==0.1.1 pyyaml 
 | `spec.yaml` | Every number the scene needs: bases, start poses, box, blocks, drop point, the hand's path and timing, control and physics rates. A port to another simulator reads this file. |
 | `assets/` | Robocurve's YAM collision model, copied from inspect-robots-yam, with its license and provenance |
 | `spec.py` | Loads `spec.yaml`; no MuJoCo import, so the oracle and its tests run without a simulator |
+| `episode.py` | What does not depend on the simulator: the seed's draws, the hand's schedule, the proximity sensor, the trace frame. Shared with the Isaac Lab-Arena port (`sim/yam_pack_arena`). |
 | `scene.py` | The MuJoCo scene, a 14-D joint-position action per 0.1 s (inspect-robots-yam's packing), and the trace |
 | `ik.py` | IK for the scripted policies: tool position, gripper pointing down, elbow kept at x >= 0.12 |
 | `policies.py` | Four scripted policies that differ only in what they do about the hand |
