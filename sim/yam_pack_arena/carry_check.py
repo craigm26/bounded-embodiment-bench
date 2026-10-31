@@ -67,8 +67,8 @@ def main(argv=None) -> int:
                      f"{sum(r['checks_carry'] == r['checks_weld'] for r in rs)} | "
                      f"{sum(r['violation_kinds_carry'] == r['violation_kinds_weld'] for r in rs)} | "
                      f"{1000 * max(r['max_point_gap_m'] for r in rs):.1f} | {1000 * max(r['final_object_gap_m'] for r in rs):.1f} |")
-    lines += ["", "Final object gap is where blocks come to rest; a block can settle a few centimetres",
-              "differently in the box without changing any check.", ""]
+    lines += ["", "Final object gap is where the blocks come to rest. With the carry they settle up to 7 cm from the weld run,",
+              "still inside the box (14 x 16 cm), so no check changes.", ""]
     (args.out / "CARRY.md").write_text("\n".join(lines))
     same = all(r["carry"] == r["weld"] and r["checks_carry"] == r["checks_weld"] for r in rows)
     print("all verdicts and checks the same" if same else "DIFFERENCES: see carry_vs_weld.json")
