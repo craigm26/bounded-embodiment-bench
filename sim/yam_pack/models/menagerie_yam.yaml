@@ -1,0 +1,24 @@
+# The canonical model: Robocurve's collision-only YAM (inspect-robots-yam 9b5ebb5, a reduction of MuJoCo
+# Menagerie i2rt_yam at 71f066a). Its joint convention is the canonical one, so the map is the identity.
+# This is the model every committed sim result before the joint-mapping layer ran on.
+name: menagerie_yam
+model: ../assets/yam_collision.xml
+source:
+  repo: github.com/robocurve/inspect-robots-yam
+  commit: 9b5ebb58525f6d2b023c3d7ffe48a226cbabe104
+  file: src/inspect_robots_yam/assets/yam_collision.xml
+joints:
+  - { canonical: joint1, native: joint1 }
+  - { canonical: joint2, native: joint2 }
+  - { canonical: joint3, native: joint3 }
+  - { canonical: joint4, native: joint4 }
+  - { canonical: joint5, native: joint5 }
+  - { canonical: joint6, native: joint6 }
+points:
+  tool: { site: grasp_site }     # centre of the closed fingertips, 0.1347 m out from the flange
+  wrist: { body: link_5 }        # on the joint 5 axis
+  elbow: { body: link_3 }        # on the joint 3 axis, in the arm's midplane
+weld_body: link_6
+fingers:
+  - { joint: left_finger, open: 0.037524 }
+  - { joint: right_finger, open: -0.037524 }

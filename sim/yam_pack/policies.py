@@ -72,8 +72,11 @@ class Packer:
         box = spec["objects"]["box"]
         grip_y = box["centre"][1] + box["size"][1] / 2 - box["wall"] / 2   # top of the box's left wall
         bz = spec["objects"]["box"]["size"][2]
-        L = ArmPlan("left", ArmIK(world.m, "left"), world.q("left"))
-        R = ArmPlan("right", ArmIK(world.m, "right"), world.q("right"))
+        # IK plans in canonical joints on the canonical model, whatever model the world simulates
+        # (``World.policy_m``); the world's joint map carries the plan onto its own model.
+        km = getattr(world, "policy_m", world.m)
+        L = ArmPlan("left", ArmIK(km, "left"), world.q("left"))
+        R = ArmPlan("right", ArmIK(km, "right"), world.q("right"))
         L.steps.append(("move", np.array([pk["box_x"][0], grip_y, bz + 0.005]), V_SLIDE))
         L.steps.append(("grip", 0.0))
         for k in range(1, len(pk["box_x"])):

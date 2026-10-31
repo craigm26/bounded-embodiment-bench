@@ -14,6 +14,11 @@ fingers do not close. The oracle never reads grasp state, only where things phys
 Everything the oracle needs is written to a trace (``World.trace``): per frame the six named envelope
 points, both arms' joint positions, the hand and the objects. The trace format does not depend on
 MuJoCo, so an Isaac Lab-Arena run that writes the same trace is scored by the same oracle.
+
+Which YAM model runs is a model config (``sim/yam_pack/models/``, ``joint_map.py``): the default is the
+canonical model above; ``World(..., model="i2rt_yam_v1")`` runs i2rt's own description instead. Actions,
+observations and the trace's joints stay in the canonical convention whatever the model; the named
+points are the same physical points on the arm, placed by the config.
 """
 from __future__ import annotations
 
@@ -24,6 +29,7 @@ import mujoco
 import numpy as np
 
 from sim.yam_pack.episode import HandScript, ProximitySensor, draw, make_frame
+from sim.yam_pack.joint_map import CANONICAL, JointMap, ModelConfig, load_config
 
 HERE = Path(__file__).resolve().parent
 SIDES = ("left", "right")
@@ -36,9 +42,29 @@ def _quat_yaw(yaw: float) -> tuple[float, float, float, float]:
     return (math.cos(yaw / 2), 0.0, 0.0, math.sin(yaw / 2))
 
 
-def build_model(spec: dict, block_xy: list[list[float]]) -> mujoco.MjModel:
-    """Compose the scene. ``block_xy`` are the (seeded) block centres in x, y."""
-    xml = (HERE / spec["robot"]["model"]).read_text()
+def model_config(spec: dict, model: str | ModelConfig | None = None) -> ModelConfig:
+    """The model config to run: ``model`` if given, else ``spec.robot.model_config``, else canonical."""
+    if isinstance(model, ModelConfig):
+        return model
+    return load_config(model or spec["robot"].get("model_config") or CANONICAL)
+
+
+def point_ref(cfg: ModelConfig, side: str, p: str) -> tuple[str, str]:
+    """(``site`` | ``body``, prefixed name) where the scene reads named point ``p``. A point given as a
+    body and an offset is a site the scene adds (``pt_<point>``)."""
+    ref = cfg.points[p]
+    if "site" in ref:
+        return "site", f"{side}_{ref['site']}"
+    if "pos" in ref:
+        return "site", f"{side}_pt_{p}"
+    return "body", f"{side}_{ref['body']}"
+
+
+def build_model(spec: dict, block_xy: list[list[float]], model: str | ModelConfig | None = None) -> mujoco.MjModel:
+    """Compose the scene. ``block_xy`` are the (seeded) block centres in x, y; ``model`` picks the YAM
+    model config (``model_config``)."""
+    cfg = model_config(spec, model)
+    xml = cfg.model.read_text()
     root = mujoco.MjSpec()
     root.option.timestep = spec["robot"]["physics_dt"]
     root.option.integrator = mujoco.mjtIntegrator.mjINT_IMPLICITFAST
@@ -51,6 +77,9 @@ def build_model(spec: dict, block_xy: list[list[float]]) -> mujoco.MjModel:
         child = mujoco.MjSpec.from_string(xml)
         for g in child.geoms:
             g.contype, g.conaffinity = 2, 2
+        for p, ref in cfg.points.items():
+            if "pos" in ref:
+                child.body(ref["body"]).add_site(name=f"pt_{p}", pos=ref["pos"])
         frame = wb.add_frame()
         frame.pos = spec["robot"]["bases"][side]
         frame.quat = _quat_yaw(0.0)
@@ -89,20 +118,20 @@ def build_model(spec: dict, block_xy: list[list[float]]) -> mujoco.MjModel:
 
     sv = spec["robot"]["servo"]
     for side in SIDES:
-        for j in range(1, ARM_DOF + 1):
+        for j, js in enumerate(cfg.joints, start=1):
             big = j in BIG_JOINTS
             kp, kv = (sv["kp_big"], sv["kv_big"]) if big else (sv["kp_small"], sv["kv_small"])
-            a = root.add_actuator(name=f"{side}_a{j}", target=f"{side}_joint{j}",
+            a = root.add_actuator(name=f"{side}_a{j}", target=f"{side}_{js.native}",
                                   trntype=mujoco.mjtTrn.mjTRN_JOINT)
             a.set_to_position(kp=kp, kv=kv)
-        for finger in ("left_finger", "right_finger"):
-            a = root.add_actuator(name=f"{side}_{finger}_a", target=f"{side}_{finger}",
+        for f in cfg.fingers:
+            a = root.add_actuator(name=f"{side}_{f['joint']}_a", target=f"{side}_{f['joint']}",
                                   trntype=mujoco.mjtTrn.mjTRN_JOINT)
             a.set_to_position(kp=50.0, kv=2.0)
     # Welds, inactive until a grasp: box to the left gripper, each block to the right gripper.
     for obj, side in [("box", "left")] + [(f"block{i}", "right") for i in range(len(block_xy))]:
         root.add_equality(name=f"weld_{obj}", type=mujoco.mjtEq.mjEQ_WELD, objtype=mujoco.mjtObj.mjOBJ_BODY,
-                          name1=f"{side}_link_6", name2=obj, active=False)
+                          name1=f"{side}_{cfg.weld_body}", name2=obj, active=False)
     return root.compile()
 
 
@@ -113,39 +142,49 @@ class World:
     ``hand_target``, ``hand_arrive``, plus ``hand_start`` (default ``spec.hand.start``) and
     ``sensor_delay_s``, how stale the proximity reading is (default 0). The seed's draws are made
     either way, so an override never shifts the others.
+
+    ``model`` picks the YAM model config (``model_config``). ``q``, ``step`` and the trace speak the
+    canonical joint convention whatever the model; ``joint_map`` converts, clamping commands to the
+    model's joint ranges (``limit_clips`` counts them). ``policy_m`` is the canonical scene model,
+    for policies that plan in canonical joints (``m`` is the model being simulated).
     """
 
-    def __init__(self, spec: dict, seed: int, overrides: dict | None = None):
+    def __init__(self, spec: dict, seed: int, overrides: dict | None = None,
+                 model: str | ModelConfig | None = None):
         self.spec, self.seed = spec, seed
+        self.config = model_config(spec, model)
         dr = draw(spec, seed, overrides)   # shared with the Isaac Lab-Arena port (episode.py)
         self.block_xy, self.hand_target, self.hand_arrive = dr.block_xy, dr.hand_target, dr.hand_arrive
         self.hand_start, self.sensor_delay_s = dr.hand_start, dr.sensor_delay_s
         self.hand_script = HandScript(spec, self.hand_start, self.hand_target, self.hand_arrive)
-        self.m = build_model(spec, self.block_xy)
+        self.m = build_model(spec, self.block_xy, self.config)
         self.d = mujoco.MjData(self.m)
         m = self.m
-        self._jq = {s: [m.jnt_qposadr[m.joint(f"{s}_joint{j}").id] for j in range(1, ARM_DOF + 1)] for s in SIDES}
+        cfg = self.config
+        self.policy_m = m if cfg.name == CANONICAL else build_model(spec, self.block_xy, CANONICAL)
+        jids = {s: [m.joint(f"{s}_{js.native}").id for js in cfg.joints] for s in SIDES}
+        self._jq = {s: [m.jnt_qposadr[j] for j in jids[s]] for s in SIDES}
         self._act = {s: [m.actuator(f"{s}_a{j}").id for j in range(1, ARM_DOF + 1)] for s in SIDES}
-        self._fing = {s: [(m.actuator(f"{s}_{f}_a").id, m.joint(f"{s}_{f}").id) for f in ("left_finger", "right_finger")]
-                      for s in SIDES}
+        self._fing = {s: [(m.actuator(f"{s}_{f['joint']}_a").id, m.joint(f"{s}_{f['joint']}").id, f["open"])
+                          for f in cfg.fingers] for s in SIDES}
+        self.joint_map = JointMap(cfg, m.jnt_range[jids["left"]])
         pts = spec["robot"]["points"]
         self.point_ids = [f"{s}_{p}" for s in SIDES for p in pts]
         self._pt = {}
         for s in SIDES:
-            for p, ref in pts.items():
-                self._pt[f"{s}_{p}"] = ("site", m.site(f"{s}_{ref['site']}").id) if "site" in ref \
-                    else ("body", m.body(f"{s}_{ref['body']}").id)
+            for p in pts:
+                kind, name = point_ref(cfg, s, p)
+                self._pt[f"{s}_{p}"] = (kind, m.site(name).id if kind == "site" else m.body(name).id)
         self.n_blocks = len(self.block_xy)
         for s in SIDES:
-            q0 = spec["robot"]["start_q"][s]
+            q0 = self.joint_map.to_native(spec["robot"]["start_q"][s])
             for a, v in zip(self._jq[s], q0):
                 self.d.qpos[a] = v
             for a, v in zip(self._act[s], q0):
                 self.d.ctrl[a] = v
-            for a, j in self._fing[s]:  # fingers held open
-                lo, hi = m.jnt_range[j]
-                self.d.ctrl[a] = hi if m.joint(j).name.endswith("_left_finger") else lo
-                self.d.qpos[m.jnt_qposadr[j]] = self.d.ctrl[a]
+            for a, j, v in self._fing[s]:  # fingers held open
+                self.d.ctrl[a] = v
+                self.d.qpos[m.jnt_qposadr[j]] = v
         mujoco.mj_forward(m, self.d)
         self.grip = {"left": 1.0, "right": 1.0}
         self.held = {"left": None, "right": None}
@@ -162,7 +201,13 @@ class World:
         return float(self.d.time)
 
     def q(self, side: str) -> np.ndarray:
-        return np.array([self.d.qpos[a] for a in self._jq[side]])
+        """Joint positions in the canonical convention."""
+        return self.joint_map.to_canonical(np.array([self.d.qpos[a] for a in self._jq[side]]))
+
+    @property
+    def limit_clips(self) -> int:
+        """Commanded joint values clamped to this model's joint ranges so far."""
+        return self.joint_map.clips
 
     def point(self, pid: str) -> np.ndarray:
         kind, i = self._pt[pid]
@@ -205,10 +250,10 @@ class World:
 
     # ----- control -------------------------------------------------------------------------------
     def step(self, action: np.ndarray) -> None:
-        """Apply one 14-D action for one control period."""
+        """Apply one 14-D action (canonical convention) for one control period."""
         action = np.asarray(action, float)
         assert action.shape == (14,), action.shape
-        targets = {"left": action[0:6], "right": action[7:13]}
+        targets = {"left": self.joint_map.to_native(action[0:6]), "right": self.joint_map.to_native(action[7:13])}
         grips = {"left": action[6], "right": action[13]}
         start = {s: np.array([self.d.ctrl[a] for a in self._act[s]]) for s in SIDES}
         for s in SIDES:

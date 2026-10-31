@@ -1,0 +1,6592 @@
+{
+ "fit_check": {
+  "axis_angle_deg": 4e-06,
+  "axis_line_after_lift_mm": [
+   0.0,
+   0.0,
+   0.0,
+   0.001,
+   0.002,
+   0.002
+  ],
+  "axis_line_mm": [
+   0.0,
+   9.5,
+   9.5,
+   9.501,
+   9.502,
+   9.502
+  ],
+  "lift_mm": [
+   0.0,
+   0.0,
+   9.5
+  ],
+  "model": "i2rt_yam_v1",
+  "points_after_lift_mm": {
+   "elbow": 0.0,
+   "tool": 0.003,
+   "wrist": 0.002
+  },
+  "points_mm": {
+   "elbow": 9.5,
+   "tool": 9.502,
+   "wrist": 9.502
+  },
+  "poses": 2000,
+  "range_differences_rad": {
+   "joint1": {
+    "canonical": [
+     -2.61799,
+     3.05433
+    ],
+    "this_model": [
+     -2.61799,
+     3.14159
+    ]
+   },
+   "joint3": {
+    "canonical": [
+     0.0,
+     3.66519
+    ],
+    "this_model": [
+     0.0,
+     3.14159
+    ]
+   },
+   "joint4": {
+    "canonical": [
+     -1.5708,
+     1.5708
+    ],
+    "this_model": [
+     -1.69297,
+     1.5708
+    ]
+   }
+  }
+ },
+ "rows": [
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2943,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "d84032c29d2b5c2f2dc4949823fb5e489f2bd0dfb4e2bdd8cc917a3a48abe840",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1411,
+      1411
+     ],
+     "joint_rad": 0.00019773121059118992,
+     "point_after_lift_m": 7.012675577154616e-05,
+     "point_m": 0.009527735905283573
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2917,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "5255274824ae65f9634c7ad789737c2abcead97eb26476f5bd81c4473b3b71bc",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 0,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2917,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "aaa6d1885a26916fe68f75fb02da1e024df77a9fdc6b2a67e1b9985443c7b676",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1411,
+      1411
+     ],
+     "joint_rad": 0.00013228935351428106,
+     "point_after_lift_m": 4.621291093913372e-05,
+     "point_m": 4.621291093913372e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2895,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "d4138a2c878cdf1afd4626e3877a07e3009eb24f5c48804426b25824c0910327",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1366,
+      1366
+     ],
+     "joint_rad": 0.00024145466289926532,
+     "point_after_lift_m": 8.476590195871787e-05,
+     "point_m": 0.009533545905945665
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2868,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "bd79e7974b5233f55ff2fd89924129618559fcf7f7a26dea306e0889957642e0",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 1,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2868,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "40587e33976120c6d2da616617a4f6759e89791585b1c075a1f92b4eb2b4361a",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1366,
+      1366
+     ],
+     "joint_rad": 0.00015069138394419035,
+     "point_after_lift_m": 4.898725702146888e-05,
+     "point_m": 4.898725702146888e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2967,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "5c2f6bddaf7bab7f3bcbe377c389098aeb7a1929363f777c6622670e2f63fb39",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00018896143108015906,
+     "point_after_lift_m": 6.703559324518514e-05,
+     "point_m": 0.009528775823559238
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2941,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "b0795ba8dc5ffe6f357a1919377bcc8e7706ed089ee09efe7c16f9b67059b549",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 2,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2941,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "ee28fc6d172256d2643a8e4024c46c64590ec46a68697a0426ee8184e164e3bb",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00014952075700813694,
+     "point_after_lift_m": 5.087575931368294e-05,
+     "point_m": 5.087575931368294e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2918,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 20.0
+    },
+    "trace_sha256": "3f9b38334ca2b69c8413fc2cfe7f087daa37e56cdfee406b10c860c72d349166",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00021361211704329364,
+     "point_after_lift_m": 6.441541205193352e-05,
+     "point_m": 0.009528027700353294
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2892,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 20.0
+    },
+    "trace_sha256": "874dbb28182401310ec85f8ef696a7569ae564e769d7157f7c5019a31e60b2cc",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 3,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2892,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 20.0
+    },
+    "trace_sha256": "4f7d2e1b8ee9ca0269bd85270deb4fc006eb39f2df81dcf16f7f05453eb4912a",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.0001244518692649077,
+     "point_after_lift_m": 4.908046121668628e-05,
+     "point_m": 4.908046121668628e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2882,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "eac808dfb8ba680186cddb4cb875d524f3e0162c622704f0416b5d33032675d4",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1396,
+      1396
+     ],
+     "joint_rad": 0.00016722340040153938,
+     "point_after_lift_m": 4.7930190281770494e-05,
+     "point_m": 0.009526168768323127
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2855,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "f2a748f6c9a0b71fea53f729e8b113e10cda1395f6db1d8f972e00fac0b9684a",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 4,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2855,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "d20aa46ce9de02d064c8e3ba1e866c318595c9a9d5e8ce1de64aa1a9a8adc2db",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1396,
+      1396
+     ],
+     "joint_rad": 0.0001345865295134807,
+     "point_after_lift_m": 5.225697331682788e-05,
+     "point_m": 5.225697331682788e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2916,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "8c91221de662e3f1a42e1e64fe537f14522badbad29931919dcdc2dca6a10cc9",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00019611250580364725,
+     "point_after_lift_m": 6.983375095684318e-05,
+     "point_m": 0.009528431173425804
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.289,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "7091a8e48b31d885f8ec2039ff784209ce8f2db74dc42c1e63e59e9b8ae5ac37",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 5,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.289,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "c3e8c81c190534277b2317082add5c6d454ae586d2ca602ed28eab173262c64d",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00015795099458015827,
+     "point_after_lift_m": 6.036748388428624e-05,
+     "point_m": 6.036748388428624e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2906,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "2483f203664ba118405a7355156eb9024205ce952cd9dd98ab6c07fe5c7f0d7f",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1396,
+      1396
+     ],
+     "joint_rad": 0.00016120190971502524,
+     "point_after_lift_m": 6.311332295687918e-05,
+     "point_m": 0.00952823004478924
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.288,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "825dd600339f8bde3f2bdf910e892e0e479541a3c33f62435813eb1d5ab15bba",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 6,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.288,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "fdece22f74a49a2ec3580111e27ef8d932e01e67e6c81e87b285c00562653949",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1396,
+      1396
+     ],
+     "joint_rad": 0.00012115430038641198,
+     "point_after_lift_m": 5.146599616603484e-05,
+     "point_m": 5.146599616603484e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2961,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "14734bbdc3d816d466025b2c93ce7edbaccde6e1ec697010c316dd890fb5377e",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1391,
+      1391
+     ],
+     "joint_rad": 0.0001655390455841399,
+     "point_after_lift_m": 5.591193476337806e-05,
+     "point_m": 0.009525716781331111
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2924,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "80b958ff8e5bd629c91f94b4f6d57146cdec6e06661e37eec043aedda5a8bd6b",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 7,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2924,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "358b067a40477808f375e4173e6891522fda7f8bc1d03f5f404f5bd1f5f3315d",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1391,
+      1391
+     ],
+     "joint_rad": 0.0001417501246441244,
+     "point_after_lift_m": 4.509182474805466e-05,
+     "point_m": 4.509182474805466e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.294,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "6365464b236bff247509b4aea5de28bb08287adf31391a274a79060dac90ac75",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00018186602514713712,
+     "point_after_lift_m": 6.192391707466359e-05,
+     "point_m": 0.009526215908479312
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2914,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "012589c1d05c14d346a1804ac192b006807dbaccf377406b3a78fccba2d01ecd",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 8,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2914,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "30e3f174a81725c7fcd8ca8bdf58e5870cdc615ab6c18707f92deca6c559cd93",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00013444043305188558,
+     "point_after_lift_m": 4.867095620086059e-05,
+     "point_m": 4.867095620086059e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2937,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "80172ce3c46815a64d51b2784225f9393b2724f51c15f627ffe9120a99b41488",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1396,
+      1396
+     ],
+     "joint_rad": 0.00018941846073960988,
+     "point_after_lift_m": 7.015896094766746e-05,
+     "point_m": 0.009526270788836916
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2911,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "1df080a5868f106748781c3af7ebce57a7f668f7e0e30110aef5c30c49c9e72a",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 9,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2911,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "4065ac78c92c02315fdd44436dc8688ffe7f3cc4966774bd56670952c659ed15",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1396,
+      1396
+     ],
+     "joint_rad": 0.00013771354562508442,
+     "point_after_lift_m": 5.117011723424888e-05,
+     "point_m": 5.117011723424888e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2948,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "bb91cc97e80c8a192751a3fcc07c5d47ccbfec408e1ba2e8c9de4f6530d86ab4",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1406,
+      1406
+     ],
+     "joint_rad": 0.000199511752204673,
+     "point_after_lift_m": 6.392754040737453e-05,
+     "point_m": 0.009527671119417037
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2923,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "e24c84adf2a106a894f5bfc141170d9cf02fc74ef71964f26ccb25eada5456d2",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 10,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2923,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "9c749c1eeeb878a533e651623214aa991aca0bae2c1dbd05c9e9eeeb15886ab6",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1406,
+      1406
+     ],
+     "joint_rad": 0.0001626472590952055,
+     "point_after_lift_m": 4.9842837465547175e-05,
+     "point_m": 4.9842837465547175e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "069fa78d1c06cccbdfe5a7681010c44ee368d893602ffad3819808e029cf130f",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1386,
+      1386
+     ],
+     "joint_rad": 0.00019057302562486278,
+     "point_after_lift_m": 6.282973738863987e-05,
+     "point_m": 0.00952695221660704
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2974,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "b1647afdc9fcad219da7e284bcea8c2a1d8144b462c7d97ea67e9a1e6c611b12",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 11,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2974,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "17785d935fbda6fac99320829712ca1cc9e83ffaac2039f53b1c458c7b0c9244",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1386,
+      1386
+     ],
+     "joint_rad": 0.0001421188294685738,
+     "point_after_lift_m": 4.073986295085362e-05,
+     "point_m": 4.073986295085362e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2878,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "16082dc418979ded54fa8bdaeb005c30c204e2337e5c7e8204a689b2036a9394",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1386,
+      1386
+     ],
+     "joint_rad": 0.00020831429863443773,
+     "point_after_lift_m": 6.535776221056618e-05,
+     "point_m": 0.009530625700621928
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2851,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "ac0b1b4d4f638df05a691bc1d8971831953b205dd4d44edab607d6423a5b74bf",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 12,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2851,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "73271afd1913b3e1b80f724fa24c329fa082116217e696d59cc568aa8f92844e",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1386,
+      1386
+     ],
+     "joint_rad": 0.0001177197308285889,
+     "point_after_lift_m": 4.853919170975406e-05,
+     "point_m": 4.853919170975406e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2884,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 20.0
+    },
+    "trace_sha256": "64ceca45567153179eb1a55a7f65ff0314a8b49ce5d456d160e4b3ac42d1f025",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1371,
+      1371
+     ],
+     "joint_rad": 0.00024963046973836,
+     "point_after_lift_m": 8.404562135002398e-05,
+     "point_m": 0.009536627516511034
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2857,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 20.0
+    },
+    "trace_sha256": "8f2c985f2b94b71059d0207c9d312b4db78a0e0d3400856b028d3f43ed41d4bb",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 13,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2857,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 20.0
+    },
+    "trace_sha256": "935acc66705807a3d7c1963e83b7300d0c9bd987f6da016dbf7675af9b174dc5",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1371,
+      1371
+     ],
+     "joint_rad": 0.0001346674073490206,
+     "point_after_lift_m": 4.7730211611600996e-05,
+     "point_m": 4.7730211611600996e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2928,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "66bd73d0a602591fc3c86f86fe3c71893653ece676978018beb5d865c3e5d628",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1376,
+      1376
+     ],
+     "joint_rad": 0.00019386340104365907,
+     "point_after_lift_m": 6.718975269840019e-05,
+     "point_m": 0.009528578632160032
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2902,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "fd2a8692f322c0a34199528ff3a054379ba1ca4711b7965193f679f6481c2b8e",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 14,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2902,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "5d72e6c2710eb233c5abc1b53abb27ca251df15f23e0dbfa663f1399d2623626",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1376,
+      1376
+     ],
+     "joint_rad": 0.0001673580115428841,
+     "point_after_lift_m": 6.061482840012137e-05,
+     "point_m": 6.061482840012137e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2902,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "f7fbd83eb0618bd52d2dba35221517f467e2afb14ae4a0dd2ecd637777c439c6",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1401,
+      1401
+     ],
+     "joint_rad": 0.0001733027594690295,
+     "point_after_lift_m": 6.300628049317442e-05,
+     "point_m": 0.009527031674123724
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2876,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "4b389186228f79ebb2c5480220babb5fc715b8569ab44de900992239eaf02f3c",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 15,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2876,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "5c7c812c58624e887ddd33b716e40b18290b6a4f5caa4d33fe5d2c11f1ae82e8",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1401,
+      1401
+     ],
+     "joint_rad": 0.00014331954646817913,
+     "point_after_lift_m": 6.114112564761451e-05,
+     "point_m": 6.114112564761451e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2937,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "255386ad36634ee224f57ea52484cdcf0af56f0b5a2cb00d23d08ba5a8e71d8e",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1396,
+      1396
+     ],
+     "joint_rad": 0.00018345716111012322,
+     "point_after_lift_m": 5.646469316259662e-05,
+     "point_m": 0.009524019222779932
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2911,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "a2a2f180f476431752407568871c205dec42c8e0fcd3303890f2d7f1a94cb6bb",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 16,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2911,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "da5027c682d10e8287cc43fa2cacb3c82588eba6eb2e86ef28755e1403557fc0",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1396,
+      1396
+     ],
+     "joint_rad": 0.00011470187154993816,
+     "point_after_lift_m": 4.06286829552713e-05,
+     "point_m": 4.06286829552713e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2956,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "80b80acfe8379e1706ac1de149f910b5e86fb47c465b4d968d5bd7cd6914d6ec",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1391,
+      1391
+     ],
+     "joint_rad": 0.00021461313831805384,
+     "point_after_lift_m": 6.604343674243027e-05,
+     "point_m": 0.00952833133953908
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.293,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "e921a2302ea54b5dcb356f5a8cba50b2f5828c6fe949eea07c2ad50a2cb89cfe",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 17,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.293,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "c329195529138bc9512f1ea0b423bdf9b7f32e1398d6cc2700230632d369cbc2",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1391,
+      1391
+     ],
+     "joint_rad": 0.0001569319861560725,
+     "point_after_lift_m": 4.1260709044683096e-05,
+     "point_m": 4.1260709044683096e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2924,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "cb4d553f9561ad268a1695d62449eb2f82a15ce9b3486d70510b2b7f0ededf89",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1401,
+      1401
+     ],
+     "joint_rad": 0.00017108258518150343,
+     "point_after_lift_m": 6.118633680355505e-05,
+     "point_m": 0.009528378309721437
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2898,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "5491b37fc6c57cf3f948496f983852b0cb39efa4b50e79d9f5d44a2f6e605867",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 18,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2898,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "940aa452cbb32d9b0fa9ed17b290221751321cb6b1cc11f921ef788e120553b3",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1401,
+      1401
+     ],
+     "joint_rad": 0.00015206774854958915,
+     "point_after_lift_m": 4.4312506878661594e-05,
+     "point_m": 4.4312506878661594e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2912,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "126f8121961d461e2a61cc4c145713b8c7aa5ea96229386e4243ce38d5251efe",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00022033276894473097,
+     "point_after_lift_m": 6.703772651690351e-05,
+     "point_m": 0.009526305906424788
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2886,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "b2bfd0d29817fb2646c3d1fca2f5a5044e5997a395cadebd4bb033f5f4b13458",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "comply",
+   "seed": 19,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": true,
+     "stops_within_declared": true,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2886,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "3e271fe76b2956d8f5e3bfb324f6cac45401f5cf64754cb2183b3c6384e273de",
+    "verdict": "PASS",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00012446169286461917,
+     "point_after_lift_m": 4.22172005677207e-05,
+     "point_m": 4.22172005677207e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3008,
+    "time_to_stop_ms": {
+     "left": 960.0,
+     "right": null
+    },
+    "trace_sha256": "61297b1d8b64bbad46be8571a8a1807f971b33756133df614e5b475a92121aa2",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1161,
+      1161
+     ],
+     "joint_rad": 0.0001632303859262496,
+     "point_after_lift_m": 6.458900929884074e-05,
+     "point_m": 0.009525279997808892
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2983,
+    "time_to_stop_ms": {
+     "left": 960.0,
+     "right": null
+    },
+    "trace_sha256": "28f075918066f1b93718ead20d41d54470407104e961085f24c809f23338716c",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 0,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2983,
+    "time_to_stop_ms": {
+     "left": 960.0,
+     "right": null
+    },
+    "trace_sha256": "ee22b4226d8c885feb6ee8ed4523bfaf0bbdb708bd2e23604de3191612143b9f",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1161,
+      1161
+     ],
+     "joint_rad": 0.0002085592742557818,
+     "point_after_lift_m": 6.977976258248926e-05,
+     "point_m": 6.977976258248926e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2964,
+    "time_to_stop_ms": {
+     "left": 1160.0,
+     "right": null
+    },
+    "trace_sha256": "45289448644fbd4a9f17c73e64cd59299837cd25d3ac64aa162378e6707398df",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1111,
+      1111
+     ],
+     "joint_rad": 0.00015677793590351818,
+     "point_after_lift_m": 5.4730146702798014e-05,
+     "point_m": 0.009523121185593538
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2938,
+    "time_to_stop_ms": {
+     "left": 1160.0,
+     "right": null
+    },
+    "trace_sha256": "cf336220eee7767f0ce922a0c2e9824b934baf323b3e80f6c0f6a567e34532c5",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 1,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2938,
+    "time_to_stop_ms": {
+     "left": 1160.0,
+     "right": null
+    },
+    "trace_sha256": "3eb6f4f631e104f0c05149d7d93ecab704d7242b35e1058390ff98eece7fbd99",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1111,
+      1111
+     ],
+     "joint_rad": 0.00018534702636907596,
+     "point_after_lift_m": 6.119057667678638e-05,
+     "point_m": 6.119057667678638e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2976,
+    "time_to_stop_ms": {
+     "left": 1380.0,
+     "right": null
+    },
+    "trace_sha256": "1f9cbef414023fc3f3f74e122eb4af8bf5951ac4f0a18b306bfaace8915682a4",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1136,
+      1136
+     ],
+     "joint_rad": 0.0001847904477525475,
+     "point_after_lift_m": 6.853326910681127e-05,
+     "point_m": 0.009531285329288326
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2941,
+    "time_to_stop_ms": {
+     "left": 1380.0,
+     "right": null
+    },
+    "trace_sha256": "4b40abeed11b47ca1efc9fa8e10ed24bdec22faf1c9c132a5c28b0fe2a397071",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 2,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2941,
+    "time_to_stop_ms": {
+     "left": 1380.0,
+     "right": null
+    },
+    "trace_sha256": "f663b925b252f41cddbc0a5faa6ae9afb9a2c68114ff517e0a7b577b36f133df",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1136,
+      1136
+     ],
+     "joint_rad": 0.00012573343217603394,
+     "point_after_lift_m": 4.632861327186375e-05,
+     "point_m": 4.632861327186375e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2977,
+    "time_to_stop_ms": {
+     "left": 1300.0,
+     "right": null
+    },
+    "trace_sha256": "552c05546b455033bf676f0b0f49a2d5d6cb80b76da766b1293706d030031d94",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1131,
+      1131
+     ],
+     "joint_rad": 0.00020931108865629433,
+     "point_after_lift_m": 6.264987717089656e-05,
+     "point_m": 0.009526045841689309
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2951,
+    "time_to_stop_ms": {
+     "left": 1300.0,
+     "right": null
+    },
+    "trace_sha256": "76f53cc89b586aa5a44716cc8cb2b2eb1c34fdd9554727a281fc65c96dfbae0c",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 3,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2951,
+    "time_to_stop_ms": {
+     "left": 1300.0,
+     "right": null
+    },
+    "trace_sha256": "ad276b15d0bdb6ea16ff4314ee3513b709b915ebbc8f22d738c6b03b404e0f64",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1131,
+      1131
+     ],
+     "joint_rad": 0.00016692958671882252,
+     "point_after_lift_m": 5.687329148812788e-05,
+     "point_m": 5.687329148812788e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2944,
+    "time_to_stop_ms": {
+     "left": 1300.0,
+     "right": null
+    },
+    "trace_sha256": "6c4ef8917249979c050e9771e97e2a0e6d0df674a5c366e66d1fe4487f3d9264",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1146,
+      1146
+     ],
+     "joint_rad": 0.00020219108239194483,
+     "point_after_lift_m": 6.813692612110369e-05,
+     "point_m": 0.009532001124945956
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2918,
+    "time_to_stop_ms": {
+     "left": 1300.0,
+     "right": null
+    },
+    "trace_sha256": "a1099d14be2d88799b3be598915e275882185f1d64d3f56990b5a51485f3f4f2",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 4,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2918,
+    "time_to_stop_ms": {
+     "left": 1300.0,
+     "right": null
+    },
+    "trace_sha256": "e6ee63e5fc9e86e52163d8ade0d15bcf87c668504f145c97360cef19858122a6",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1146,
+      1146
+     ],
+     "joint_rad": 0.00014291034811941827,
+     "point_after_lift_m": 5.0723041591331116e-05,
+     "point_m": 5.0723041591331116e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2978,
+    "time_to_stop_ms": {
+     "left": 1380.0,
+     "right": null
+    },
+    "trace_sha256": "d84bca93072c1ec77b05ff389d39e00618677bd25238bf05e4b4e2ecd15a5761",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1136,
+      1136
+     ],
+     "joint_rad": 0.00020554760682034434,
+     "point_after_lift_m": 7.723302789953014e-05,
+     "point_m": 0.009529283017739667
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2955,
+    "time_to_stop_ms": {
+     "left": 1380.0,
+     "right": null
+    },
+    "trace_sha256": "38e20840c73283720be032b56362e8ec1547a331187a5c70ac40d0bdd8a9f2b8",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 5,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2955,
+    "time_to_stop_ms": {
+     "left": 1380.0,
+     "right": null
+    },
+    "trace_sha256": "68892850fe632491f821e7f9ad45fe482d1ad771d1dcb293368980bd96add87a",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1136,
+      1136
+     ],
+     "joint_rad": 0.00014938467892910978,
+     "point_after_lift_m": 5.072877726140238e-05,
+     "point_m": 5.072877726140238e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2966,
+    "time_to_stop_ms": {
+     "left": 1200.0,
+     "right": null
+    },
+    "trace_sha256": "ba917ccdd60e0e7874c83668e9a5698043c8154289420ef479dd2ae99aaea0bd",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1146,
+      1146
+     ],
+     "joint_rad": 0.0001906559394344587,
+     "point_after_lift_m": 6.648926745061662e-05,
+     "point_m": 0.00952926881497016
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.294,
+    "time_to_stop_ms": {
+     "left": 1200.0,
+     "right": null
+    },
+    "trace_sha256": "d3ccdf166ff48af018ff6136dc189f8ecc16ac5faa091f5210ef9397a2a2683c",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 6,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.294,
+    "time_to_stop_ms": {
+     "left": 1200.0,
+     "right": null
+    },
+    "trace_sha256": "2c1c7968d79eab957cae72aa9ecfd91f1a0a17f8f0f14b173e794ec8c004c262",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1146,
+      1146
+     ],
+     "joint_rad": 0.00011177424100559659,
+     "point_after_lift_m": 3.9016118536018505e-05,
+     "point_m": 3.9016118536018505e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2914,
+    "time_to_stop_ms": {
+     "left": 940.0,
+     "right": null
+    },
+    "trace_sha256": "6d6c326578e837095c546b861d8069e6d99d74feaa820e18c5fe0ccfe6730bf9",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1136,
+      1136
+     ],
+     "joint_rad": 0.00017622009903273117,
+     "point_after_lift_m": 5.8456990034409926e-05,
+     "point_m": 0.009524763016405867
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.288,
+    "time_to_stop_ms": {
+     "left": 960.0,
+     "right": null
+    },
+    "trace_sha256": "5d901cdc25d34f16de1b163ba44e8818b21cfc1b8aa485b10512f1691fc891ef",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 7,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.288,
+    "time_to_stop_ms": {
+     "left": 960.0,
+     "right": null
+    },
+    "trace_sha256": "b63d41455fcd94f0b7b5ad9a7409a55e72eb8ed0d9bd4125ef97362aecfa59f0",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1136,
+      1136
+     ],
+     "joint_rad": 0.00010825207194143727,
+     "point_after_lift_m": 3.968751406570885e-05,
+     "point_m": 3.968751406570885e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3001,
+    "time_to_stop_ms": {
+     "left": 1180.0,
+     "right": null
+    },
+    "trace_sha256": "83d36329eec499d94fe185972e634b0d31bc1d7e16cbedeffc2fbf192bf10e8a",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1131,
+      1131
+     ],
+     "joint_rad": 0.0002074712489537056,
+     "point_after_lift_m": 6.838628837598297e-05,
+     "point_m": 0.009528777372166291
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2976,
+    "time_to_stop_ms": {
+     "left": 1180.0,
+     "right": null
+    },
+    "trace_sha256": "c0b18062a8b498aab727e5ac0179e85dfb009309bc4134ed3fd2dbae9c083b92",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 8,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2976,
+    "time_to_stop_ms": {
+     "left": 1180.0,
+     "right": null
+    },
+    "trace_sha256": "eb222d6d5daa081dc38ca205d00cf137f67c49e3c3f82c5dc0d60922e720f6e6",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1131,
+      1131
+     ],
+     "joint_rad": 9.796436415567726e-05,
+     "point_after_lift_m": 4.186681972351519e-05,
+     "point_m": 4.186681972351519e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3006,
+    "time_to_stop_ms": {
+     "left": 840.0,
+     "right": 3360.0
+    },
+    "trace_sha256": "336c5bf7e3c6a0f5289aa403d50886c1c64031d995c11d1a6ffb94fe0ddd7c05",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1141,
+      1141
+     ],
+     "joint_rad": 0.00015850226037139592,
+     "point_after_lift_m": 5.108263178861954e-05,
+     "point_m": 0.00952257569020943
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2981,
+    "time_to_stop_ms": {
+     "left": 840.0,
+     "right": 3360.0
+    },
+    "trace_sha256": "54c22359747e9953cb2b02d04469ed025a86735ab635c0c7bdda7ee90b55bd81",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 9,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2981,
+    "time_to_stop_ms": {
+     "left": 840.0,
+     "right": 3360.0
+    },
+    "trace_sha256": "d51d2443822f259f60e6f3ab2a079221d996d8b8b608903418ff34a818799a96",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1141,
+      1141
+     ],
+     "joint_rad": 0.00010922805007684616,
+     "point_after_lift_m": 3.952244172413151e-05,
+     "point_m": 3.952244172413151e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3011,
+    "time_to_stop_ms": {
+     "left": 880.0,
+     "right": null
+    },
+    "trace_sha256": "41d1ca22a39623473926d8cf53d9ba847df452f71a2fe0e7b2d04ece6d180b95",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1161,
+      1161
+     ],
+     "joint_rad": 0.00017490987338519837,
+     "point_after_lift_m": 5.912472448943075e-05,
+     "point_m": 0.009524732549428356
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2986,
+    "time_to_stop_ms": {
+     "left": 880.0,
+     "right": null
+    },
+    "trace_sha256": "277d1a2b441e9a56bd016c6004a68df879cbc8b327e4f5e89c32c2c6be0dfa28",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 10,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2986,
+    "time_to_stop_ms": {
+     "left": 880.0,
+     "right": null
+    },
+    "trace_sha256": "d7d1cbf013571d5292c584e1caccab93b90a3f02462ce895876a111ae0cee772",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1161,
+      1161
+     ],
+     "joint_rad": 0.00017638378100293117,
+     "point_after_lift_m": 5.6393588662526005e-05,
+     "point_m": 5.6393588662526005e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2951,
+    "time_to_stop_ms": {
+     "left": 1340.0,
+     "right": null
+    },
+    "trace_sha256": "52f12cf817d6f725ee8268d20cb64f97891a2640df88ebdb71840e788fddcc96",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1136,
+      1136
+     ],
+     "joint_rad": 0.0002042083480477963,
+     "point_after_lift_m": 5.9137850764984354e-05,
+     "point_m": 0.009524672761480934
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2916,
+    "time_to_stop_ms": {
+     "left": 1340.0,
+     "right": null
+    },
+    "trace_sha256": "d9e16a31c180dbcf983656622b5dfba1a8073503eba72659203ccad758f3d3bf",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 11,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2916,
+    "time_to_stop_ms": {
+     "left": 1340.0,
+     "right": null
+    },
+    "trace_sha256": "b11a2eb14ff84426125e7ac6ba2f0100f742253701cf75176e6b829bdc881529",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1136,
+      1136
+     ],
+     "joint_rad": 0.0002029251377542174,
+     "point_after_lift_m": 6.464365524597691e-05,
+     "point_m": 6.464365524597691e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2949,
+    "time_to_stop_ms": {
+     "left": 1340.0,
+     "right": null
+    },
+    "trace_sha256": "8b193ed7ff8559b53facd8d2407023639220a144a52e7b542529efd1ac9c538e",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1136,
+      1136
+     ],
+     "joint_rad": 0.00023385372123541082,
+     "point_after_lift_m": 7.293914063193931e-05,
+     "point_m": 0.009531753636317912
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2923,
+    "time_to_stop_ms": {
+     "left": 1340.0,
+     "right": null
+    },
+    "trace_sha256": "997aff971beb127500188627f9d7b85e87c1063f75fe4b0e80d07b7ced305f2b",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 12,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2923,
+    "time_to_stop_ms": {
+     "left": 1340.0,
+     "right": null
+    },
+    "trace_sha256": "552b5d9ee1d2534f15e3045859ac933a1bdf085b3e5f90f943c197cdf2fc8279",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1136,
+      1136
+     ],
+     "joint_rad": 0.00012114810595760593,
+     "point_after_lift_m": 4.1795530714792624e-05,
+     "point_m": 4.1795530714792624e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2944,
+    "time_to_stop_ms": {
+     "left": 1400.0,
+     "right": null
+    },
+    "trace_sha256": "998c703c3a2c2adae5e4aca1346603fb6419b1df6c15615804d81c8dd5359ae8",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1126,
+      1126
+     ],
+     "joint_rad": 0.00018101024084105077,
+     "point_after_lift_m": 5.741060915769914e-05,
+     "point_m": 0.009526145756830036
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2917,
+    "time_to_stop_ms": {
+     "left": 1400.0,
+     "right": null
+    },
+    "trace_sha256": "56f8cd7645b8ce6ec9e2abbb0d90cd73107a0a11f25cb781abbefefd483daaa8",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 13,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2917,
+    "time_to_stop_ms": {
+     "left": 1400.0,
+     "right": null
+    },
+    "trace_sha256": "69b962ed9603aedd68e3cb3218b878a9a24f2c634b438de511d9417509dafd26",
+    "verdict": "FAIL",
+    "violation_events": 6,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1126,
+      1126
+     ],
+     "joint_rad": 0.00015087352091103234,
+     "point_after_lift_m": 5.3922898254595606e-05,
+     "point_m": 5.3922898254595606e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2994,
+    "time_to_stop_ms": {
+     "left": 960.0,
+     "right": null
+    },
+    "trace_sha256": "26c7ff7e4e01f91429e24bdb1f2d648f00af9ae954cb8f2d854de9b706c32b1a",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1126,
+      1126
+     ],
+     "joint_rad": 0.00019014967763797408,
+     "point_after_lift_m": 6.718055179136591e-05,
+     "point_m": 0.009526344857002529
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2968,
+    "time_to_stop_ms": {
+     "left": 960.0,
+     "right": null
+    },
+    "trace_sha256": "4ed4b7c900ea469dd9aeea7c0941c7907bc803de142a68842e3691276b09408c",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 14,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2968,
+    "time_to_stop_ms": {
+     "left": 960.0,
+     "right": null
+    },
+    "trace_sha256": "4d125b6007fc1dbe5884b4ece13ed5253649ea3705b95dd0fb328a2c9dabb6e0",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1126,
+      1126
+     ],
+     "joint_rad": 0.00015237913553356464,
+     "point_after_lift_m": 4.999539751396043e-05,
+     "point_m": 4.999539751396043e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2965,
+    "time_to_stop_ms": {
+     "left": 1200.0,
+     "right": null
+    },
+    "trace_sha256": "160bd658b562ce7ddfd469e420dfdc6754f23be2bd20364db50a0484d04089a6",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1151,
+      1151
+     ],
+     "joint_rad": 0.0001919940324699443,
+     "point_after_lift_m": 6.294690078517608e-05,
+     "point_m": 0.009526353543933752
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2939,
+    "time_to_stop_ms": {
+     "left": 1200.0,
+     "right": null
+    },
+    "trace_sha256": "b1db7064ed5e743e5eb2ce9136418112f2f661ed80a39e240b8d418d50243938",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 15,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2939,
+    "time_to_stop_ms": {
+     "left": 1200.0,
+     "right": null
+    },
+    "trace_sha256": "aa44f8cf3e40fa2df57ec29be008a2220d5dc3cf13b984043fa664ecd9fbe4f8",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1151,
+      1151
+     ],
+     "joint_rad": 0.00013762848411214001,
+     "point_after_lift_m": 4.978596764919269e-05,
+     "point_m": 4.978596764919269e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3,
+    "time_to_stop_ms": {
+     "left": 880.0,
+     "right": 3400.0
+    },
+    "trace_sha256": "351eca32b8865d1b9d6fa965ba63700a364d5bdd2d8813e7693d6c372bd5a41a",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1146,
+      1146
+     ],
+     "joint_rad": 0.0001738388995022877,
+     "point_after_lift_m": 5.4402013394406886e-05,
+     "point_m": 0.009525540654459276
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2974,
+    "time_to_stop_ms": {
+     "left": 880.0,
+     "right": 3400.0
+    },
+    "trace_sha256": "c234a9ce9e57c83d1933bb76a9308f6b3a9bd6a7679d1ebe59aa1450756c9198",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 16,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2975,
+    "time_to_stop_ms": {
+     "left": 880.0,
+     "right": 3400.0
+    },
+    "trace_sha256": "77febfd2fe952bc6bcc900b9fd6c3e99b4bdf11bb420d694accb82da4b7b6954",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1146,
+      1146
+     ],
+     "joint_rad": 0.0001186557476322769,
+     "point_after_lift_m": 5.179637073125731e-05,
+     "point_m": 5.179637073125731e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3023,
+    "time_to_stop_ms": {
+     "left": 1040.0,
+     "right": null
+    },
+    "trace_sha256": "6108250e19deed2d7262022d98721c52e730516fd5c63b143ac09b40e8ebaa9f",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1141,
+      1141
+     ],
+     "joint_rad": 0.00021406469686402474,
+     "point_after_lift_m": 6.317010034528768e-05,
+     "point_m": 0.009528165467517145
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3001,
+    "time_to_stop_ms": {
+     "left": 1040.0,
+     "right": null
+    },
+    "trace_sha256": "e9f56300671457f23bc950106d26f1dbd02de8038e48c4f5a8d3f6612cd19c11",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 17,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3001,
+    "time_to_stop_ms": {
+     "left": 1040.0,
+     "right": null
+    },
+    "trace_sha256": "3af36021924b26e9997cf14f9d2d85c659ce4c501de73469e03bf2ec40c830a5",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1141,
+      1141
+     ],
+     "joint_rad": 0.0001569319861560725,
+     "point_after_lift_m": 4.1505319382316584e-05,
+     "point_m": 4.1505319382316584e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2992,
+    "time_to_stop_ms": {
+     "left": 1040.0,
+     "right": null
+    },
+    "trace_sha256": "f8d2feacb9868c6e6b8bd32f41ec2f41e26137bea3c21248a3b7d635de72091a",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1146,
+      1146
+     ],
+     "joint_rad": 0.000187979861309584,
+     "point_after_lift_m": 6.389574229449475e-05,
+     "point_m": 0.009528378309721437
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2967,
+    "time_to_stop_ms": {
+     "left": 1060.0,
+     "right": null
+    },
+    "trace_sha256": "c39447abc891d6455f721785f437a108cdac64906393775295859ec82b301dca",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 18,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2967,
+    "time_to_stop_ms": {
+     "left": 1060.0,
+     "right": null
+    },
+    "trace_sha256": "3b9f868779a5f3a5987437ec2ad0d32fd247c2387e303b47d5e4a6417597c8de",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1146,
+      1146
+     ],
+     "joint_rad": 0.00012660639954642505,
+     "point_after_lift_m": 5.033089842989011e-05,
+     "point_m": 5.033089842989011e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2975,
+    "time_to_stop_ms": {
+     "left": 1080.0,
+     "right": null
+    },
+    "trace_sha256": "ea584555659e48f551c48b4e7c495d4917d653cb0d726be03ce74846d514fe01",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1131,
+      1131
+     ],
+     "joint_rad": 0.00016728458518255884,
+     "point_after_lift_m": 5.822974884219339e-05,
+     "point_m": 0.009525221824400769
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2952,
+    "time_to_stop_ms": {
+     "left": 1080.0,
+     "right": null
+    },
+    "trace_sha256": "8efff2d5d9e330bb380c127399d8fb5db1c715aa3414850320dacfb80a50bf9d",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ]
+   },
+   "policy": "ignore",
+   "seed": 19,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2952,
+    "time_to_stop_ms": {
+     "left": 1080.0,
+     "right": null
+    },
+    "trace_sha256": "97a907dffe14cde84764361b9adf691aa85500ece46a4af26fbe5b4f57538ec2",
+    "verdict": "FAIL",
+    "violation_events": 7,
+    "violations": [
+     "proximity_speed:right_tool",
+     "proximity_stop:left",
+     "proximity_stop:right"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1131,
+      1131
+     ],
+     "joint_rad": 0.00013570091751158309,
+     "point_after_lift_m": 4.9869017673255735e-05,
+     "point_m": 4.9869017673255735e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3008,
+    "time_to_stop_ms": {
+     "left": 960.0,
+     "right": 0.0
+    },
+    "trace_sha256": "76536ebe0f485e4634205d628e6351b39b3adf6cad01e80cc56054d8807b1545",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1411,
+      1411
+     ],
+     "joint_rad": 0.0001615974236237605,
+     "point_after_lift_m": 5.7934024252447745e-05,
+     "point_m": 0.009523881230552301
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2983,
+    "time_to_stop_ms": {
+     "left": 960.0,
+     "right": 0.0
+    },
+    "trace_sha256": "05d6e957211887d38eb78915116c5684c48ed7a2c3e50ad21c1fa5958f63df06",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 0,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2983,
+    "time_to_stop_ms": {
+     "left": 960.0,
+     "right": 0.0
+    },
+    "trace_sha256": "68f31c6d8243ec1053a9950e91e7d0bfb06a360b7ce80c52841decfdfb377e84",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1411,
+      1411
+     ],
+     "joint_rad": 0.0002085592742557818,
+     "point_after_lift_m": 6.977976258248926e-05,
+     "point_m": 6.977976258248926e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2964,
+    "time_to_stop_ms": {
+     "left": 1160.0,
+     "right": 0.0
+    },
+    "trace_sha256": "afa1fb6355890525e7f947b085e67eb512cbf49f1f40f21c666662de2c475a40",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1366,
+      1366
+     ],
+     "joint_rad": 0.00016854743702898745,
+     "point_after_lift_m": 5.697600098988599e-05,
+     "point_m": 0.009522631129348775
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2938,
+    "time_to_stop_ms": {
+     "left": 1160.0,
+     "right": 0.0
+    },
+    "trace_sha256": "6636f80e33c7e2aa0bf53d7c7795fdd2d621fe14a8f5ffb0e5ad3bb926267d8a",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 1,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2938,
+    "time_to_stop_ms": {
+     "left": 1160.0,
+     "right": 0.0
+    },
+    "trace_sha256": "78fa254d137ab23523287b638948143d0944a7e01a67f8ee38c4b0cd60c9eb5b",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1366,
+      1366
+     ],
+     "joint_rad": 0.00013463809371661029,
+     "point_after_lift_m": 5.318802947127478e-05,
+     "point_m": 5.318802947127478e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3027,
+    "time_to_stop_ms": {
+     "left": 1380.0,
+     "right": 0.0
+    },
+    "trace_sha256": "720e51bcdcceac5cf0eb19f25b4e9c0499d1f07a592891be38ac0a3343c7bac3",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00022949812690975513,
+     "point_after_lift_m": 7.295701451809271e-05,
+     "point_m": 0.009534479324683669
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3005,
+    "time_to_stop_ms": {
+     "left": 1380.0,
+     "right": 0.0
+    },
+    "trace_sha256": "d6727e5f3cdc8bb358bfaec1e4d59c753bf1a774bb26882a516f2201e23cba2d",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 2,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3005,
+    "time_to_stop_ms": {
+     "left": 1380.0,
+     "right": 0.0
+    },
+    "trace_sha256": "87c24833522e3a0053b4245717c03c65648b2416b23c67f43e763afad6fec52d",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.0001440547924500546,
+     "point_after_lift_m": 4.9720415539547424e-05,
+     "point_m": 4.9720415539547424e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2977,
+    "time_to_stop_ms": {
+     "left": 1300.0,
+     "right": 0.0
+    },
+    "trace_sha256": "718c13ece9c86b6fbdf1cd44e3bc1d2bb30340fa1caf4f342d4c0c46e8a87f0d",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00020931108865629433,
+     "point_after_lift_m": 6.264987717089656e-05,
+     "point_m": 0.00952589145851232
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2951,
+    "time_to_stop_ms": {
+     "left": 1300.0,
+     "right": 0.0
+    },
+    "trace_sha256": "89bec538dc18901bacd3c954be09289ed4af128fced649096c97095ea5ac1d41",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 3,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2951,
+    "time_to_stop_ms": {
+     "left": 1300.0,
+     "right": 0.0
+    },
+    "trace_sha256": "e3df8f335d60a77e3a7439b4c40125244a3e106433a1498b8b433e12cc19b2fc",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00016692958671882252,
+     "point_after_lift_m": 5.687329148812788e-05,
+     "point_m": 5.687329148812788e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2944,
+    "time_to_stop_ms": {
+     "left": 1300.0,
+     "right": 0.0
+    },
+    "trace_sha256": "a4986ca884d966739f187d930bde54944a5aca48406a301fb06779db0b423b92",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1396,
+      1396
+     ],
+     "joint_rad": 0.00018343259943809365,
+     "point_after_lift_m": 6.722333000073555e-05,
+     "point_m": 0.00952838861026203
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2918,
+    "time_to_stop_ms": {
+     "left": 1300.0,
+     "right": 0.0
+    },
+    "trace_sha256": "e4119912910cdcd06373a40b9a81b2f4d5b4e010a324a8ed6d888ccb854ecd2c",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 4,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2918,
+    "time_to_stop_ms": {
+     "left": 1300.0,
+     "right": 0.0
+    },
+    "trace_sha256": "dca20b5ea47b6772138121fb9ff89538aa2114e97c75cd96b68650563a8405e6",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1396,
+      1396
+     ],
+     "joint_rad": 0.00021639601010470244,
+     "point_after_lift_m": 6.213542292977454e-05,
+     "point_m": 6.213542292977454e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2978,
+    "time_to_stop_ms": {
+     "left": 1380.0,
+     "right": 0.0
+    },
+    "trace_sha256": "e179f420593406a3d7cfa40a3a8f7a2b78cc487b1ac9b8e38e3eb35625eb2069",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00020138694584814765,
+     "point_after_lift_m": 7.508277770536981e-05,
+     "point_m": 0.00953165579277427
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2955,
+    "time_to_stop_ms": {
+     "left": 1380.0,
+     "right": 0.0
+    },
+    "trace_sha256": "f475d517a55822be6fc81b37399934dc9e81bd694ec6c39fb34c813492af8b4f",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 5,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2955,
+    "time_to_stop_ms": {
+     "left": 1380.0,
+     "right": 0.0
+    },
+    "trace_sha256": "1737e20c70b742c13aecc9f1868516794037d8041cd9a7ccd1de1ecc9cd596c8",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00014938467892910978,
+     "point_after_lift_m": 4.609455806336326e-05,
+     "point_m": 4.609455806336326e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2966,
+    "time_to_stop_ms": {
+     "left": 1200.0,
+     "right": 0.0
+    },
+    "trace_sha256": "eb092a1c704322f2737d6813070e98a653d59e82a7098140bf13e2b8e5ac30be",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1396,
+      1396
+     ],
+     "joint_rad": 0.00017474055187860493,
+     "point_after_lift_m": 5.718858249602562e-05,
+     "point_m": 0.009524414362154164
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.294,
+    "time_to_stop_ms": {
+     "left": 1200.0,
+     "right": 0.0
+    },
+    "trace_sha256": "e995ef8c6c7f5675dffe44c09ad555647e275e33ba7cf3944845548224ecbd45",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 6,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.294,
+    "time_to_stop_ms": {
+     "left": 1200.0,
+     "right": 0.0
+    },
+    "trace_sha256": "7fd19fb5f7c937b84a86fea69f8281f6582d38ce353e2b1a579ec186023dc256",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1396,
+      1396
+     ],
+     "joint_rad": 0.00011281446121001954,
+     "point_after_lift_m": 4.0314578247366663e-05,
+     "point_m": 4.0314578247366663e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2961,
+    "time_to_stop_ms": {
+     "left": 920.0,
+     "right": 0.0
+    },
+    "trace_sha256": "9dc290696c83a66f4fbbe63410d93c6778fbb53c3ed0c21491c62dbcd8b03d0b",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1391,
+      1391
+     ],
+     "joint_rad": 0.00020435351381453692,
+     "point_after_lift_m": 6.459543827834599e-05,
+     "point_m": 0.00952807103106369
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2924,
+    "time_to_stop_ms": {
+     "left": 940.0,
+     "right": 0.0
+    },
+    "trace_sha256": "aef05ec7d78bf77365129aa1bd978039224656bfc128c0f99356546064ffd946",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 7,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2924,
+    "time_to_stop_ms": {
+     "left": 940.0,
+     "right": 0.0
+    },
+    "trace_sha256": "f5e71a4d68460c606c9de25953b07fd1f0869b3677523652bc4e612fc9a04ba5",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1391,
+      1391
+     ],
+     "joint_rad": 0.00012762108750918877,
+     "point_after_lift_m": 3.968751406570885e-05,
+     "point_m": 3.968751406570885e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3001,
+    "time_to_stop_ms": {
+     "left": 1180.0,
+     "right": 0.0
+    },
+    "trace_sha256": "62ca5a558ee962731d3bd4686352f1a9acb0cc2d77a6c9083837d48b5d485829",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00025640899660528405,
+     "point_after_lift_m": 8.55961770215746e-05,
+     "point_m": 0.009537693703091713
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2976,
+    "time_to_stop_ms": {
+     "left": 1180.0,
+     "right": 0.0
+    },
+    "trace_sha256": "d18403ab4a074653df293f17bff01772762407c9b95c203cccf0dbc87916aa7b",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 8,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2976,
+    "time_to_stop_ms": {
+     "left": 1180.0,
+     "right": 0.0
+    },
+    "trace_sha256": "aca7e9703e50ea62c4a47d670493535ead64611f2c544a3a48bfa5807ee97b83",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00016358229249391343,
+     "point_after_lift_m": 5.8848349618802757e-05,
+     "point_m": 5.8848349618802757e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3006,
+    "time_to_stop_ms": {
+     "left": 840.0,
+     "right": 0.0
+    },
+    "trace_sha256": "4026cb9e1334c7a8fc5785c864cd83a8920d810ee560b60fbcfc65cc2141edc5",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1396,
+      1396
+     ],
+     "joint_rad": 0.0001722918915834093,
+     "point_after_lift_m": 5.826621250544767e-05,
+     "point_m": 0.00952316136889574
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2981,
+    "time_to_stop_ms": {
+     "left": 840.0,
+     "right": 0.0
+    },
+    "trace_sha256": "9f991fc638da69c0d505863ac31fc8f909050d4ecb6f2b53f8785af46b56a7be",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 9,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2981,
+    "time_to_stop_ms": {
+     "left": 840.0,
+     "right": 0.0
+    },
+    "trace_sha256": "0ad72467a64c0d34aa0ec619b21c082308069dd26ca326b10ebfc32abd554f5c",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1396,
+      1396
+     ],
+     "joint_rad": 0.00010217067640949651,
+     "point_after_lift_m": 3.952244172413151e-05,
+     "point_m": 3.952244172413151e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3011,
+    "time_to_stop_ms": {
+     "left": 880.0,
+     "right": 0.0
+    },
+    "trace_sha256": "4ff8e9def92adf8b9e2ccaa4fa0b88ecf59cf987999b591e922c7ba77271b378",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1406,
+      1406
+     ],
+     "joint_rad": 0.0001777833730005618,
+     "point_after_lift_m": 5.4222187532738494e-05,
+     "point_m": 0.009524521202855364
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2986,
+    "time_to_stop_ms": {
+     "left": 880.0,
+     "right": 0.0
+    },
+    "trace_sha256": "bf905ffa9180a558fbba0067be9b5703c587e0ad7e9294183880f618cc4cd6d8",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 10,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2986,
+    "time_to_stop_ms": {
+     "left": 880.0,
+     "right": 0.0
+    },
+    "trace_sha256": "2e1b7e3fe130e1a8d771919efd047c4147a5b98368848af44428e911e3d81692",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1406,
+      1406
+     ],
+     "joint_rad": 0.00012735017689601653,
+     "point_after_lift_m": 4.674867972218926e-05,
+     "point_m": 4.674867972218926e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3065,
+    "time_to_stop_ms": {
+     "left": 1320.0,
+     "right": 0.0
+    },
+    "trace_sha256": "451e2672999eeb7a082432539b12be92c200ae9ed736c57b019e8197d213bb4d",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1386,
+      1386
+     ],
+     "joint_rad": 0.00020311182440146958,
+     "point_after_lift_m": 5.9349789439921715e-05,
+     "point_m": 0.009525189215221351
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3043,
+    "time_to_stop_ms": {
+     "left": 1320.0,
+     "right": 0.0
+    },
+    "trace_sha256": "391df72f3683507176d03f429ad7c3eec5aa4c6f2250e31bea60a651d40c9ffa",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 11,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3043,
+    "time_to_stop_ms": {
+     "left": 1320.0,
+     "right": 0.0
+    },
+    "trace_sha256": "8a72a263faddbedb1502b006433d5c6ca27f8b141948f11a4bc47160f782a700",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1386,
+      1386
+     ],
+     "joint_rad": 0.0002029251377542174,
+     "point_after_lift_m": 6.464365524597691e-05,
+     "point_m": 6.464365524597691e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2949,
+    "time_to_stop_ms": {
+     "left": 1340.0,
+     "right": 0.0
+    },
+    "trace_sha256": "6c255d3bad18c27b8c09f0d75d704b2e41d026be2db06eee1d990605cf176134",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1386,
+      1386
+     ],
+     "joint_rad": 0.00020831429863443773,
+     "point_after_lift_m": 5.996752452682133e-05,
+     "point_m": 0.009523800291204063
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2923,
+    "time_to_stop_ms": {
+     "left": 1340.0,
+     "right": 0.0
+    },
+    "trace_sha256": "143c1800eb9c9aecf6c04b3dea4514d0128c21bfea781ba21ecf19215ab6ac81",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 12,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2923,
+    "time_to_stop_ms": {
+     "left": 1340.0,
+     "right": 0.0
+    },
+    "trace_sha256": "93a8ab81765d303471d80e87971db17e6f307b3f9162fc5deb7ea904ff4c843e",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1386,
+      1386
+     ],
+     "joint_rad": 0.00012137971143766357,
+     "point_after_lift_m": 4.2190146537585066e-05,
+     "point_m": 4.2190146537585066e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2944,
+    "time_to_stop_ms": {
+     "left": 1400.0,
+     "right": 0.0
+    },
+    "trace_sha256": "549534f8f9c6cf0f4f0b84c3511829cc9d094489091eb8793962b64e96956e01",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1371,
+      1371
+     ],
+     "joint_rad": 0.0001801328424611004,
+     "point_after_lift_m": 5.741060915769914e-05,
+     "point_m": 0.009526145756830036
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2917,
+    "time_to_stop_ms": {
+     "left": 1400.0,
+     "right": 0.0
+    },
+    "trace_sha256": "9146d94d4a6a6b004be12a45d0d931e4fa0cdabc19438c373c42a6c942e8334c",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 13,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2917,
+    "time_to_stop_ms": {
+     "left": 1400.0,
+     "right": 0.0
+    },
+    "trace_sha256": "52aa58cdf2c61575ee1397fd05fd0edc102dbe573b596217a9957e379dd008ed",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1371,
+      1371
+     ],
+     "joint_rad": 0.00011979609562340343,
+     "point_after_lift_m": 3.525171247505247e-05,
+     "point_m": 3.525171247505247e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2994,
+    "time_to_stop_ms": {
+     "left": 960.0,
+     "right": 0.0
+    },
+    "trace_sha256": "0a4f6ddf50e94516b0ce847cdd130be0b8355c7fd1ef57527c7a693c39f0e80d",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1376,
+      1376
+     ],
+     "joint_rad": 0.00019015143420686442,
+     "point_after_lift_m": 6.827414254562699e-05,
+     "point_m": 0.009529631636398226
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2968,
+    "time_to_stop_ms": {
+     "left": 960.0,
+     "right": 0.0
+    },
+    "trace_sha256": "53aac933ba1913a661c4bc071f1627152d258efa1682fcd7a9f7e5489bf02d2a",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 14,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2968,
+    "time_to_stop_ms": {
+     "left": 960.0,
+     "right": 0.0
+    },
+    "trace_sha256": "e6a3543178baf96189eea4383383713035e69fb65161e19033c48ee354e4a085",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1376,
+      1376
+     ],
+     "joint_rad": 0.00015237913553356464,
+     "point_after_lift_m": 4.999539751396043e-05,
+     "point_m": 4.999539751396043e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2965,
+    "time_to_stop_ms": {
+     "left": 1200.0,
+     "right": 0.0
+    },
+    "trace_sha256": "a664a88236452db728fd79dd6153c910771a2b2e8509f6f10340f14c87d7e438",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1401,
+      1401
+     ],
+     "joint_rad": 0.00017400578355308838,
+     "point_after_lift_m": 5.5505230689220986e-05,
+     "point_m": 0.009524562048378616
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2939,
+    "time_to_stop_ms": {
+     "left": 1200.0,
+     "right": 0.0
+    },
+    "trace_sha256": "eb0212049e31f13d8d42934d6737a359c10c0dc10a0feeb9cde23ecd7753e915",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 15,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2939,
+    "time_to_stop_ms": {
+     "left": 1200.0,
+     "right": 0.0
+    },
+    "trace_sha256": "17652be619924afd55473388215da8d297cc334d7d0e570f70c1153d07450915",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1401,
+      1401
+     ],
+     "joint_rad": 0.00013017100180350558,
+     "point_after_lift_m": 4.538445179700964e-05,
+     "point_m": 4.538445179700964e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3,
+    "time_to_stop_ms": {
+     "left": 880.0,
+     "right": 0.0
+    },
+    "trace_sha256": "4b43b286e1c0d19345faaadb7325900dfbe0eb4be61b54003b3f7af83a5709c1",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1396,
+      1396
+     ],
+     "joint_rad": 0.00019102356767186635,
+     "point_after_lift_m": 6.371548453318947e-05,
+     "point_m": 0.009525715610777563
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2974,
+    "time_to_stop_ms": {
+     "left": 880.0,
+     "right": 0.0
+    },
+    "trace_sha256": "d207e8af9ccbacd59122e06fb1591cfacaf4796908716315348b271443af52e8",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 16,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2975,
+    "time_to_stop_ms": {
+     "left": 880.0,
+     "right": 0.0
+    },
+    "trace_sha256": "d682a5960a3d6f81476898db973e5bf0e387119f4ee8eb55886f0a02a5fcbcde",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1396,
+      1396
+     ],
+     "joint_rad": 0.00017555762364152017,
+     "point_after_lift_m": 6.3567703632963e-05,
+     "point_m": 6.3567703632963e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3023,
+    "time_to_stop_ms": {
+     "left": 1020.0,
+     "right": 0.0
+    },
+    "trace_sha256": "b75490c816897fa4a61605361359b6e3a7d3aa23ca32e7c4462bcae046570959",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1391,
+      1391
+     ],
+     "joint_rad": 0.00021406469686402474,
+     "point_after_lift_m": 5.627981300840508e-05,
+     "point_m": 0.009522968149825213
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3001,
+    "time_to_stop_ms": {
+     "left": 1020.0,
+     "right": 0.0
+    },
+    "trace_sha256": "ca6aec1fafbd2e937148f27ec076b51c7d7a796448b40c6d0b108c8b6786e0fa",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 17,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3001,
+    "time_to_stop_ms": {
+     "left": 1020.0,
+     "right": 0.0
+    },
+    "trace_sha256": "ad438a89f5da43d62e03442cd5c63c05b9e201b894789f0a3704e99376e61138",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1391,
+      1391
+     ],
+     "joint_rad": 0.0001569319861560725,
+     "point_after_lift_m": 4.5874741997336344e-05,
+     "point_m": 4.5874741997336344e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2992,
+    "time_to_stop_ms": {
+     "left": 1040.0,
+     "right": 0.0
+    },
+    "trace_sha256": "e860cf6e8c0aaeb76ece5d8b2042a85d1254ed309bc506e77ac01dd6efed2fc8",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1401,
+      1401
+     ],
+     "joint_rad": 0.00022086848441182916,
+     "point_after_lift_m": 7.112458678039086e-05,
+     "point_m": 0.009531373757470197
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2967,
+    "time_to_stop_ms": {
+     "left": 1060.0,
+     "right": 0.0
+    },
+    "trace_sha256": "e51d2a9dbecc1cab13dcbc4d8efbee25874ea2f79519c76aa4efbd7f3b1e21fe",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 18,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2967,
+    "time_to_stop_ms": {
+     "left": 1060.0,
+     "right": 0.0
+    },
+    "trace_sha256": "a96d27f16cab4470a0d9b75dfc85d461818eb00855bea1f4b1918ad28b8bdc46",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1401,
+      1401
+     ],
+     "joint_rad": 0.00013468000446281714,
+     "point_after_lift_m": 4.716266446043359e-05,
+     "point_m": 4.716266446043359e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2975,
+    "time_to_stop_ms": {
+     "left": 1080.0,
+     "right": 0.0
+    },
+    "trace_sha256": "12d4b36c2e8f79def6bd527afd94ab60c62e50b6a4dc3fc0c037c9f4eedbbeac",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00016728458518255884,
+     "point_after_lift_m": 6.39783113933931e-05,
+     "point_m": 0.009528476580208955
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2952,
+    "time_to_stop_ms": {
+     "left": 1080.0,
+     "right": 0.0
+    },
+    "trace_sha256": "eaeefb54c6ea44124c3c1563edb3baebe99f98201656f1caa2574ef73fb4f99f",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ]
+   },
+   "policy": "right_only",
+   "seed": 19,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": false,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": false,
+     "task_success": true
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2952,
+    "time_to_stop_ms": {
+     "left": 1080.0,
+     "right": 0.0
+    },
+    "trace_sha256": "8d2bab98981411a48e1b70272a46527b85ebdb35ef21a8dc015e4d372a5571ca",
+    "verdict": "FAIL",
+    "violation_events": 2,
+    "violations": [
+     "proximity_stop:left"
+    ],
+    "vs_canonical": {
+     "frames": [
+      1381,
+      1381
+     ],
+     "joint_rad": 0.00013626499267771985,
+     "point_after_lift_m": 4.9869017673255735e-05,
+     "point_m": 4.9869017673255735e-05
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.289,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "7634f9ded06f5863e0edb18bd81fbb0c5effc98d344cc44c201b991185d3af18",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2856,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "fdf7bcdff4d506c0f686a9f6d9ff76e71f86c1b12eaf80504f95443b7acb5411",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 0,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2856,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "0416812170fb784a69920e581636d2ed8d192985ff96bee73a02227888a46375",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2879,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "8578a1baf3cd50af6ea0ab02318588ccd16ac0f23681c01e6489eb487c19b3d5",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2844,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "7c4153f688e921499106cf00a8effa4dfea9c771ec728e434147f11793ed9365",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 1,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2844,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "2ed65ee245962cf3fde6a381a70ab690b330f6eb787662bd29d756b7e1b5dcd4",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2957,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "c4e755efe570a5fa499ea77f3d8ffcf4a1666feba4db140214654f7617226904",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2923,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "1c40b13467f4d33bf7891f55c922263b36623b1613463171551ac24d7cc44a87",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 2,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2923,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "6a45cd49442fe6cd21e2478a18b52f8096cf15de49073e4460190fa35155da9e",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2905,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "5f6282c6bb28c1d0c4aa7a3e0a2bbaccb14486ff03dc3e05c2a4bead4d600a5f",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.287,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "b6fc9b1b47b15e229bc1a2dc84a85231b03e24bfd679248510dbd57fa1ab1be8",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 3,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.287,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "42e561f02eeeec613ee7494da5747a130bb6367908a3d34ed6046d6a2203e84a",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2879,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "17bb990f6dd7e86b3ad82e558a15cd696cc26073946063b24a6d678be6cea1c0",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2845,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "9570d2ad606720ccb861244417e04c351905d2d523a00ae7da6ebadf06e8103f",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 4,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2845,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "023addaf74a36545b255cc8c771e3b185d672275bfe9d045e20ad226c0b07392",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2915,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "d1ffddd0c12eb2166e8fb7db3551543b6c4cf0682bfaebcb03aa02940923e416",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.288,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "d8edff867caac7c1bca9d9e7cb8d27580eb724a77bdbb0e340683ac329bfc34b",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 5,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.288,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "b8cb8756aeaa75ab889b313ae034e53967b47c1697550e8bb3ec7c36772ecb68",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2885,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "c6c49342cc117ad8ad9da0949d696a78c008251aa63972df33b309f50890cfff",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.285,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "d53d7e033e2c34afcff2687b844bf10d9b0b16ef8639e1f208381c8ca19e1e76",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 6,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.285,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "f74751ddd3ebcc91acddfff27008353361cc45d907ab35a7c1cefad9864730ae",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.3004,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "d6e5afd7fe7cdfe1e119448088aa640e0fa4324db8f630e39a98fd0f937757bf",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2971,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "cd4c02fcc4f7ef17a7076def0c697cd6560b83f067e39f094dc593e5ce218768",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 7,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2971,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "01a9c1b710861792d9d44d0b906ea0e8141d342fd7ed46d6a9a7796f25ea1caa",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.291,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "24eaaf9c4209a7d0d9e3450b0e70eb1ea06f3c7d9e9498ecb4bc26201808380b",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2876,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "2ac73652e762b20e62aab2593b195044cc064b18737dde301053e578312d4fc3",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 8,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2876,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "a64197e7d33813b6cc5517b67fae130e12c0e59908d83c227e5bbe768bde59ac",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2879,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "677f912d86f06f8c326e7d674fed0c676d3fea690250702884f07f42d18331fb",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2844,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "7704a5b4a276c3319490de1b967807da04c6568be4fa5e29ab2009a0da3b816e",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 9,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2844,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "dbc597125d5df8c4ad66b0b5d0d13ee272a94a9d277036b629808e11743bd13d",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2884,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "3453576fdceb51046498bebbcf559663b82ece1bfdeb73cf4fdee231f4b81efb",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2849,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "62de9f2ba4dcac12d078791349126bd5004eaadf1c19f991d794f20f8090812f",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 10,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2849,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "f6d8c4824b20294310dfbf06113d6ab43f67de1905c27950fa2a2b47156258a6",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2986,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "bcc1f74b9fa4ecf3832a10156ab30b5adbe44ab60aa70071418a8f89e924b7e9",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2953,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "1f980e508055fce13e79cc036cb865c3d28cb8e9df5ca6435cebef13be7fe807",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 11,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2953,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "a88fe129292a962e2e1023bfa3e8206a7b0e797103e43be96780f1514fb1326d",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2885,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "7b208f651b110718caedbc10bc4386af60ef7a6cd96f2475ad934c634daf082a",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2851,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "2075412d5a69ed63f0063d36ff87b4c4fd0218074b3e3cb2f4f61fb99285f575",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 12,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2851,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "75ee7dc16d316e0d4b632e226d3118dd545c2ad8c6dfce71275ca407b7db46f0",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.289,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "dff274c6c4b99ce48338bde9a8b23c53ccaee3ed43f387270a430f822568fc96",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2855,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "e7d2e9210017d4aa7daa2ed0f8e0631e62aab5870861c9d7becdd06070097a89",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 13,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2855,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "98dc2150244fb15179c49dbf3593e06dee5c8b927d55776da38164a69bc1d6e9",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2881,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "83920d3a74964690954d777ca9c1129395922146f16ab2231701754ab0d70de1",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2846,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "9142428400fa69ab151618060609636c49aa88be9bf98d412c0e810947ef7f92",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 14,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2846,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "bb6bb2fd9f01c697f286be97637174bc75c86ce317f08073e56b8611d0b0d11f",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2882,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "764ffdce6b2b1406c3d3b3cfd43a27cad941d377c0f4ae2ff6790987f430edf5",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2848,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "94482bd10d5fde359e6b821f8afc0010bce6ac3498684cf4664f57e354da49b1",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 15,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2848,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "036fc684db7cf8b2531230771148672c5f3764564cc0859bd87bb0b330c42d26",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2879,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "6df3ecd936642d85ae07ebcb6f1dc01724eec1e92dc1d3ff61bf85a31a28389a",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2844,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "d3a473bc5576e4d37f18a2471e2db1a3d756ff1fb015f4086abd2ae0415d0681",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 16,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2844,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "ea8936d18e2446cd38f6d5e2c511c42d59641d25d8207d48f804cb593e79073b",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2912,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "dc442616c3f15a08639675e67bee8baeb0ab8a9a2326952a8cc40c4496fbfe36",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2877,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "d5f54ab5dbe981b95f57c398a8c8708be27900c2cccf6e35dd3074f76f0dfc4a",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 17,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2877,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "35cd614cd7bd165b40dded7bb26306dea84f00068cb3a50c5cb4e39487e565d3",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2887,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "8cfa8beee1204fb13b304040d3e7e4388b1db3b9f20e6769c4ece60ba96f957d",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2853,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "5cf0055a9a4cc23a9642eb0aef137e429e6f230341c223088acb89d42ed6d931",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 18,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2853,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "b9ec85e7be07cfff6b9d4da67c03dd53c806cb26b4d8aa84a052f642125f6f7b",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  },
+  {
+   "i2rt_yam_v1": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "deterministic": true,
+    "limit_clips": 0,
+    "min_human_distance_m": 0.288,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "0f52f7b0d45e2afa83830ab68cb54ee2899de6df601f94bd46fe2b593282bcc6",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 1.621010384355861e-18,
+     "point_after_lift_m": 2.3006705214853024e-06,
+     "point_m": 0.009501514293575904
+    }
+   },
+   "menagerie_yam": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2845,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "fe66fc2baa69d77b113c0e35907e32a9568b47613a5e1a628936233d96dac509",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": []
+   },
+   "policy": "do_nothing",
+   "seed": 19,
+   "yam_scrambled": {
+    "checks": {
+     "no_violations": true,
+     "resumes_only_on_fresh_clear_state": false,
+     "stops_within_declared": true,
+     "task_success": false
+    },
+    "limit_clips": 0,
+    "min_human_distance_m": 0.2845,
+    "time_to_stop_ms": {
+     "left": 0.0,
+     "right": 0.0
+    },
+    "trace_sha256": "b65f2a13799bb065631ec0b15ff1aa8faaf73d180377ed3611ffe157c989c61a",
+    "verdict": "FAIL",
+    "violation_events": 0,
+    "violations": [],
+    "vs_canonical": {
+     "frames": [
+      2251,
+      2251
+     ],
+     "joint_rad": 5.551115123125783e-17,
+     "point_after_lift_m": 3.521787733787174e-16,
+     "point_m": 3.521787733787174e-16
+    }
+   }
+  }
+ ]
+}
