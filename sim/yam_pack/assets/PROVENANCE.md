@@ -6,7 +6,8 @@ Copied unchanged from Robocurve's `inspect-robots-yam`
 MuJoCo Menagerie's `i2rt_yam/yam.xml` at Menagerie commit `71f066ad0be9cd271f7ed58c030243ef157af9f4`:
 visual meshes, actuators and keyframes removed, collision capsules, joints, joint ranges and inertials kept.
 
-License: MIT, i2rt robotics; the text is in `MENAGERIE_LICENSE`, copied from the same commit.
+License: MIT. The Menagerie model is i2rt robotics' (text in `MENAGERIE_LICENSE`, copied from the same commit);
+the reduction is RoboCurve's (text in `INSPECT_ROBOTS_YAM_LICENSE`, copied from inspect-robots-yam's `LICENSE`).
 
 `sim/yam_pack/scene.py` composes two copies side by side the way inspect-robots-yam's `CollisionChecker`
 does (`left_`/`right_` prefixes, bases at y = +/-0.30 m, the defaults that file marks as unverified rig
