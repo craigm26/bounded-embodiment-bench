@@ -19,7 +19,8 @@ import mujoco
 
 from sim.yam_pack.oracle import score, sha256_json
 from sim.yam_pack.policies import POLICIES, Packer
-from sim.yam_pack.scene import World, load_spec
+from sim.yam_pack.scene import World
+from sim.yam_pack.spec import load_spec
 
 ROOT = Path(__file__).resolve().parents[2]
 ENVELOPE = ROOT / "embodiments/abc-bimanual/envelope.json"

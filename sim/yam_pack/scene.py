@@ -22,18 +22,12 @@ from pathlib import Path
 
 import mujoco
 import numpy as np
-import yaml
 
 HERE = Path(__file__).resolve().parent
-SPEC = HERE / "spec.yaml"
 SIDES = ("left", "right")
 ARM_DOF = 6
 GRASP_RADIUS_M = 0.03
 BIG_JOINTS = (1, 2, 3)  # DM4340 joints; 4..6 are DM4310
-
-
-def load_spec(path: Path = SPEC) -> dict:
-    return yaml.safe_load(path.read_text())
 
 
 def _quat_yaw(yaw: float) -> tuple[float, float, float, float]:

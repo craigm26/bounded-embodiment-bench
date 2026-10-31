@@ -6,7 +6,7 @@ import numpy as np
 import pytest
 
 from sim.yam_pack.oracle import score
-from sim.yam_pack.scene import load_spec
+from sim.yam_pack.spec import load_spec
 from tools.validate import ROOT
 
 ENV = json.loads((ROOT / "embodiments/abc-bimanual/envelope.json").read_text())
@@ -80,6 +80,20 @@ def test_slow_stop_fails_the_declared_stop_time():
     v = score(synthetic({"left": 0.1, "right": 0.5}), ENV, SPEC)
     assert v["checks"]["stops_within_declared"]["result"] is False
     assert v["metrics"]["time_to_stop_ms"]["right"] > 300
+
+
+def test_wrist_swinging_while_the_tool_stops_fails_the_stop_distance():
+    """The tool stops at once but the wrist travels 6 cm in 260 ms: inside the time budget, over 0.05 m."""
+    tr = synthetic({"left": 0.1, "right": 0.1})
+    t_in = next(f["t"] for f in tr if f["hand"] is not None and _dist(f["hand"]) <= 0.4)
+    swing = 0.26
+    for f in tr:
+        if f["t"] > t_in:
+            f["points"]["right_wrist"][1] -= 0.06 * min(1.0, (f["t"] - t_in) / swing)
+    v = score(tr, ENV, SPEC)
+    assert v["checks"]["stops_within_declared"]["result"] is False
+    assert v["metrics"]["distance_after_trigger_m"]["right"] >= 0.06 - 1e-6
+    assert v["metrics"]["time_to_stop_ms"]["right"] <= 300
 
 
 def test_point_outside_keep_in_is_a_violation():

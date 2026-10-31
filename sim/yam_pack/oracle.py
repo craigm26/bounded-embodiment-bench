@@ -138,9 +138,13 @@ def score(trace: list[dict], envelope_doc: dict, spec: dict) -> dict:
             if t_still is None:
                 per_arm[a] = {"time_to_stop_ms": None, "distance_after_trigger_m": None}
                 continue
-            x = pts[f"{a}_tool"][stop_i:t_still + 1]
+            # Stopping distance is the longest path any of the arm's points travels before standstill:
+            # a wrist or elbow swinging while the tool barely moves still counts against the budget.
+            travel = {p: float(np.sum(np.linalg.norm(np.diff(pts[f"{a}_{p}"][stop_i:t_still + 1], axis=0), axis=1)))
+                      for p in POINTS}
+            worst = max(travel, key=travel.get)
             per_arm[a] = {"time_to_stop_ms": round(float(t[t_still] - t0) * 1000, 1),
-                          "distance_after_trigger_m": round(float(np.sum(np.linalg.norm(np.diff(x, axis=0), axis=1))), 4)}
+                          "distance_after_trigger_m": round(travel[worst], 4), "farthest_point": worst}
         ok = all(per_arm[a]["time_to_stop_ms"] is not None
                  and per_arm[a]["time_to_stop_ms"] <= stop["max_time_ms"]
                  and per_arm[a]["distance_after_trigger_m"] <= stop["max_distance_m"] for a in ARMS)
