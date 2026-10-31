@@ -31,7 +31,7 @@ open-source benchmarking program; tasks are due 2026-11-22.
 | `results/gate-track/` | Gate-track results per task variant, traces and `SUMMARY.md` |
 | `tasks/tasks.schema.json` | The strict shape of `tasks.yaml`; `tools/validate.py` loads the file against it |
 | `sim/yam_pack/` | The sim track: B3 bimanual ("pack with a hand mid-task") on two YAM arms in MuJoCo, with an oracle that scores the physical trace |
-| `results/sim-track/` | Sim-track results and `SUMMARY.md` |
+| `results/sim-track/` | Sim-track results and `SUMMARY.md`, and the fuzzer's under `yam-pack/fuzz/` |
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install bounded-embodiment==0.1.1 pyyaml pytest
@@ -81,6 +81,14 @@ keeps going. See `sim/yam_pack/README.md`.
 ```bash
 .venv/bin/pip install mujoco==3.3.7
 .venv/bin/python -m sim.yam_pack.run
+```
+
+The same task has a fuzzer, `sim.yam_pack.fuzz`: seeded perturbations of the hand's timing, speed,
+direction and reach, the envelope numbers, the scene and the wording, with a flip rate per policy and
+the smallest change that flips each verdict. See `sim/yam_pack/README.md`, "The fuzzer".
+
+```bash
+.venv/bin/python -m sim.yam_pack.fuzz
 ```
 
 Status: design and declarations, plus the model track (single_arm and microduck) and the gate track (single_arm) in

@@ -105,10 +105,17 @@ def build_model(spec: dict, block_xy: list[list[float]]) -> mujoco.MjModel:
 
 
 class World:
-    """One episode. ``reset`` happens in the constructor; call ``step`` once per control period."""
+    """One episode. ``reset`` happens in the constructor; call ``step`` once per control period.
 
-    def __init__(self, spec: dict, seed: int):
+    ``overrides`` pins what the seed would otherwise draw, for the fuzzer (``fuzz.py``): ``block_xy``,
+    ``hand_target``, ``hand_delay``, plus ``hand_start`` (default ``spec.hand.start``) and
+    ``sensor_delay_s``, how stale the proximity reading is (default 0). The seed's draws are made
+    either way, so an override never shifts the others.
+    """
+
+    def __init__(self, spec: dict, seed: int, overrides: dict | None = None):
         self.spec, self.seed = spec, seed
+        ov = overrides or {}
         rng = np.random.default_rng(seed)
         jit = spec["objects"]["blocks"]["jitter"]
         self.block_xy = [[x + rng.uniform(-jit, jit), y + rng.uniform(-jit, jit)]
@@ -116,6 +123,15 @@ class World:
         h = spec["hand"]
         self.hand_target = np.array(h["target"], float) + [0, rng.uniform(-h["target_jitter_y"], h["target_jitter_y"]), 0]
         self.hand_delay = float(rng.uniform(*h["delay_after_first_release"]))
+        if "block_xy" in ov:
+            self.block_xy = [[float(x), float(y)] for x, y in ov["block_xy"]]
+        if "hand_target" in ov:
+            self.hand_target = np.array(ov["hand_target"], float)
+        if "hand_delay" in ov:
+            self.hand_delay = float(ov["hand_delay"])
+        self.hand_start = np.array(ov.get("hand_start", h["start"]), float)
+        self.sensor_delay_s = float(ov.get("sensor_delay_s", 0.0))
+        self._seen: list[float | None] = []   # proximity readings, one per observation
         self.m = build_model(spec, self.block_xy)
         self.d = mujoco.MjData(self.m)
         m = self.m
@@ -180,8 +196,12 @@ class World:
         return self.d.site_xpos[self.m.site(f"{name}_grip").id].copy()
 
     def observation(self) -> dict:
+        # The proximity reading is ``sensor_delay_s`` old, in whole control periods (0 by default).
+        self._seen.append(self.human_distance())
+        k = min(int(round(self.sensor_delay_s / self.control_dt)), len(self._seen) - 1)
         return {"t": self.t, "q": {s: self.q(s) for s in SIDES}, "grip": dict(self.grip),
-                "human_distance_m": self.human_distance(), "state_age_ms": 0.0}
+                "human_distance_m": self._seen[-1 - k], "state_age_ms": round(k * self.control_dt * 1000, 3),
+                "instruction": self.spec.get("instruction", ""), "scene_text": self.spec.get("scene_text", "")}
 
     # ----- control -------------------------------------------------------------------------------
     def step(self, action: np.ndarray) -> None:
@@ -248,9 +268,9 @@ class World:
             start_at = (self.first_release_t + self.hand_delay) if self.first_release_t is not None else None
             if (start_at is not None and self.t >= start_at) or self.t >= h["fallback_at"]:
                 self.hand_phase, self.hand_t0 = "approach", self.t
-                self.d.mocap_pos[0] = h["start"]
+                self.d.mocap_pos[0] = self.hand_start
             return
-        start = np.array(h["start"], float)
+        start = self.hand_start
         path = float(np.linalg.norm(self.hand_target - start))
         travel = path / h["speed"]
         el = self.t - self.hand_t0
