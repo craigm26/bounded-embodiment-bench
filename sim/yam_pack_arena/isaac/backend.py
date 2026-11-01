@@ -155,6 +155,39 @@ class IsaacBackend:
         _call(o, ("write_root_link_pose_to_sim_index", "write_root_pose_to_sim_index"), root_pose=pose, env_ids=self.env_ids)
         _call(o, ("write_root_link_velocity_to_sim_index",), root_velocity=vel, env_ids=self.env_ids)
 
+    def object_state(self, name):
+        d = self.obj[name].data
+        p, q = self.object_pose(name)
+        com = _np(d.root_com_pos_w)[0] - self.origin
+        return p, q, com, _np(d.root_com_lin_vel_w)[0], _np(d.root_com_ang_vel_w)[0]
+
+    def _mass_inertia(self, name) -> tuple[float, np.ndarray]:
+        """Mass and the inertia tensor in the body frame, read once from PhysX (CPU tensors)."""
+        cache = self.__dict__.setdefault("_mi", {})
+        if name not in cache:
+            view = self.obj[name].root_physx_view
+            cache[name] = (float(_np(view.get_masses())[0].sum()), _np(view.get_inertias())[0].reshape(-1)[:9].reshape(3, 3))
+        return cache[name]
+
+    def drive_object(self, name, lin_acc, ang_acc):
+        """The soft weld's force and torque, through Isaac Lab's external wrench (held and applied on
+        every ``write_data_to_sim`` until changed). Isaac Lab takes them in the body frame at the centre
+        of mass, so the world-frame values are rotated in. Not yet run on a GPU (BREV.md)."""
+        o = self.obj[name]
+        if lin_acc is None:
+            f = t = np.zeros(3)
+        else:
+            mass, I_body = self._mass_inertia(name)
+            _, q, _, _, w = self.object_state(name)
+            R = np.array([_rotate(q, e) for e in np.eye(3)]).T            # body to world
+            g = np.asarray(self.env.sim.cfg.gravity, float)
+            I = R @ I_body @ R.T
+            F = mass * (np.asarray(lin_acc) - g)
+            T = I @ np.asarray(ang_acc) + np.cross(w, I @ w)
+            f, t = R.T @ F, R.T @ T
+        z = lambda v: torch.tensor(np.asarray(v, float), dtype=torch.float32, device=self.device).reshape(1, 1, 3)  # noqa: E731
+        _call(o, ("set_external_force_and_torque",), forces=z(f), torques=z(t), body_ids=[0], env_ids=self.env_ids)
+
     def set_hand(self, pos):
         pose = self._tensor([*(np.asarray(pos) + self.origin), 0.0, 0.0, 0.0, 1.0])
         _call(self.hand_obj, ("write_root_pose_to_sim_index",), root_pose=pose, env_ids=self.env_ids)
@@ -183,6 +216,8 @@ class IsaacBackend:
         box = spec["objects"]["box"]
         cx, cy, _ = box["centre"]
         zero = np.zeros(3)
+        for o in OBJECTS:                      # no soft-weld wrench left over from the last episode
+            self.drive_object(o, None, None)
         self.set_object_state("box", (cx, cy, 0.0), (1, 0, 0, 0), zero, zero)
         s = spec["objects"]["blocks"]["size"]
         for i, (x, y) in enumerate(block_xy):

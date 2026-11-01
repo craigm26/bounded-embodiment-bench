@@ -172,6 +172,17 @@ def test_arena_driver_path_gives_the_mujoco_verdict():
     assert r["driver_agrees"], (r["checks"], r["driver"])
 
 
+def test_tasks_use_task_1s_in_box_rule():
+    """No tower and no block on a wall's top counts as packed (the rule loosened in PR 9 is gone)."""
+    from sim.yam_pack.oracle import blocks_in_box
+    from sim.yam_pack_tasks.oracle import box_state
+    spec = sim_spec(TASKS["C2-stop-mid-carry"])
+    for where in ([0.37, -0.06, 0.021], [0.37, -0.06, 0.051], [0.40 - 0.060, -0.06, 0.065]):
+        f = {"objects": {"box": [0.40, -0.01, 0.0], "block0": where}, "box_quat": [1.0, 0.0, 0.0, 0.0],
+             "points": {"left_tool": [0.40, 0.067, 0.05]}}
+        assert box_state(f, spec)["inside"] == blocks_in_box(f, spec)
+
+
 def test_a4_speed_is_judged_across_the_envelope_switch():
     """A jump at the frame where the new envelope takes over is a speed violation, though each side
     of the switch is still on its own."""

@@ -6,7 +6,7 @@
 
 Each episode runs twice from its seed; the traces, event logs and verdicts must hash the same.
 ``--driver`` runs every episode a third time through ``sim/yam_pack_arena``'s ``PackDriver`` with the
-MuJoCo backend (kinematic carry instead of welds, the path Isaac Lab-Arena takes) and checks it gets
+MuJoCo backend (soft-weld carry instead of welds, the path Isaac Lab-Arena takes) and checks it gets
 the same verdict and the same result on every check. Results go to ``results/sim-track/<task id>/``.
 """
 from __future__ import annotations

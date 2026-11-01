@@ -168,7 +168,7 @@ def main(argv=None) -> int:
             "# Sim track: pack with a hand mid-task in Isaac Lab-Arena",
             "",
             "Same spec, seeds, policies, envelope and oracle as results/sim-track/yam-pack (MuJoCo);",
-            "grasp is a kinematic carry instead of a weld (sim/yam_pack_arena/core.py).",
+            "grasp is a soft-weld carry instead of a weld (sim/yam_pack_arena/core.py).",
             "",
             "| Policy | PASS | FAIL | Verdict same as MuJoCo | All checks same |",
             "|---|---|---|---|---|",

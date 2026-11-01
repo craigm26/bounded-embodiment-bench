@@ -7,10 +7,20 @@ objects, and writes trace frames at ``trace_hz`` in the format the oracle reads.
 
 The one deliberate change from ``World`` is the grasp. MuJoCo welds a grasped object to ``link_6``
 with an equality constraint; Isaac Lab has no runtime weld, so here a grasp records the object's pose
-relative to ``link_6`` and, before every physics step, writes the object back to that pose with the
-link's velocity at that point (a kinematic carry). ``MujocoBackend`` below runs this same driver in
-MuJoCo with the welds left off, which is how the carry is checked on a CPU: the four reference
-policies must get the verdicts they get with welds (``tests/test_sim_yam_arena.py``).
+relative to ``link_6`` and, before every physics step, pushes the object toward that pose with a
+force and torque at its centre of mass (a soft weld): a spring-damper on the pose and velocity error
+with the stiffness and damping of MuJoCo's default weld (solref 0.02 s, damping ratio 1), plus the
+object's weight. The object stays a dynamic body, so what rests in it rides along by friction.
+
+An earlier version wrote the object's pose and velocity straight into the simulator each substep (a
+kinematic carry). The pose was right, but a box moved that way slid out from under its contents: the
+contact solve never saw the box move, so friction never dragged the blocks, and a block the weld
+carries 6 cm stayed where it landed. That is what made the tasks' in-box rule look too strict under
+the driver (``sim/yam_pack_tasks/README.md``); the rule is task 1's again now.
+
+``MujocoBackend`` below runs this same driver in MuJoCo with the welds left off, which is how the
+carry is checked on a CPU: the reference policies must get the verdicts they get with welds
+(``tests/test_sim_yam_arena.py``, ``carry_check.py``).
 
 Order of calls per physics substep, the same in both simulators:
 
@@ -35,6 +45,10 @@ from sim.yam_pack.episode import SIDES, HandScript, ProximitySensor, draw, make_
 
 GRASP_RADIUS_M = 0.03    # same as scene.GRASP_RADIUS_M
 ARM_DOF = 6
+# The soft weld, per unit mass (and per unit inertia for rotation): MuJoCo's default constraint
+# (solref 0.02 s, damping ratio 1, dmax 0.95) gives b = 2 / (dmax * 0.02) and k = 1 / (dmax * 0.02)^2.
+CARRY_K = 1.0 / (0.95 * 0.02) ** 2     # 1/s^2, about 2770
+CARRY_B = 2.0 / (0.95 * 0.02)          # 1/s, about 105
 
 
 class Backend(Protocol):
@@ -51,6 +65,11 @@ class Backend(Protocol):
     def link6_state(self, side: str) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]: ...
     #   position, quaternion, linear velocity at the link origin, angular velocity (world frame)
     def set_object_state(self, name: str, pos, quat, linvel, angvel) -> None: ...
+    def object_state(self, name: str) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]: ...
+    #   origin position, quaternion, centre of mass, linear velocity at the centre of mass, angular velocity
+    def drive_object(self, name: str, lin_acc, ang_acc) -> None: ...
+    #   hold the force and torque at the centre of mass that give these accelerations (world frame)
+    #   against gravity, until the next call; None clears it
     def set_hand(self, pos: np.ndarray) -> None: ...
     def arm_contacts(self) -> list[list[str]]: ...
 
@@ -186,6 +205,7 @@ class PackDriver:
                     self._attach(side, n)
                     break
         elif not closed and self.held[side] is not None:
+            self.b.drive_object(self.held[side], None, None)
             self.held[side] = None
             if side == "right" and self.first_release_t is None:
                 self.first_release_t = self.t
@@ -200,13 +220,23 @@ class PackDriver:
         self.held[side] = obj
 
     def _carry(self) -> None:
+        """The soft weld: for each held object, the acceleration that takes its centre of mass and
+        orientation to where the grasp put them relative to ``link_6``, at the link's velocity there."""
         for side, obj in self.held.items():
             if obj is None:
                 continue
             lp, lq, lv, lw = self.b.link6_state(side)
             rp, rq = self.rel[obj]
-            off = qrot(lq, rp)
-            self.b.set_object_state(obj, lp + off, qmul(lq, rq), lv + np.cross(lw, off), lw)
+            p, q, com, v, w = self.b.object_state(obj)
+            tq = qmul(lq, rq)
+            tcom = lp + qrot(lq, rp) + qrot(tq, qrot(qinv(q), com - p))   # where the centre of mass belongs
+            tv = lv + np.cross(lw, tcom - lp)
+            qe = qmul(tq, qinv(q))
+            if qe[0] < 0:
+                qe = -qe
+            rot = np.zeros(3)
+            mujoco.mju_quat2Vel(rot, qe, 1.0)                            # rotation vector, object to target
+            self.b.drive_object(obj, CARRY_K * (tcom - com) + CARRY_B * (tv - v), CARRY_K * rot + CARRY_B * (lw - w))
 
     # ----- trace -----------------------------------------------------------------------------------
     def _record(self) -> None:
@@ -224,7 +254,7 @@ class PackDriver:
         self._next_trace += 1.0 / self.spec["episode"]["trace_hz"]
 
 
-# ----- MuJoCo backend: the same scene, welds off, kinematic carry --------------------------------
+# ----- MuJoCo backend: the same scene, welds off, soft-weld carry -----------------------------
 class MujocoBackend:
     """``sim/yam_pack``'s MuJoCo scene behind the ``Backend`` protocol, with the welds never switched
     on. Used to check the carry and the driver on a CPU; the shipped MuJoCo results stay on ``World``."""
@@ -299,6 +329,25 @@ class MujocoBackend:
         self.d.qvel[va:va + 3] = linvel
         self.d.qvel[va + 3:va + 6] = qrot(qinv(quat), angvel)
 
+    def object_state(self, name):
+        b = self.m.body(name).id
+        v = np.zeros(6)
+        mujoco.mj_objectVelocity(self.m, self.d, mujoco.mjtObj.mjOBJ_BODY, b, v, 0)
+        return self.d.xpos[b].copy(), self.d.xquat[b].copy(), self.d.xipos[b].copy(), v[3:].copy(), v[:3].copy()
+
+    def drive_object(self, name, lin_acc, ang_acc):
+        b = self.m.body(name).id
+        if lin_acc is None:
+            self.d.xfrc_applied[b] = 0.0
+            return
+        R = self.d.ximat[b].reshape(3, 3)
+        inertia = R @ np.diag(self.m.body_inertia[b]) @ R.T
+        w = np.zeros(6)
+        mujoco.mj_objectVelocity(self.m, self.d, mujoco.mjtObj.mjOBJ_BODY, b, w, 0)
+        # xfrc_applied is a world-frame force and torque at the body's centre of mass.
+        self.d.xfrc_applied[b, :3] = self.m.body_mass[b] * (np.asarray(lin_acc) - self.m.opt.gravity)
+        self.d.xfrc_applied[b, 3:] = inertia @ np.asarray(ang_acc) + np.cross(w[:3], inertia @ w[:3])
+
     def set_hand(self, pos):
         self.d.mocap_pos[0] = pos
 
@@ -327,7 +376,7 @@ class PolicyView:
 
 def episode(policy: str, seed: int, spec: dict, overrides: dict | None = None,
             model=None) -> tuple[list[dict], PackDriver]:
-    """``sim.yam_pack.run.episode`` through the driver and the MuJoCo backend (kinematic carry).
+    """``sim.yam_pack.run.episode`` through the driver and the MuJoCo backend (soft-weld carry).
     ``model`` is a YAM model config (``sim.yam_pack.joint_map``); the policies plan on the canonical
     model and the driver's joint map carries their joints onto this one."""
     from sim.yam_pack.joint_map import CANONICAL

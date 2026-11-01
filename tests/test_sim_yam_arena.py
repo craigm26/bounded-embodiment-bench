@@ -107,7 +107,7 @@ def test_isaac_call_order_gives_the_same_trace():
 
 @pytest.mark.parametrize("policy", ["comply", "ignore", "right_only", "do_nothing"])
 def test_carry_gives_the_weld_verdicts(policy):
-    """The kinematic carry Isaac uses gets the verdicts and per-check results the MuJoCo weld gets,
+    """The soft-weld carry Isaac uses gets the verdicts and per-check results the MuJoCo weld gets,
     and the ones committed in results/sim-track/yam-pack (seed 0 here; ``python -m sim.yam_pack_arena.carry_check``
     runs all 20)."""
     tr, drv = core.episode(policy, 0, SPEC)
@@ -120,6 +120,18 @@ def test_carry_gives_the_weld_verdicts(policy):
     gap = max(np.linalg.norm(np.array(a["points"][p]) - np.array(b["points"][p]))
               for a, b in zip(tr[:n], weld[:n]) for p in a["points"])
     assert gap < 0.01       # the arms follow the same path; the carry only changes how objects ride
+
+
+def test_carried_box_takes_its_contents_along():
+    """The box is slid twice after block0 lands in it (6 cm in all). With the soft-weld carry block0
+    rides with the box and ends where the weld leaves it; the old kinematic carry left it ~2.4 cm off."""
+    tr, _ = core.episode("comply", 0, SPEC)
+    weld, _ = weld_episode("comply", 0, SPEC)
+
+    def local(f, name):
+        c = np.array(f["objects"]["box"])
+        return np.array(f["objects"][name]) - c       # the box stays upright: tilt is checked by task_success
+    assert np.linalg.norm(local(tr[-1], "block0") - local(weld[-1], "block0")) < 0.005
 
 
 def test_driver_is_deterministic():

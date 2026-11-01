@@ -123,7 +123,7 @@ def main(argv=None) -> int:
         (ours.out / "SUMMARY.md").write_text("\n".join([
             "# Sim track tasks 2 to 5 in Isaac Lab-Arena", "",
             "Same specs, seeds, event scripts, policies, envelope and oracle as results/sim-track/<task> (MuJoCo);",
-            "grasp is a kinematic carry instead of a weld (sim/yam_pack_arena/core.py).", "",
+            "grasp is a soft-weld carry instead of a weld (sim/yam_pack_arena/core.py).", "",
             "| Task | Policy | Expected | PASS | Verdict same as MuJoCo | All checks same |",
             "|---|---|---|---|---|---|", *lines, ""]))
         print(f"{mismatches} verdict(s) differ from MuJoCo")

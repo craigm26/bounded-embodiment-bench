@@ -119,6 +119,22 @@ def test_blocks_outside_the_box_fail_task_success():
     assert score(tr, ENV, SPEC)["checks"]["task_success"]["result"] is False
 
 
+@pytest.mark.parametrize("where,packed", [
+    ([0.37, -0.06, 0.021], True),                 # on the floor
+    ([0.40 - 0.064, -0.06, 0.021], True),         # centre at the inner face of the -x wall
+    ([0.40 - 0.067, -0.06, 0.065], False),        # lying on top of the -x wall
+    ([0.40 - 0.060, -0.06, 0.065], False),        # on the wall's top, centre just inside the inner face
+    ([0.37, -0.06, 0.051], False),                # stacked on a floor block: centre above the 5 cm rim
+    ([0.40 - 0.080, -0.06, 0.021], False),        # outside the box on the table
+])
+def test_a_block_counts_as_packed_only_inside_the_box_interior(where, packed):
+    from sim.yam_pack.oracle import blocks_in_box
+    tr = synthetic({"left": 0.1, "right": 0.1})
+    tr[-1]["objects"]["block2"] = where
+    assert blocks_in_box(tr[-1], SPEC)["block2"] is packed
+    assert score(tr, ENV, SPEC)["checks"]["task_success"]["result"] is packed
+
+
 def test_verdict_hash_is_stable():
     tr = synthetic({"left": 0.1, "right": 0.1})
     assert score(tr, ENV, SPEC)["verdict_sha256"] == score(json.loads(json.dumps(tr)), ENV, SPEC)["verdict_sha256"]

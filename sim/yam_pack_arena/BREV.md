@@ -57,7 +57,9 @@ about 25 to 45 simulated seconds at 2 ms; the per-substep Python in the driver i
 expect minutes per episode, not seconds.
 
 If comply fails `task_success`: the blocks are not ending in the box. Check the carry (blocks should
-ride with the right gripper) and the collision filter (the arms must not hit the box or blocks; look
+ride with the right gripper, and blocks already in the box should move with it when the left arm slides
+it; the carry is an external force and torque on each held object, `IsaacBackend.drive_object`, not yet
+run on a GPU) and the collision filter (the arms must not hit the box or blocks; look
 for `/World/collision_groups` in the stage). If a policy fails a timing check MuJoCo passes, the arms
 are slower or springier than MuJoCo's; compare `joint_pos` against the targets for one step.
 

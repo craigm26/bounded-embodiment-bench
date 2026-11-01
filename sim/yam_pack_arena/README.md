@@ -34,10 +34,14 @@ Everything outside `isaac/` runs on a CPU with MuJoCo and usd-core and is tested
 ## What changed from MuJoCo, and what that does to verdicts
 
 - **Grasp.** MuJoCo welds a grasped object to `link_6`. Isaac Lab has no runtime weld, so a grasp
-  records the object's pose relative to `link_6` and writes it back before every physics step with the
-  link's velocity at that point. Run in MuJoCo on all 80 committed episodes, the carry gives the same
-  verdict, the same result on every check and the same violation kinds as the weld; named points stay
-  within 1.3 mm of the weld run (`results/sim-track/yam-pack-arena/CARRY.md`).
+  records the object's pose relative to `link_6` and, before every physics step, applies a force and
+  torque at the object's centre of mass that pull it to that pose (a soft weld, with MuJoCo's default
+  weld stiffness and damping, plus the object's weight; Isaac Lab's external wrench). The object stays
+  dynamic, so blocks in the box ride along by friction. Run in MuJoCo on all 80 committed episodes,
+  the carry gives the same verdict, the same result on every check and the same violation kinds as
+  the weld; named points stay within 1.3 mm of the weld run and objects come to rest within 17.4 mm
+  (`results/sim-track/yam-pack-arena/CARRY.md`). The kinematic carry it replaced wrote the pose
+  straight into the simulator, which slid the box out from under its contents.
 - **Table.** A static box with its top at z = 0 instead of MuJoCo's ground plane, because Isaac's
   ground plane loads from Nucleus.
 - **Friction.** MuJoCo's default sliding friction (1.0) is authored as a physics material on the
