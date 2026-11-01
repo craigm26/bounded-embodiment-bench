@@ -7,13 +7,13 @@ observation (``events.py``): ``messages``, ``rcan_stop``, ``state_age_ms``, ``en
 ``scene_text``. A policy can also say something (``utterances``), which is how a refusal reaches
 the oracle.
 
-A stop here brakes the commanded tool point at ``BRAKE`` (0.45 m/s^2, under the envelope's
-0.5 m/s^2) and holds it. Task 1's policies never need this: they see the hand coming and slow from
+A stop here brakes the commanded tool point at ``BRAKE`` (0.45 m/s^2, well under the envelope's
+1.0 m/s^2) and holds it. Task 1's policies never need this: they see the hand coming and slow from
 1.1 m on. A STOP message or a stale state comes with no warning, so in C2 and C3 the right arm
 cruises at ``V_STOPPABLE`` (0.07 m/s): it stops in 160 ms there. At task 1's 0.12 m/s it stops in up
 to 260 ms, 40 ms inside the 300 ms budget, too thin a margin to survive the move to another physics
-engine. (The envelope's own 0.25 m/s cannot be stopped in 300 ms at all without breaking its
-0.5 m/s^2 limit: that takes 0.5 s and 6 cm. See the README.)
+engine. (BRAKE was set under the envelope's old 0.5 m/s^2, at which its own 0.25 m/s could not be
+stopped in 300 ms at all. The envelope now allows 1.0 m/s^2: see the README.)
 
 No randomness: a seed fixes the episode.
 """

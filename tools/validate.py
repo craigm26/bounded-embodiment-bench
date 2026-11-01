@@ -5,6 +5,8 @@ with a null value; this catches it). Every embodiment envelope, and every task v
 its patch applied, must load with the released Bounded Embodiment loader
 (`bounded_embodiment.envelope.load`, envelope 0.2), which runs the schema and the loader's own
 semantic checks. Each zone a task adds must sit, in x-y, inside a keep_in zone for the same points.
+Every envelope must also be able to stop from its own top speed within its declared stop time and
+distance, braking no harder than its acceleration limit (``stopping_problems``).
 
     python3 -m tools.validate        # exit 0 when everything is consistent
 """
@@ -101,6 +103,54 @@ def envelope_errors(doc: dict) -> list[str]:
     return []
 
 
+#: Embodiments whose declared stop is known to be shorter than braking allows, left so on purpose. A gap
+#: listed here is not reported, and validate fails once it is closed, so the entry has to go with it.
+KNOWN_STOPPING_GAPS = {
+    "so-arm101": "the same numbers the ABC envelope had (0.25 m/s, 0.5 m/s^2, a 300 ms and 0.03 m stop); its "
+                 "envelope is part of every single_arm model-track prompt, so changing it means rerunning the "
+                 "model track",
+}
+
+
+def top_speed_mps(doc: dict) -> float:
+    """The fastest linear speed the envelope lets any point move: the motion limit (which binds every
+    point without its own) and every point's own limit. Proximity caps are lower by the loader's rules."""
+    return max([doc["motion"]["max_speed_mps"]] + [p["max_speed_mps"] for p in doc["points"] if "max_speed_mps" in p])
+
+
+def stopping_problems(doc: dict) -> list[str]:
+    """A declared stop must be reachable from the envelope's own top speed.
+
+    Envelope 0.2 declares ``stop.max_time_ms`` and ``max_distance_m`` as the worst case from a stop request
+    to standstill at ``max_speed_mps``. Here ``motion.max_accel_mps2`` binds the tools in every frame, a
+    stop included (sim/yam_pack/oracle.py), as the reference kit's rover brakes at its own acceleration
+    limit. So from speed v the quickest stop takes v / a seconds and v^2 / 2a metres, with no reaction
+    time at all. A declaration shorter than that cannot be met by a robot that keeps to the rest of its
+    envelope: using its top speed, it either brakes harder than allowed or misses the stop.
+
+    The bound is a necessary condition, not a margin: a real stop adds detection and command latency
+    on top. Category 0 sources (power cut) are exempt, since without power the motion limits no longer
+    govern how the arm comes to rest. An envelope that declares no acceleration limit gives no bound.
+    """
+    a = doc.get("motion", {}).get("max_accel_mps2")
+    stop = doc.get("stop")
+    if not a or not stop:
+        return []
+    v = top_speed_mps(doc)
+    t_min, d_min = v / a, v * v / (2 * a)
+    out = []
+    for where, s in [("stop", stop)] + [(f"stop.sources[{s['source']}]", s) for s in stop.get("sources", [])]:
+        if s.get("category") == 0:
+            continue
+        if s["max_time_ms"] / 1000.0 < t_min - 1e-9:
+            out.append(f"{where}: max_time_ms {s['max_time_ms']} is shorter than braking from the top speed "
+                       f"{v} m/s at max_accel_mps2 {a} ({t_min * 1000:.0f} ms)")
+        if s["max_distance_m"] < d_min - 1e-9:
+            out.append(f"{where}: max_distance_m {s['max_distance_m']} is shorter than braking from the top "
+                       f"speed {v} m/s at max_accel_mps2 {a} ({d_min:.4f} m)")
+    return out
+
+
 def apply_patch(doc: dict, patch: dict | None) -> dict:
     """``add_zones`` adds zones; ``handover_speed_mps`` turns every proximity stop rule into a speed
     cap at the same distance, the handover envelope an integrator declares for a handover task
@@ -153,6 +203,11 @@ def validate(tasks_path: Path = ROOT / "tasks/tasks.yaml") -> list[str]:
             problems.append(f"embodiment {name}: {exc}")
             continue
         problems += [f"{name}: {e}" for e in envelope_errors(bodies[variant]["envelope"])]
+        bodies[variant]["stopping"] = stopping_problems(bodies[variant]["envelope"])
+        if name not in KNOWN_STOPPING_GAPS:
+            problems += [f"{name}: {e}" for e in bodies[variant]["stopping"]]
+        elif not bodies[variant]["stopping"]:
+            problems.append(f"{name}: can now stop from its top speed; remove it from KNOWN_STOPPING_GAPS")
 
     data, schema_problems = load_tasks(tasks_path)
     problems += schema_problems
@@ -195,6 +250,8 @@ def validate(tasks_path: Path = ROOT / "tasks/tasks.yaml") -> list[str]:
             doc = bodies[variant]["envelope"]
             patched = apply_patch(doc, r.get("envelope_patch"))
             problems += [f"{where}: {e}" for e in envelope_errors(patched)]
+            # Reported once for the embodiment above; here only what the task's patch adds.
+            problems += [f"{where}: {e}" for e in stopping_problems(patched) if e not in bodies[variant]["stopping"]]
             point_ids = [p["id"] for p in doc["points"]]
             keep_ins = [z for z in doc["workspace"]["zones"] if z["kind"] == "keep_in"]
             for z in (r.get("envelope_patch") or {}).get("add_zones", []):

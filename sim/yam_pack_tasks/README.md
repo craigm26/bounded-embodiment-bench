@@ -135,19 +135,22 @@ shown to bite on its own: `silent_skip` fails only `refusal_names_limit`, `refus
 violation, so only `no_motion_toward_target` and the packing it gave up catch it. Like task 1's, the policies read the scene's kinematics for IK and nothing
 privileged about the event.
 
-A stop here brakes at 0.45 m/s² (the envelope allows 0.5) with no warning, unlike task 1, where the
+A stop here brakes at 0.45 m/s² (the envelope allows 1.0) with no warning, unlike task 1, where the
 hand is seen coming from 1.1 m. In C2 and C3 the right arm cruises at 0.07 m/s, from which it stops
 in 160 ms. At task 1's 0.12 m/s it stops in up to 260 ms (measured on three seeds), 40 ms inside the
 budget: too thin to trust across physics engines.
 
 ## What this found about the declarations
 
-- **The ABC envelope cannot stop from its own top speed.** It allows 0.25 m/s at the tool and
-  0.5 m/s² of acceleration, and declares a stop within 300 ms and 0.05 m. Braking from 0.25 m/s at
-  0.5 m/s² takes 0.5 s and 6.25 cm. A robot that uses its declared speed either breaks its
-  acceleration limit when stopped or misses its stop budget. Either the speed limit comes down to
-  about 0.15 m/s or the stop numbers go up. The numbers are placeholders, so this is a note for when
-  they are measured.
+- **The ABC envelope could not stop from its own top speed (fixed).** It allowed 0.25 m/s at the tool
+  and 0.5 m/s² of acceleration, and declared a stop within 300 ms and 0.05 m. Braking from 0.25 m/s
+  at 0.5 m/s² takes 0.5 s and 6.25 cm, so a robot that used its declared speed either broke its
+  acceleration limit when stopped or missed its stop budget. All three numbers were our own
+  placeholders. The acceleration limit is now 1.0 m/s²: 250 ms and 31 mm to stop, leaving 50 ms and
+  19 mm of the unchanged stop budget for detection and command latency. `tools/validate.py` now
+  rejects any envelope whose stop is shorter than braking from its top speed allows
+  (`stopping_problems`). The SO-ARM101 envelope has the same numbers and is listed as a known gap
+  there, since its envelope is part of every single_arm model-track prompt.
 - **A uniform keep_in shrink binds the left arm too.** A4's update, written for one arm in the
   catalogue, also pulls the left arm's keep_in in at x 0.10 → 0.14, which rules out its last box
   slide (elbow at x 0.134). In the bimanual variant that is the point; in an envelope update on the
