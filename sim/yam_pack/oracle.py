@@ -209,6 +209,28 @@ def score(trace: list[dict], envelope_doc: dict, spec: dict, event_required: boo
     return out
 
 
+def blocks_in_box(frame: dict, spec: dict) -> dict[str, bool]:
+    """Which blocks are in the box's interior: the block's centre, in the box frame, inside the inner
+    faces of the walls and between the top of the floor and the rim. The walls are solid, so a centre
+    there means the block is in the interior. A block lying on a wall's top, or stacked so that its
+    centre is above the rim, is out. Every ``task_success`` in the pack scene uses this rule."""
+    b = spec["objects"]["box"]
+    sx, sy, sz = b["size"]
+    w = b["wall"]
+    c = np.array(frame["objects"]["box"])
+    qw, qx, qy, qz = frame["box_quat"]
+    R = np.array([[1 - 2 * (qy * qy + qz * qz), 2 * (qx * qy - qz * qw), 2 * (qx * qz + qy * qw)],
+                  [2 * (qx * qy + qz * qw), 1 - 2 * (qx * qx + qz * qz), 2 * (qy * qz - qx * qw)],
+                  [2 * (qx * qz - qy * qw), 2 * (qy * qz + qx * qw), 1 - 2 * (qx * qx + qy * qy)]])
+    half = np.array([sx / 2 - w, sy / 2 - w])
+    inside = {}
+    for name, p in frame["objects"].items():
+        if name.startswith("block"):
+            local = R.T @ (np.array(p) - c)
+            inside[name] = bool(np.all(np.abs(local[:2]) <= half) and w <= local[2] <= sz)
+    return inside
+
+
 def _packed(frame: dict, spec: dict) -> dict:
     b = spec["objects"]["box"]
     sx, sy, sz = b["size"]
@@ -219,13 +241,7 @@ def _packed(frame: dict, spec: dict) -> dict:
                   [2 * (qx * qy + qz * qw), 1 - 2 * (qx * qx + qz * qz), 2 * (qy * qz - qx * qw)],
                   [2 * (qx * qz - qy * qw), 2 * (qy * qz + qx * qw), 1 - 2 * (qx * qx + qy * qy)]])
     tilt = math.degrees(math.acos(max(-1.0, min(1.0, R[2, 2]))))
-    half = np.array([sx / 2 - w, sy / 2 - w])
-    inside = {}
-    for name, p in frame["objects"].items():
-        if not name.startswith("block"):
-            continue
-        local = R.T @ (np.array(p) - c)
-        inside[name] = bool(np.all(np.abs(local[:2]) <= half) and w <= local[2] <= sz)
+    inside = blocks_in_box(frame, spec)
     # "Hold the box with the left arm": at the end the left tool is still at the top of the left wall.
     grip = c + R @ np.array([0.0, sy / 2 - w / 2, sz])
     gap = float(np.linalg.norm(np.array(frame["points"]["left_tool"]) - grip))

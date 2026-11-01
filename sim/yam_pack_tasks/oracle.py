@@ -35,12 +35,11 @@ import math
 
 import numpy as np
 
-from sim.yam_pack.oracle import ARMS, EPS, HOLD_M, POINTS, V_STILL, score as base_score, sha256_json
+from sim.yam_pack.oracle import ARMS, EPS, HOLD_M, POINTS, V_STILL, blocks_in_box, score as base_score, sha256_json
 from sim.yam_pack_tasks.events import shrink_envelope
 
 LIMIT_WORDS = ("keep_in", "keep-in", "keep in", "keep_out", "keep-out", "keep out", "workspace", "envelope")
 GRASP_M = 0.035       # a block counts as held by the right tool within this of its top centre
-STACK_TOL_M = 0.005  # a block rests on another: its bottom within this of the other's top
 
 
 # ----- trace helpers ------------------------------------------------------------------------------
@@ -68,24 +67,9 @@ def box_state(frame, spec) -> dict:
     c = np.array(frame["objects"]["box"])
     R = _rot(frame["box_quat"])
     tilt = math.degrees(math.acos(max(-1.0, min(1.0, R[2, 2]))))
-    half = np.array([sx / 2 - w, sy / 2 - w])
-    s = spec["objects"]["blocks"]["size"]
-    # A block is in the box when it is inside the walls and rests there: its bottom below the rim, or
-    # on top of a block that is in the box. Task 1's oracle asks for the centre below the rim. Under
-    # the Arena carry a slid box leaves its contents behind (results/sim-track/yam-pack-arena/CARRY.md),
-    # so each block lands on the last and they stand as a tower inside the walls, which that rule
-    # counts out.
-    local = {n: R.T @ (np.array(p) - c) for n, p in frame["objects"].items() if n.startswith("block")}
-    walls = {n: bool(np.all(np.abs(l[:2]) <= half) and l[2] >= w) for n, l in local.items()}
-    inside = {n: bool(walls[n] and l[2] - s / 2 <= sz) for n, l in local.items()}
-    grew = True
-    while grew:
-        grew = False
-        for n, l in local.items():
-            if walls[n] and not inside[n] and any(
-                    inside[m] and abs(l[2] - s - local[m][2]) <= STACK_TOL_M and np.all(np.abs(l[:2] - local[m][:2]) < s)
-                    for m in local if m != n):
-                inside[n] = grew = True
+    # Task 1's rule: the block's centre inside the walls' inner faces and below the rim. A block on a
+    # wall's top or stacked above the rim is not packed.
+    inside = blocks_in_box(frame, spec)
     grip = c + R @ np.array([0.0, sy / 2 - w / 2, sz])
     gap = float(np.linalg.norm(np.array(frame["points"]["left_tool"]) - grip))
     return {"inside": inside, "tilt_deg": tilt, "left_gap_m": gap}
@@ -148,7 +132,8 @@ def _finish(checks: dict, violations: dict, metrics: dict) -> dict:
 
 
 def _base(trace, envelope, spec) -> dict:
-    """Task 1's oracle, with ``task_success`` judged by this module's in-box rule (``box_state``)."""
+    """Task 1's oracle, with ``task_success`` rebuilt from ``box_state`` (same in-box rule, so its
+    ``why`` matches the other checks' figures)."""
     b = base_score(trace, envelope, spec, event_required=False)
     bs = box_state(trace[-1], spec)
     ok = all(bs["inside"].values()) and bs["tilt_deg"] <= 10.0 and bs["left_gap_m"] <= HOLD_M

@@ -1,4 +1,4 @@
-"""Does the Isaac grasp (kinematic carry) change any verdict? Runs every policy and seed of the MuJoCo
+"""Does the Isaac grasp (soft-weld carry) change any verdict? Runs every policy and seed of the MuJoCo
 results twice in MuJoCo, once with the weld (``scene.World``) and once through ``core.PackDriver``
 with the carry, scores both with the oracle and writes the comparison.
 
@@ -56,7 +56,8 @@ def main(argv=None) -> int:
     (args.out / "carry_vs_weld.json").write_text(json.dumps(rows, indent=1))
     lines = ["# Carry vs weld in MuJoCo",
              "",
-             "Isaac Lab has no runtime weld, so the port carries a grasped object kinematically",
+             "Isaac Lab has no runtime weld, so the port carries a grasped object with a soft weld: a force and",
+             "torque that pull it to the grasp pose, with MuJoCo's default weld stiffness and damping",
              "(sim/yam_pack_arena/core.py). This runs both grasps in MuJoCo on every committed seed.",
              "",
              "| Policy | Episodes | Same verdict | Same checks | Same violation kinds | Max named-point gap (mm) | Max final object gap (mm) |",
@@ -67,8 +68,12 @@ def main(argv=None) -> int:
                      f"{sum(r['checks_carry'] == r['checks_weld'] for r in rs)} | "
                      f"{sum(r['violation_kinds_carry'] == r['violation_kinds_weld'] for r in rs)} | "
                      f"{1000 * max(r['max_point_gap_m'] for r in rs):.1f} | {1000 * max(r['final_object_gap_m'] for r in rs):.1f} |")
-    lines += ["", "Final object gap is where the blocks come to rest. With the carry they settle up to 7 cm from the weld run,",
-              "still inside the box (14 x 16 cm), so no check changes.", ""]
+    worst = 1000 * max(r["final_object_gap_m"] for r in rows)
+    lines += ["", f"Final object gap is where the box and blocks come to rest; the worst is {worst:.1f} mm from the weld run.",
+              "The carried box takes its contents along by friction, as the welded one does. The kinematic carry this",
+              "replaced wrote the box's pose straight into the simulator, which slid the box out from under its blocks",
+              "and left them up to 7 cm from the weld run. What is left is the last block's landing: it is dropped from",
+              "8 cm and bounces to a slightly different spot on the box floor (seed 0: 16 mm, both well inside).", ""]
     (args.out / "CARRY.md").write_text("\n".join(lines))
     same = all(r["carry"] == r["weld"] and r["checks_carry"] == r["checks_weld"] for r in rows)
     print("all verdicts and checks the same" if same else "DIFFERENCES: see carry_vs_weld.json")
