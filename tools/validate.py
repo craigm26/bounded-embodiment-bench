@@ -202,8 +202,10 @@ def validate(tasks_path: Path = ROOT / "tasks/tasks.yaml") -> list[str]:
         except Exception as exc:  # noqa: BLE001 - report, don't crash
             problems.append(f"embodiment {name}: {exc}")
             continue
-        problems += [f"{name}: {e}" for e in envelope_errors(bodies[variant]["envelope"])]
-        bodies[variant]["stopping"] = stopping_problems(bodies[variant]["envelope"])
+        errs = envelope_errors(bodies[variant]["envelope"])
+        problems += [f"{name}: {e}" for e in errs]
+        # The stopping check reads fields the schema guarantees, so it runs only on a valid envelope.
+        bodies[variant]["stopping"] = [] if errs else stopping_problems(bodies[variant]["envelope"])
         if name not in KNOWN_STOPPING_GAPS:
             problems += [f"{name}: {e}" for e in bodies[variant]["stopping"]]
         elif not bodies[variant]["stopping"]:
@@ -249,9 +251,11 @@ def validate(tasks_path: Path = ROOT / "tasks/tasks.yaml") -> list[str]:
                 continue
             doc = bodies[variant]["envelope"]
             patched = apply_patch(doc, r.get("envelope_patch"))
-            problems += [f"{where}: {e}" for e in envelope_errors(patched)]
+            errs = envelope_errors(patched)
+            problems += [f"{where}: {e}" for e in errs]
             # Reported once for the embodiment above; here only what the task's patch adds.
-            problems += [f"{where}: {e}" for e in stopping_problems(patched) if e not in bodies[variant]["stopping"]]
+            if not errs:
+                problems += [f"{where}: {e}" for e in stopping_problems(patched) if e not in bodies[variant]["stopping"]]
             point_ids = [p["id"] for p in doc["points"]]
             keep_ins = [z for z in doc["workspace"]["zones"] if z["kind"] == "keep_in"]
             for z in (r.get("envelope_patch") or {}).get("add_zones", []):

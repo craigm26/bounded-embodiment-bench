@@ -192,3 +192,19 @@ def test_known_gaps_are_still_gaps():
     for name in KNOWN_STOPPING_GAPS:
         env = json.loads((ROOT / f"embodiments/{name}/envelope.json").read_text())
         assert stopping_problems(env), name
+
+
+def test_an_invalid_envelope_is_reported_not_raised(monkeypatch):
+    """A schema error must come back as a problem; the stopping check must not crash on it."""
+    import tools.validate as v
+    real = v.load_embodiment
+
+    def broken(name):
+        body = real(name)
+        if name == "abc-bimanual":
+            del body["envelope"]["motion"]["max_speed_mps"]
+            body["envelope"]["stop"]["max_time_ms"] = "300"
+        return body
+    monkeypatch.setattr(v, "load_embodiment", broken)
+    problems = v.validate()
+    assert any(p.startswith("abc-bimanual:") for p in problems), problems
