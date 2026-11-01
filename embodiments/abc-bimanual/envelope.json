@@ -108,7 +108,7 @@
   },
   "motion": {
     "max_speed_mps": 0.25,
-    "max_accel_mps2": 0.5,
+    "max_accel_mps2": 1.0,
     "joints": [
       {
         "name": "left/joint1",
@@ -265,5 +265,5 @@
     ],
     "resolver": "external"
   },
-  "notes": "Joint ranges from i2rt yam/v1 MJCF (variant unconfirmed). Zones, speeds and stop numbers are placeholders. The arms' sides overlap in a 0.20 m band beyond x 0.30 so hand-to-hand transfers are possible; near the bases the midline keep_out separates them. Add a hardwired_stop source once the independent power cut exists. Stop sources comms_loss, gate_loss and power_loss are declared at the top-level worst case until measured; hardwired_stop is deliberately absent until an independent power cut exists (be envelope lint warns about it, correctly)."
+  "notes": "Joint ranges from i2rt yam/v1 MJCF (variant unconfirmed). Zones, speeds, acceleration and stop numbers are placeholders. They are kept consistent: from the 0.25 m/s top speed, braking at max_accel_mps2 1.0 stops in 250 ms over 31 mm, inside the declared 300 ms and 0.05 m with 50 ms and 19 mm left for detection and command latency (tools/validate.py rejects a stop shorter than braking allows). The arms' sides overlap in a 0.20 m band beyond x 0.30 so hand-to-hand transfers are possible; near the bases the midline keep_out separates them. Add a hardwired_stop source once the independent power cut exists. Stop sources comms_loss, gate_loss and power_loss are declared at the top-level worst case until measured; hardwired_stop is deliberately absent until an independent power cut exists (be envelope lint warns about it, correctly)."
 }

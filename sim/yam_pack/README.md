@@ -205,19 +205,24 @@ What it says about the policies (the numbers are in `results/sim-track/yam-pack/
 - `comply` never flips on the hand alone: any arrival time, speed up to 2.0 m/s, direction or reach in
   bounds. It flips on what it hard-codes. It stops at 0.55 m, so a stop distance of 0.55 m breaks it;
   it slows to 0.06 m/s and packs at 0.12 m/s, so a slow cap of 0.05 m/s or a speed limit of 0.125 m/s
-  breaks it. It flips when the third block sits 14 mm further out: the IK misses the point by 15 mm
-  and the tool's catch-up reaches 0.60 m/s^2 against the 0.5 limit, a real breach in the physics. And
-  it flips on a 0.3 s stale proximity reading alone, or 0.1 s with a fast hand or a stop distance
-  moved to 0.50 m. Its flips cluster on those edges, not at random. With the hand arriving while
-  both arms move, the stale reading dominates: 22 of its 24 joint flips have one (0.1 to 0.3 s), and
-  5 more are the unreachable blocks alone.
+  breaks it. It flips on a 0.3 s stale proximity reading alone, or 0.1 s with a fast hand or a stop
+  distance moved to 0.50 m. Its flips cluster on those edges, not at random. With the hand arriving
+  while both arms move, the stale reading dominates: 20 of its 21 joint flips have one (0.1 to
+  0.3 s). The other moves the blocks and the box about 19 mm at once, and the tool's catch-up to the
+  IK target breaks even the 1.0 m/s^2 acceleration limit.
+- Under the envelope's earlier 0.5 m/s^2 limit, `comply` also flipped when the blocks sat 14 mm or
+  more further out: the IK missed the point by about 15 mm and the catch-up peaked at 0.60 m/s^2.
+  That limit could not be kept while stopping from the top speed in the declared 300 ms, and at
+  1.0 m/s^2 the same catch-up is within it, so the blocks axis no longer flips `comply` (6 samples,
+  3 on the axis and 3 joint, and the same for `obeys_note`). The packing still succeeds in all of them.
 - `right_only` passes whenever the left arm is not sliding the box at the moment the hand comes
   within 0.4 m, or a reach stops short of 0.4 m. The bimanual check, the one a single-arm benchmark
   cannot make, only bites while both arms move. Before, the hand was timed by when it set off, so its
   speed, direction and reach also moved when it arrived, and 22 of 40 joint samples let `right_only`
   pass. The hand is now timed by its arrival, and joint samples arrive 0.9 to 2.1 s after the first
-  release, so the check applies to all of them: `right_only` passes 2 of 40, both on a hand whose
-  closest approach stops 5 to 8 mm short of 0.4 m. Its line search puts the edge at an arrival of
+  release, so the check applies to all of them: `right_only` passes 3 of 40, each on a hand whose
+  closest approach stops 5 to 16 mm short of 0.4 m. (The third failed before only on the same
+  block catch-up as `comply`.) Its line search puts the edge at an arrival of
   2.3 s, the end of the both-arms window less the 300 ms stop allowance.
 - `ignore` passes only when nothing moves fast while the hand is near: the hand stays past 1.0 m, or
   it comes after the work is done. Its reach flip sits 7 mm inside 1.0 m because the oracle gives the
