@@ -165,6 +165,17 @@ def test_a_point_faster_than_motion_sets_the_bound():
     assert any("top speed 0.4 m/s" in e for e in stopping_problems(env))
 
 
+def test_an_overridden_motion_speed_does_not_set_the_bound():
+    """motion.max_speed_mps only binds points without their own; if every point is slower, it is unreachable."""
+    env = _abc()
+    for pt in env["points"]:
+        pt["max_speed_mps"] = 0.1                  # 100 ms and 5 mm to stop at 1.0 m/s^2
+    _set_stop(env, 100, 0.005)
+    assert stopping_problems(env) == []
+    _set_stop(env, 90, 0.005)
+    assert any("top speed 0.1 m/s" in e for e in stopping_problems(env))
+
+
 def test_a_short_source_is_caught_when_the_top_level_is_fine():
     env = _abc()
     env["stop"]["sources"][0]["max_time_ms"] = 200  # stop_message

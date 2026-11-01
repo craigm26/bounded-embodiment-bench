@@ -113,9 +113,10 @@ KNOWN_STOPPING_GAPS = {
 
 
 def top_speed_mps(doc: dict) -> float:
-    """The fastest linear speed the envelope lets any point move: the motion limit (which binds every
-    point without its own) and every point's own limit. Proximity caps are lower by the loader's rules."""
-    return max([doc["motion"]["max_speed_mps"]] + [p["max_speed_mps"] for p in doc["points"] if "max_speed_mps" in p])
+    """The fastest linear speed the envelope lets any point move: each point's own limit, or the motion
+    limit for a point that declares none. Proximity caps are lower by the loader's rules."""
+    default = doc["motion"]["max_speed_mps"]
+    return max((p.get("max_speed_mps", default) for p in doc["points"]), default=default)
 
 
 def stopping_problems(doc: dict) -> list[str]:
