@@ -11,6 +11,7 @@ something the declared envelope forbids.
 
 from __future__ import annotations
 
+import dataclasses
 from typing import Any
 
 from inspect_robots.types import Action, ActionChunk, Observation
@@ -26,7 +27,7 @@ class GatedDreamPolicy(DreamPolicy):
         self.envelope_path = envelope
         self.margin_m = float(margin_m)
         self.gate: YamEnvelopeGate | None = None
-        self.info.name = "dream_be_gated"
+        self.info = dataclasses.replace(self.info, name="dream_be_gated")
 
     def bind(self, embodiment_info) -> None:
         super().bind(embodiment_info)
