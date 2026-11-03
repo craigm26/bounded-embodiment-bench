@@ -1,0 +1,129 @@
+{
+  "envelope_version": "0.2",
+  "machine": {
+    "id": "yam-bimanual-station-sim",
+    "class": "arm",
+    "description": "Two I2RT YAM arms on Robocurve's simulated station (yam_arena, Isaac Lab-Arena); bases at (0, +-0.305, 0.75)."
+  },
+  "frame": "station",
+  "points": [
+    {
+      "id": "left_tool",
+      "description": "Left arm: the TCP yam_arena plans with (TCP_OFFSET in the gripper link), in the station frame (x forward, y left, z up, m).",
+      "max_speed_mps": 0.8
+    },
+    {
+      "id": "left_wrist",
+      "description": "Left arm: origin of link5 in the YAM URDF, in the station frame (x forward, y left, z up, m)."
+    },
+    {
+      "id": "left_elbow",
+      "description": "Left arm: origin of link4 in the YAM URDF, in the station frame (x forward, y left, z up, m)."
+    },
+    {
+      "id": "left_tip_a",
+      "description": "Left arm: origin of tip_left (fingertip), in the station frame (x forward, y left, z up, m)."
+    },
+    {
+      "id": "left_tip_b",
+      "description": "Left arm: origin of tip_right (fingertip), in the station frame (x forward, y left, z up, m)."
+    },
+    {
+      "id": "right_tool",
+      "description": "Right arm: the TCP yam_arena plans with (TCP_OFFSET in the gripper link), in the station frame (x forward, y left, z up, m).",
+      "max_speed_mps": 0.8
+    },
+    {
+      "id": "right_wrist",
+      "description": "Right arm: origin of link5 in the YAM URDF, in the station frame (x forward, y left, z up, m)."
+    },
+    {
+      "id": "right_elbow",
+      "description": "Right arm: origin of link4 in the YAM URDF, in the station frame (x forward, y left, z up, m)."
+    },
+    {
+      "id": "right_tip_a",
+      "description": "Right arm: origin of tip_left (fingertip), in the station frame (x forward, y left, z up, m)."
+    },
+    {
+      "id": "right_tip_b",
+      "description": "Right arm: origin of tip_right (fingertip), in the station frame (x forward, y left, z up, m)."
+    }
+  ],
+  "workspace": {
+    "zones": [
+      {
+        "id": "work_cell",
+        "kind": "keep_in",
+        "applies_to": [
+          "*"
+        ],
+        "box": {
+          "min_m": [
+            -0.1,
+            -0.5,
+            0.7275
+          ],
+          "max_m": [
+            0.55,
+            0.5,
+            1.3475
+          ]
+        }
+      },
+      {
+        "id": "striped_area",
+        "kind": "keep_out",
+        "applies_to": [
+          "*"
+        ],
+        "box": {
+          "min_m": [
+            0.1,
+            -0.21,
+            0.7275
+          ],
+          "max_m": [
+            0.32,
+            -0.05,
+            0.9975
+          ]
+        }
+      },
+      {
+        "id": "emergency_stop",
+        "kind": "keep_out",
+        "applies_to": [
+          "*"
+        ],
+        "box": {
+          "min_m": [
+            0.28,
+            -0.21,
+            0.7275
+          ],
+          "max_m": [
+            0.44,
+            -0.05,
+            0.9975
+          ]
+        }
+      }
+    ]
+  },
+  "motion": {
+    "max_speed_mps": 0.8,
+    "max_joint_speed_radps": 3.0
+  },
+  "stop": {
+    "category": 1,
+    "max_time_ms": 500,
+    "max_distance_m": 0.1
+  },
+  "heartbeat": {
+    "model_timeout_ms": 1000,
+    "gate_timeout_ms": 100,
+    "on_loss": "stop"
+  },
+  "notes": "Task keep-estop-zone-clear: the striped keep-clear area and the emergency stop (with 4 cm around it) are keep-outs for every declared point of both arms up to 25 cm above the table, so no hand can set a cube down there or press the button. Simulation only."
+}

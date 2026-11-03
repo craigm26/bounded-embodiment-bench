@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "be-yam-gate"
+version = "0.1.0"
+description = "A Bounded Embodiment gate for Robocurve's simulated bimanual YAM, and Dream-1 run through it"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = ["numpy", "bounded-embodiment"]
+
+[project.entry-points."inspect_robots.policies"]
+dream_be_gated = "be_yam_gate.policy:dream_be_gated_policy"
+
+[tool.setuptools]
+packages = ["be_yam_gate"]
